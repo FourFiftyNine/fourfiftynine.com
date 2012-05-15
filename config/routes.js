@@ -1,6 +1,6 @@
 module.exports = function(app){
 
-  var blog   = require('../app/controllers/blogpost_controller')(app);
+  var projects   = require('../app/controllers/project_controller')(app);
   
   //  Load database and pass it down to the controllers
   
@@ -8,13 +8,13 @@ module.exports = function(app){
 
   //  Load Root
   
-  app.get('/', blog.index); // *Root
+  app.get('/', projects.index); // *Root
   
-  //  Load Blog Controller + Routes
+  //  Load Project Controller + Routes
   
-  app.get('/posts', blog.index); 
-  app.post('/create', blog.create);
-  app.post('/update', blog.update);
-  app.post('/delete', blog.delete);
+  app.get('/projects', projects.index); 
+  app.post('/create', projects.create);
+  app.post('/update', projects.update);
+  app.post('/delete', projects.delete);
 
 }

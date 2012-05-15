@@ -13,6 +13,7 @@ $(function(){
   
   $('#create').submit(function(){
     var data = $(this).serialize();
+    console.log(data);
     $.post('/create', data, function(res){
       if(!res.error){
         // Do something!

@@ -16,7 +16,7 @@ module.exports = function(app){
 
   //  Setup DB Connection
 
-  var dblink = process.env.MONGOHQ_URL || 'mongodb://localhost/blogsample';
+  var dblink = process.env.MONGOHQ_URL || 'mongodb://localhost/fourfiftynine';
 
   const db  = mongoose.createConnection(dblink);
 
@@ -58,9 +58,9 @@ module.exports = function(app){
   app.configure(function () {
     app.set('db', { 
         'main': db
-      , 'posts': db.model('BlogPost')
+      , 'projects': db.model('Project')
     })
-    app.set('version', '0.1.6');
+    app.set('version', '0.0.1');
   });
    
   

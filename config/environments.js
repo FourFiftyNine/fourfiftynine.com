@@ -39,7 +39,7 @@ module.exports = function(app){
 
   // Set pusher
   app
-    .set('pusher', { 'blog_post': push.channel('blog_post') })
+    .set('pusher', { 'project': push.channel('project') })
     .set('pusher_key', push.options.appKey)
 
   return app

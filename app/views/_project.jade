@@ -1,0 +1,11 @@
+div.post(id=project.id)
+   a.delete(href='#') &times;
+   a.edit(href='#') &#9998;
+   form(action='/update', method='post')
+      h3.show= project.title
+      input.hide(type='text', value=project.title, name='project[title]')
+      span.body
+       p.show= project.overview
+       textarea.hide(name='project[overview]')= project.overview
+      input(type='hidden', value=project.id, name='project[id]')
+      button.hide(type='submit') Save changes

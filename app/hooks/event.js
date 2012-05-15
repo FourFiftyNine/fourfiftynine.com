@@ -1,16 +1,16 @@
 // Events
 
-exports.create_blog_post = function (data, req) {
+exports.create_project = function (data, req) {
   var pusher = req.app.set('pusher')
-  pusher.blog_post.trigger('post', data)
+  pusher.project.trigger('project', data)
 }
 
-exports.update_blog_post = function (data, req) {
+exports.update_project = function (data, req) {
   var pusher = req.app.set('pusher')
-  pusher.blog_post.trigger('post', data)
+  pusher.project.trigger('project', data)
 }
 
-exports.delete_blog_post = function (data, req) {
+exports.delete_project = function (data, req) {
   var pusher = req.app.set('pusher')
-  pusher.blog_post.trigger('post', data)
+  pusher.project.trigger('project', data)
 }

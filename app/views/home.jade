@@ -17,19 +17,23 @@ div.all
             div.label
               label Title
             div.field
-              input(type = 'text', name= 'post[title]')
+              input(type = 'text', name= 'project[title]')
           p
             div.label
-              label Body
+              label Overview
             div.field
-              textarea(name = 'post[body]')
+              textarea(name = 'project[overview]')
+            div.label
+              label Specs
+            div.field
+              textarea(name = 'project[specs]')
           div
             input.button(type = 'submit', value = 'Save!')
     div.right
      p
-      div#posts
-        - if (posts.length)
-            != partial('_post', { collection: posts }) 
+      div#projects
+        - if (projects.length)
+            != partial('_project', { collection: projects }) 
         - else
           p#noposts
             strong no posts

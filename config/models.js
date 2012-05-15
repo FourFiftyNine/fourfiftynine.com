@@ -12,8 +12,8 @@ require('express-mongoose');
  
 module.exports = function(){
   
-  //  Load Blog Post model
+  //  Load Project model
   
-  mongoose.model('BlogPost', require('../app/models/blogpost'));
+  mongoose.model('Project', require('../app/models/project'));
 
 }
