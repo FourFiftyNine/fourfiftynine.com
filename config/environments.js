@@ -10,9 +10,9 @@ module.exports = function(app){
     // Setup pusher
 
     push = new Pusher({
-        appId  : '15248'
-      , appKey : '4ba149ec25cf69edff9c'
-      , secret : 'fd9b0ace66816292bfe6'
+        appId  : '20483'
+      , appKey : '43147abf3df9be2cce23'
+      , secret : 'cd5935473680059cf5b2'
     })
 
     this

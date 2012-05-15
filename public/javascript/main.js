@@ -24,7 +24,7 @@ $(function(){
   
   //delete data
 
-  $('#posts')
+  $('#projects')
     .delegate('a', 'click', function() {
       if($(this).hasClass('delete')){
         var data = { id : $(this).parent().attr('id') };
