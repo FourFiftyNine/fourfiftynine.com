@@ -20,10 +20,10 @@ module.exports = function(app){
 
   const db  = mongoose.createConnection(dblink);
 
-  //  Compile Hack for Stylus
-
+  // use nib + debug options
   function compile(str, path) {
     return stylus(str)
+      .set('linenos', true)
       .set('filename', path)
       .include(nib.path);
   }

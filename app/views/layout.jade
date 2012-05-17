@@ -1,12 +1,33 @@
 !!! 5
-html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en')
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='en')
+//if IE 8
+  html.no-js.lt-ie9(lang='en')
+//[if gt IE 8]><!
+html.no-js(lang='en')
+  //<![endif]
   head
-    title ExpressJS-Blog
-    script(src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title fourfiftynine - development and design
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    script(src='javascript/libs/modernizr-2.5.3.min.js')
+  body!=body
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script
+      window.jQuery || document.write('<script src="javascript/libs/jquery-1.7.2.min.js"><\\/script>')
     script(src="http://js.pusher.com/1.11/pusher.min.js")
     script(src= '/javascript/main.js')
-    link(rel='stylesheet', href='/stylesheets/main.css')
-  body
-    nav
-    #main
-      != body
+    //-script(src='javascripts/plugins.js')
+    //-script(src='javascripts/script.js')
+    //- change UA-XXXXX-X to your id and outdent the following:
+    //-
+      script
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
