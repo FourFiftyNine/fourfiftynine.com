@@ -62,7 +62,6 @@ module.exports = function(app){
     })
     app.set('version', '0.0.1');
   });
-   
-  
+
   return app;
 }
