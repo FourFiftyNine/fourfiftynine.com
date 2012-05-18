@@ -1,15 +1,23 @@
+/*
+## FourFiftyNine.com ##
+ - Anthony Sessa
+ 
+  444       444        555555555555555
+ 44444     44444        555555555555555
+ 44444     44444        555555555555555
+ 44444     44444  [][]  55555
+ 444444444444444  [][]  55555
+ 444444444444444        55555
+ 444444444444444  [][]  555555555555555
+           44444  [][]  555555555555555
+           44444                  55555
+           44444                  55555
+           44444                  55555
+           44444                  55555
+
+*/
+
 @import 'nib'
-
-light = #a9a9a9
-lighter = #eee
-blue = #00ABFA
-dark = #222
-
-@import 'import/_mixins'
-
-@import 'import/_globals'
-
-@import 'import/_forms'
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section
   display: block
@@ -225,8 +233,36 @@ td
   color: black
   padding: 0.2em 0
 
-// @media only screen and (min-width: 35em)
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** General
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/*~~ Colors ~~*/
+
+
+body
+  background: url('/images/background.png') repeat
+  font-family: 'museo-slab', serif;
+  smooth()
+  text-shadow: 3px 3px 3px rgba(0,0,0,.07)
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** Typography
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+h1,h2
+  font-family: 'tandelle', sans-serif
+
+h2
+  font-size: 36px
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** Begin FourFiftyNine.com
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+
+// @media only screern and (min-width: 35em)
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** Utility
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .ir
   display: block
   border: 0
