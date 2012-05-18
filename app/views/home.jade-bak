@@ -1,0 +1,38 @@
+script!= javascript
+//- ul#flash
+
+div.all
+  #header
+    | ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. 
+  div.hide
+    div.load
+      img(src: '/animation.gif');
+  div.wrap
+    div.left
+     p
+      form(action= '/create', method= 'post', id= 'create')
+        fieldset
+          p
+            div.label
+              label Title
+            div.field
+              input(type = 'text', name= 'project[title]')
+          p
+            div.label
+              label Overview
+            div.field
+              textarea(name = 'project[overview]')
+            div.label
+              label Specs
+            div.field
+              textarea(name = 'project[specs]')
+          div
+            input.button(type = 'submit', value = 'Save!')
+    div.right
+     p
+      div#projects
+        - if (projects.length)
+            != partial('_project', { collection: projects }) 
+        - else
+          p#noposts
+            strong no posts

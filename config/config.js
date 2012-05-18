@@ -62,6 +62,26 @@ module.exports = function(app){
     })
     app.set('version', '0.0.1');
   });
+  // Left Off here
+  app.configure(function () {
+    this
+      .use(function(req, res, next) {
+        console.log(res.app.route);
+        // res.app.route
+        var locals = {
+          body_class: (res.app.route === '/') ? 'home' : S(res.app.route).replaceAll('/', ' ').ltrim().s,
+        }
+        next();
+        return { locals: locals };
+    })
+  });
+
+  // setLocalVariables = function(req, res, next) {
+  //   var locals = {
+  //     body_class: (req.route.path === '/') ? 'home' : S(req.route.path).replaceAll('/', ' ').ltrim().s,
+  //   }
+  //   return { locals: locals };
+  // }
 
   return app;
 }

@@ -18,7 +18,15 @@ html.no-js(lang='en')
     script(src='javascript/libs/modernizr-2.5.3.min.js')
     script(src='http://use.typekit.com/mzx2wbd.js')
     script try{Typekit.load();}catch(e){}
-  body!=body
+  body(class="#{locals.body_class}")
+    #content
+      !=body
+    aside#sidebar
+      h1
+        a(href='/')
+          img(src='/images/logo.png', alt='FourFiftyNine - web development and design')
+      nav
+
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script
       window.jQuery || document.write('<script src="javascript/libs/jquery-1.7.2.min.js"><\\/script>')

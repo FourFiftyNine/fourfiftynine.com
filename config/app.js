@@ -12,6 +12,7 @@ const express       = require('express')
     , environments  = require('./environments')
     , errors        = require('./errors')
     , hooks         = require('./hooks')
+    , S             = require('string'); // Utility Class http://stringjs.com/
 
 /**
  * Exports
