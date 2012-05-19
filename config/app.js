@@ -12,7 +12,8 @@ const express       = require('express')
     , environments  = require('./environments')
     , errors        = require('./errors')
     , hooks         = require('./hooks')
-    , S             = require('string'); // Utility Class http://stringjs.com/
+    , helpers       = require('./helpers');
+    
 
 /**
  * Exports
@@ -24,9 +25,13 @@ module.exports = function () {
 
   const app = express.createServer()
   
+  // Load helpers
+  app.dynamicHelpers ({page_title: helpers.creator()});
+  // app.dynamicHelpers ({bodyClass: helpers.bodyClass()});
+
   //  Load Mongoose Models
   
-  models(app)
+  models(app);
   
   //  Load Expressjs config
   
@@ -46,8 +51,10 @@ module.exports = function () {
 
   //  Load hooks
 
-  hooks(app)
-  
+  hooks(app);
+
+  // app.dynamicHelpers(require('./helpers.js').dynamicHelpers);
+
   return app;
   
 };

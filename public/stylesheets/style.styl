@@ -233,7 +233,7 @@ td
   color: black
   padding: 0.2em 0
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~3~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** General
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -254,8 +254,8 @@ body
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content
   background: url('/images/background-top.png') repeat-x top
-  margin-right: 20%
-  width: 80%
+  padding-right: 20%
+  width: 100%
 #sidebar
   background: url('/images/background-sidebar.png') repeat
   border-left: 1px solid #000000
@@ -269,11 +269,28 @@ body
   width: 245px
   h1 // logo is 234px wide
     margin-left: 5px
+  /*~~ Navigation ~~*/ 
+  nav
+    ul
+      li
+        text-align: center
+        a
+          color: blue
+          display: block
+          font-family: 'tandelle'
+          font-size: 48px
+          text-decoration: none
+          &:hover
+            background: rgba(0,0,0,.04);
+            border-radius: 50px;
+            //color: darkGrey
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Home
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+.home h1
+  font-size: 60px
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Typography
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -6,7 +6,8 @@ const express   = require('express')
     , stylus    = require('stylus')
     , expose    = require('express-expose')
     , mongoose  = require('mongoose')
-    , nib       = require('nib');
+    , nib       = require('nib')
+    , S         = require('string'); // Utility Class http://stringjs.com/
 
 /**
  *  Exports
@@ -62,19 +63,21 @@ module.exports = function(app){
     })
     app.set('version', '0.0.1');
   });
-  // Left Off here
-  app.configure(function () {
-    this
-      .use(function(req, res, next) {
-        console.log(res.app.route);
-        // res.app.route
-        var locals = {
-          body_class: (res.app.route === '/') ? 'home' : S(res.app.route).replaceAll('/', ' ').ltrim().s,
-        }
-        next();
-        return { locals: locals };
-    })
-  });
+  // // Left Off here
+  // app.configure(function () {
+  //   this
+  //     .use(function(req, res, next) {
+  //       console.log(res.app.route);
+  //       // res.app.route
+  //       var locals = {
+  //         body_class: (res.app.route === '/') ? 'home' : S(res.app.route).replaceAll('/', ' ').ltrim().s,
+  //       }
+  //       next();
+  //       return { locals: locals };
+  //   })
+  // });
+
+  // console.log(app);
 
   // setLocalVariables = function(req, res, next) {
   //   var locals = {

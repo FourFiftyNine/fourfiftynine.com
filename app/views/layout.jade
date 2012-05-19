@@ -11,14 +11,22 @@ html.no-js(lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title fourfiftynine - development and design
+    //- TODO unless....``
+    pageTitle = ((page_title.get()) ? page_title.get() + ' | ' : '') + 'FourFiftyNine - development and design'
+    title= pageTitle
+    //- - if (page_title.get())
+    //-   title= (page_title.get()) ?  + ' | FourFiftyNine - development and design'
+    //- - else
+    //-   title FourFiftyNine - development and design
+    
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='javascript/libs/modernizr-2.5.3.min.js')
     script(src='http://use.typekit.com/mzx2wbd.js')
     script try{Typekit.load();}catch(e){}
-  body(class="#{locals.body_class}")
+  //- body(class="#{bodyClass}")
+  body
     #content
       !=body
     aside#sidebar
@@ -26,6 +34,14 @@ html.no-js(lang='en')
         a(href='/')
           img(src='/images/logo.png', alt='FourFiftyNine - web development and design')
       nav
+        ul
+          li.work
+            a(href='') work
+          li.about
+            a(href='/about') about
+          li.contact
+            a(href='/contact') contact
+
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script
