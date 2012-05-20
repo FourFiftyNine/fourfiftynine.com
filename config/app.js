@@ -26,8 +26,10 @@ module.exports = function () {
   const app = express.createServer()
   
   // Load helpers
-  app.dynamicHelpers ({page_title: helpers.creator()});
-  // app.dynamicHelpers ({bodyClass: helpers.bodyClass()});
+  app.dynamicHelpers ({
+    page_title: helpers.creator(),
+    body_classes: function(req, res) { return helpers.body_classes(req, res); }
+  });
 
   //  Load Mongoose Models
   

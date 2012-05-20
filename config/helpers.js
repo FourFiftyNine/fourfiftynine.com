@@ -1,3 +1,5 @@
+var S = require('String');
+
 exports.create = function () {
     var value = null;
     return {
@@ -21,7 +23,7 @@ exports.creator = function () {
 // The class attribute is special-cased when an array is given, allowing you to pass an array such as bodyClasses = ['user', 'authenticated'] directly:
 
 // body(class=bodyClasses)
-// exports.bodyClass = function(req, res){
-//   console.log(req);
-//   return (req.route.path === '/') ? 'home' : S(req.route.path).replaceAll('/', ' ').ltrim().s;
-// }
+exports.body_classes = function(req, res){
+  if(typeof req.route !== 'undefined')
+    return (req.route.path === '/') ? 'home' : S(req.route.path).replaceAll('/', ' ').ltrim().s;
+}
