@@ -1,0 +1,22 @@
+{
+  "title"   : "Half Pretties",
+  "company" : "Half Pretties",
+  "slug"    : "half-pretties",
+  "website" : "halfpretties.com",
+  "overview": [
+    "Whenever a client provides beautiful photography, a website usually ends up looking great.  We utilized <a href='http://shopify.com'>Shopify's</a> awesome e-commerce platform.  It was a blast to develop."
+  ],
+  "specs"   : [
+    "Shopify", 
+    "HTML5", 
+    "CSS3",
+    "Advanced JavaScript",
+    "Elegant degredation of CSS3/HTML5 using Modernizr", 
+    "Shopify's JavaScript API"
+  ],
+  "screenshots": [
+    "home",
+    "product",
+    "about"
+  ]
+}

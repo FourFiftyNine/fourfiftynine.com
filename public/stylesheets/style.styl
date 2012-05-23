@@ -32,7 +32,9 @@ darkGrey = #505050
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** General
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+html, button, input, select, textarea
+  font-family: sans-serif
+  color: darkGrey
 body
   background: url('/images/background.png') repeat
   smooth()
@@ -211,9 +213,17 @@ body
         text-align: center
         width: 100%
       #dekko
-        background: url(/images/projects/dekko/1.png) no-repeat
+        background: url(/images/projects/dekko/thumb.jpg) no-repeat
+      #dekko-developer
+        background: url(/images/projects/dekko-developer/thumb.jpg) no-repeat
       #halfpretties
-        background: url(/images/projects/halfpretties/1.png) no-repeat -27px 0px
+        background: url(/images/projects/halfpretties/thumb.jpg) no-repeat
+      #drinkchai
+        background: url(/images/projects/drinkchai/thumb.jpg) no-repeat 
+      #wenergyinc
+        background: url(/images/projects/halfpretties/thumb.jpg) no-repeat 
+      #half-pretties
+        background: url(/images/projects/half-pretties/thumb.jpg) no-repeat 
 
 /*~~ projects/view ~~*/
 .projects.view
@@ -245,12 +255,30 @@ body
         opacity: .8
     .copy
       float: left
+      overflow: auto
       position: fixed
       left: 0
+      height: 100%
       width: 35%
       section,
       header
         margin-left: 110px
+        &.overview
+          a
+            text-decoration: none
+            color: grey
+            border-bottom: 1px dotted grey
+            &:hover
+              color: darkGrey
+
+        &.website
+          a
+            color: lightGrey
+            font-size: 35px
+            font-family: 'tandelle', 'sans-serif'
+            text-decoration: none
+            &:hover
+              color: darkGrey
       p
         text-align: left
         margin-top: 0
@@ -266,11 +294,9 @@ body
       img
         border-radius: 10px
         margin-bottom: 40px
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.4)
-        opacity: .5
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.2)
+        // opacity: .5
         width: 100%
-        &.active
-          opacity: 1
     /*~~ All Projects Partial ~~*/
     #all-projects
       background: url(/images/background-sidebar.png) repeat
@@ -291,6 +317,11 @@ body
   top: 0
   width: 100%
   z-index: 1
+#projects
+  .copy
+    z-index: 1
+  .arrow
+    z-index: 2
 
 // http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
 /* iPhone [portrait + landscape] */

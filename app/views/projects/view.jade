@@ -1,27 +1,25 @@
 - view_body_class.set("view");
-- page_title.set("Project Name");
+- page_title.set(title);
 section#projects.clearfix
   a.arrow.prev(href='/')
   a.arrow.next(href='/')
-  article#dekko
+  article(id='#{slug}')
     .copy
       header
         h1 #{title}
       section.overview
         h2 Overview
-        p Dekko Inc. provided us with a clear design and user experience direction. Working along side their fantastic team we thoroughly enjoyed impelementing a top notch, HTML5, iPhone and iPad compatable WordPress theme.
-        p Additionally we utilized YouTube’s advanced JavaScript SDK in order to create a custom video playback experience
+        each p in overview
+          p!= p
       section.specs
         h2 Technical Specs
         ul
-          li WordPress
-          li HTML5
-          li CSS3
-          li Elegant degredation of CSS3/HTML5 using Modernizr
-          li YouTube JavaScript API
-          li Custom iPad / iPhone mobile Safari detection
+          each spec in specs
+            li!= spec
       section.tags
+      section.website
+        a(href="http://#{website}", title="#{title}") &raquo; visit #{website}
     section.screenshots
-      img(src='/images/projects/dekko/1.png', class='active')
-      img(src='/images/projects/dekko/1.png')
+      each image in screenshots
+        img(src='/images/projects/#{slug}/#{image}.jpg', alt="#{image}")
   //- != partial('projects/_all')
