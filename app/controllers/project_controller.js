@@ -42,6 +42,16 @@ controller.index = function(req, res, next){
   });
 }
 
+controller.view = function(req, res, next){
+  var name = req.params.name;
+  if (req.is('json')) {
+    console.log(name);
+    res.json({name: name});
+  } else {
+    res.render('projects/view', {});
+  }
+}
+
 /**
  * Create Project
  *

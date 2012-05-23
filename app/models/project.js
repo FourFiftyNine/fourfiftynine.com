@@ -27,6 +27,10 @@ Project.statics.getLatestPosts = function(callback){
   return this.find().sort('_id','descending').limit(15).find({}, callback)
 }
 
+Project.statics.getProjectByName = function(name) {
+  // return this.find();
+}
+
 //this happens before it saves, they are called middleware
 
 Project.pre('save', function(next){

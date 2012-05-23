@@ -15,6 +15,7 @@ module.exports = function(app){
   //  Load Project Controller + Routes
   
   app.get('/projects', projects.index); 
+  app.get('/projects/:name', projects.view); 
   app.post('/create', projects.create);
   app.post('/update', projects.update);
   app.post('/delete', projects.delete);

@@ -1,13 +1,93 @@
-// ajax
+// FourFiftyNine.com
+// main.js - Used in all views
 
-$(function(){
+/*jshint asi: false, browser: true, curly: true, devel: true, eqeqeq: false, forin: false, newcap: true, noempty: true, strict: true, undef: true */
+/*global jQuery: true */
+
+(function( window, $, undefined ) {
+
+'use strict';
+// $document.ready( common.init );
+
+// global doesnt exist anywhere else yet
+var CDLIX     = window.CDLIX || {};
+var history   = window.history;
+var location  = window.location;
+var M         = window.Modernizr;
+var $window   = $(window);
+var $document = $(document);
+
+var main = CDLIX.main = {
+
+  init: function() {
+    
+    main.$content = $('#content');
+    main.$article = $('#content > article');
+    // TODO... make more obvious
+    main.$content.find('>section').addClass('active');
+    // do initial resize
+    main.resizeContent();
+    main.fadeInContent();
+    // bind resize
+    $window.resize(main.resizeContent);
+  },
+
+  resizeContent: function() {
+    if ( true /* $('.body').hasClass('home') */ ) {
+      var sidebarWidth = $('#sidebar').innerWidth();
+      var h = $(window).height();
+      var w = $(window).width();
+      var $images = $('#images');
+      var contentWidth = (w - sidebarWidth);
+
+      $("#content").css('width', contentWidth);
+      // $('.screenshots').css('height', h);
+      // TODO golf it - bogeyed out right now
+      if ( contentWidth < 540 ) {
+        $images.css('width', 270);
+      } else if (contentWidth < 810) {
+        $images.css('width', 540);
+      } else if ( contentWidth < 1080 ) {
+        $images.css('width', 810);
+      } else if ( contentWidth < 1350 ) {
+        $images.css('width', 1080);
+      } else if ( contentWidth >= 1350 ) {
+        $images.css('width', 1350);
+      }
+    }
+    // var copyWidth = $('.copy').outerWidth(true);
+    // var screenShotsMarginLeft = copyWidth + 40;
+    // TODO split into separate resize function
+    if ( $('#projects').hasClass('active') ) {
+      var copyMarginLeft = parseInt($('.copy').css('marginLeft')); //
+      var copyMarginRight = 50;
+      var screenshotsOffsetLeft = $('.screenshots').offset().left;
+      $('.copy').css('width', screenshotsOffsetLeft - copyMarginLeft - copyMarginRight)
+
+      if(w < 1300) {
+        $('.arrow.next').css('right', sidebarWidth + 10);
+      } else {
+        $('.arrow.next').css('right', sidebarWidth + 35);
+      }
+
+      // $('.screenshots > img').css('height', h - 80);
+    }
+  },
+
+  fadeInContent: function() {
+    main.$content.delay(400).animate({opacity: 1}, 250);
+
+  }
+};
+/* Residual code from initial project
   
-  var pusher = new Pusher(PUSHER["app_key"]);
-  var channel = pusher.subscribe(PUSHER["channel"]);
+  // var pusher = new Pusher(PUSHER["app_key"]);
+  // var channel = pusher.subscribe(PUSHER["channel"]);
 
-  channel.bind(PUSHER["events"], function(data) {
-    response(data);
-  });
+  // channel.bind(PUSHER["events"], function(data) {
+  //   response(data);
+  // });
+  
 
   // create data
   
@@ -51,7 +131,6 @@ $(function(){
     })
   ;
 
-})
 
 // utility functions
 
@@ -96,3 +175,8 @@ function response(res) {
     }
   }
 }
+
+*/
+
+$document.ready( main.init );
+})( window, jQuery );

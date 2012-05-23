@@ -11,6 +11,7 @@ html.no-js(lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width; initial-scale=1.5; maximum-scale=1.0;')
     //- TODO unless....``
     pageTitle = ((page_title.get()) ? page_title.get() + ' | ' : '') + 'FourFiftyNine - development and design'
     title= pageTitle
@@ -22,20 +23,22 @@ html.no-js(lang='en')
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='javascript/libs/modernizr-2.5.3.min.js')
+    script(src='/javascript/libs/modernizr-2.5.3.min.js')
     script(src='http://use.typekit.com/mzx2wbd.js')
     script try{Typekit.load();}catch(e){}
   body(class="#{body_classes}")
+    #top-border
     #content
       !=body
+      #spinner
     aside#sidebar
       h1
         a(href='/')
           img(src='/images/logo.png', alt='FourFiftyNine - web development and design')
       nav
         ul
-          li.work
-            a(href='') work
+          li.projects
+            a(href='/projects/dekko') projects
           li.about
             a(href='/about') about
           li.contact
@@ -43,11 +46,14 @@ html.no-js(lang='en')
 
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='/javascript/orientation-detect.js')
     script
       window.jQuery || document.write('<script src="javascript/libs/jquery-1.7.2.min.js"><\\/script>')
     script(src="http://js.pusher.com/1.11/pusher.min.js")
-    script(src= '/javascript/main.js')
+    script(src="http://fgnass.github.com/spin.js/dist/spin.min.js")
     script(src='/javascript/plugins.js')
+    script(src= '/javascript/main.js')
+
     //- change UA-XXXXX-X to your id and outdent the following:
     //-
       script

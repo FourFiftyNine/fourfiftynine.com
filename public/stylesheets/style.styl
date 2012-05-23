@@ -1,6 +1,6 @@
 /*
 ## FourFiftyNine.com ##
- - Anthony Sessa
+ - Anthony Sessa - sessa.com
  
   444       444        555555555555555
  44444     44444        555555555555555
@@ -16,265 +16,92 @@
            44444                  55555
 
 */
-
-@import 'nib'
-
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section
-  display: block
-
-audio, canvas, video
-  display: inline-block
-  *display: inline
-  *zoom: 1
-
-audio:not([controls])
-  display: none
-
-[hidden]
-  display: none
-
-html
-  font-size: 100%
-  -webkit-text-size-adjust: 100%
-  -ms-text-size-adjust: 100%
-
-html, button, input, select, textarea
-  font-family: sans-serif
-  color: #222
-
-body
-  margin: 0
-  font-size: 1em
-  line-height: 1.4
-
-::-moz-selection
-  background: #fe57a1
-  color: #fff
-  text-shadow: none
-
-::selection
-  background: #fe57a1
-  color: #fff
-  text-shadow: none
-
-a
-  color: #00e
-
-a:visited
-  color: #551a8b
-
-a:hover
-  color: #06e
-
-a:focus
-  outline: thin dotted
-
-a:hover, a:active
-  outline: 0
-
-abbr[title]
-  border-bottom: 1px dotted
-
-b, strong
-  font-weight: bold
-
-blockquote
-  margin: 1em 40px
-
-dfn
-  font-style: italic
-
-hr
-  display: block
-  height: 1px
-  border: 0
-  border-top: 1px solid #ccc
-  margin: 1em 0
-  padding: 0
-
-ins
-  background: #ff9
-  color: #000
-  text-decoration: none
-
-mark
-  background: #ff0
-  color: #000
-  font-style: italic
-  font-weight: bold
-
-pre, code, kbd, samp
-  font-family: monospace, serif
-  _font-family: 'courier new', monospace
-  font-size: 1em
-
-pre
-  white-space: pre-wrap
-  word-wrap: break-word
-
-q
-  quotes: none
-
-q:before, q:after
-  content: none
-
-small
-  font-size: 85%
-
-sub, sup
-  font-size: 75%
-  line-height: 0
-  position: relative
-  vertical-align: baseline
-
-sup
-  top: -0.5em
-
-sub
-  bottom: -0.25em
-
-ul, ol
-  margin: 1em 0
-  padding: 0 0 0 40px
-
-dd
-  margin: 0 0 0 40px
-
-nav ul, nav ol
-  list-style: none
-  list-style-image: none
-  margin: 0
-  padding: 0
-
-img
-  border: 0
-  -ms-interpolation-mode: bicubic
-  vertical-align: middle
-
-svg:not(:root)
-  overflow: hidden
-
-figure
-  margin: 0
-
-form
-  margin: 0
-
-fieldset
-  border: 0
-  margin: 0
-  padding: 0
-
-label
-  cursor: pointer
-
-legend
-  border: 0
-  *margin-left: -7px
-  padding: 0
-  white-space: normal
-
-button, input, select, textarea
-  font-size: 100%
-  margin: 0
-  vertical-align: baseline
-  *vertical-align: middle
-
-button, input
-  line-height: normal
-
-button, input[type="button"], input[type="reset"], input[type="submit"]
-  cursor: pointer
-  -webkit-appearance: button
-  *overflow: visible
-
-button[disabled], input[disabled]
-  cursor: default
-
-input[type="checkbox"], input[type="radio"]
-  box-sizing: border-box
-  padding: 0
-  *width: 13px
-  *height: 13px
-
-input[type="search"]
-  -webkit-appearance: textfield
-  -moz-box-sizing: content-box
-  -webkit-box-sizing: content-box
-  box-sizing: content-box
-
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button
-  -webkit-appearance: none
-
-button::-moz-focus-inner, input::-moz-focus-inner
-  border: 0
-  padding: 0
-
-textarea
-  overflow: auto
-  vertical-align: top
-  resize: vertical
-
-input:valid, textarea:valid
-
-input:invalid, textarea:invalid
-  background-color: #f0dddd
-
-table
-  border-collapse: collapse
-  border-spacing: 0
-
-td
-  vertical-align: top
-
-.chromeframe
-  margin: 0.2em 0
-  background: #ccc
-  color: black
-  padding: 0.2em 0
-
-/*~~~~~~~~~~~~~3~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** General
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+/** Begin FourFiftyNine.com
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
 /*~~ Colors ~~*/
 blue = #587891
 lightGrey = #b3adaf
 grey = #8a8a8b
 darkGrey = #505050
 
+@import 'nib'
+@import 'import/_h5bp'
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** General
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 body
   background: url('/images/background.png') repeat
-  font-family: 'museo-slab', serif;
   smooth()
   text-shadow: 3px 3px 3px rgba(0,0,0,.07)
+
+#spinner
+  display: none
+  position: absolute !important
+  left: 50% !important
+  // top: 230px !important
+  top: 250px !important
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** Typography
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+body
+  font-family: 'museo-slab', serif
+  font-size: 14px
+  font-weight: 500
+  p
+    line-height: 24px
+
+h1,h2
+  font-family: 'tandelle', sans-serif
+
+h1
+  color: darkGrey
+  font-weight: normal
+h2
+  color: blue
+  font-size: 36px
+  font-weight: normal
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Layout
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-#content
+body
+  // border-top: 5px solid blue
+#top-border
   background: url('/images/background-top.png') repeat-x top
-  padding-right: 20%
-  width: 100%
+#content
+  // background: url('/images/background-top.png') repeat-x top
+  opacity: 0 
+  position: relative
   article
-    margin-right: 275px
+    margin: 0 auto
 #sidebar
   background: url('/images/background-sidebar.png') repeat
   border-left: 1px solid #000000
   border-left: 1px solid rgba(0,0,0,.1)
   box-shadow: 0 0 9px 0 rgba(0,0,0,.09)
   height: 100%
-  padding: 15px;
-  position: absolute
+  max-width: 245px
+  min-width: 175px
+  position: fixed
   right: 0
   top: 0
-  width: 245px
+  width: 18%
   h1 // logo is 234px wide
-    margin-left: 5px
+    padding: 0 10px
+    text-align: center
+    img
+      width: 95%
   /*~~ Navigation ~~*/ 
   nav
     ul
       li
+        margin: 10px 10px
         text-align: center
         a
           color: blue
@@ -297,25 +124,203 @@ body
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Home
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.home h1
-  font-size: 60px
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** Typography
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-h1,h2
-  font-family: 'tandelle', sans-serif
+.home #content 
+  h1
+    font-size: 60px
+    font-weight: normal
+    line-height: 60px
+    margin-bottom: 40px
+    margin-top: 0
+    padding-top: 40px
+    text-align: center
+  #images
+    margin: 0 auto;
+    a
+      border-radius: 5px
+      border: 1px solid rgba(151,151,151,.3)
+      display: inline-block
+      height: 198px
+      margin: 10px
+      width: 248px
+      &:hover
+        // box-shadow: 0 0 0 5px rgba(88, 120, 145,.1)
+        box-shadow: 0 0 0 5px rgba(0,0,0,.1)
+        .image
+          box-shadow: none
+      &:active
+        box-shadow: 0 0 20px 0 rgba(0,0,0,.50) inset
+        .image
+          box-shadow: 0 0 0 5px blue
+          box-shadow: 0 0 0 5px rgba(0,0,0,.1)
+      .image
+        border-radius: 5px
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
+        float: left
+        height: 200px
+        left: -1px
+        position: relative
+        top: -1px
+        width: 250px
+        z-index: -1
+      .name
+        background: rgba(0,0,0,.5)
+        border-radius: bottom 5px
+        bottom: 0
+        color: #ffffff
+        font-weight: bold
+        padding: 10px 0
+        position: absolute
+        text-align: center
+        width: 100%
+      #dekko
+        background: url(/images/projects/dekko/1.png) no-repeat
+      #halfpretties
+        background: url(/images/projects/halfpretties/1.png) no-repeat -27px 0px
 
-h1
-  color: darkGrey
-h2
-  color: blue
-  font-size: 36px
-  font-weight: normal
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** Begin FourFiftyNine.com
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+/** Projects
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#projects
+  h1
+    margin: 35px 0 0
+    font-size: 100px
+  h2
+    margin: 10px 0 10px
+  .arrow
+    background: url(/images/sprite-arrows-blue.png)
+    display: block
+    height: 65px
+    width: 29px
+    position: fixed
+    top: 420px
+    &.prev
+      left: 35px
+      background-position: 0 -65px
+    &:hover
+      opacity: .8
+  .copy
+    float: left
+    position: fixed
+    left: 0
+    margin-left: 110px
+    width: 30%
+    p
+      text-align: left
+      margin-top: 0
+      margin-bottom: 10px
+      font-size: 17px
+    .specs
+      ul
+        list-style-position: outside
+        margin-top: 0
+        padding-left: 20px
+        list-style-image: url(/images/bullet.png)
+        li
+          font-size: 14px
+  .screenshots
+    float: right
+    margin-top: 40px
+    margin-right: 110px
+    width: 50%
+    img
+      border-radius: 10px
+      margin-bottom: 40px
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.4)
+      opacity: .5
+      width: 100%
+      &.active
+        opacity: 1
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** Complex Z-Indexes (might be unnecessary)
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#top-border
+  height: 19px
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 1
+
+// http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+/* iPhone [portrait + landscape] */
+@media only screen and (max-device-width: 480px)
+  .selector-01 { margin: 10px; }
+  .selector-02 { margin: 10px; }
+  .selector-03 { margin: 10px; }
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) 
+  h1
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) 
+  h1
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) 
+  h1
+/* iPads landscape) ----------- */
+@media only screen and (max-width : 1300px) 
+  #projects
+    .arrow
+      &.prev
+        left: 10px
+    h2
+      margin: 10px 0 5px
+    .screenshots
+      margin-right: 55px
+    .copy
+      margin-left: 55px
+      p
+        font-size: 12px
+        line-height: 18px
+
+@media only screen and (max-width : 1100px)
+  #sidebar
+    min-width: 82px
+    width: 82px
+    h1
+      a
+        background: url(/images/logo-numbers.png) no-repeat
+        height: 109px
+        width: 82px
+        margin: 0 auto
+        display: block
+        img
+          display: none
+    nav
+      ul
+        li
+          a
+            font-size: 24px
+            &:hover,
+            &:active
+              border-radius: 10px
+@media only screen and (max-width : 960px) 
+  #projects
+    h1
+      font-size: 58px
 
 
+@media only screen and (max-width : 768px)
+  #projects
+    h1
+      font-size: 40px
+    h2
+      font-size: 30px
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) 
+  h1
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) 
+  h1
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) 
+  h1
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) 
+  h1
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
+  h1
 // @media only screern and (min-width: 35em)
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
