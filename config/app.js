@@ -28,6 +28,7 @@ module.exports = function () {
   // Load helpers
   app.dynamicHelpers ({
     page_title: helpers.creator(),
+    view_body_class: helpers.creator(),
     body_classes: function(req, res) { return helpers.body_classes(req, res); }
   });
 

@@ -25,16 +25,13 @@ var main = CDLIX.main = {
     main.$article = $('#content > article');
     // TODO... make more obvious
     main.$content.find('>section').addClass('active');
-    // do initial resize
-    main.resizeContent();
     main.fadeInContent();
-    // bind resize
-    $window.resize(main.resizeContent);
   },
 
+  // now responsive - duh
   resizeContent: function() {
     if ( true /* $('.body').hasClass('home') */ ) {
-      var sidebarWidth = $('#sidebar').innerWidth();
+      var sidebarWidth = $('#navigation').innerWidth();
       var h = $(window).height();
       var w = $(window).width();
       var $images = $('#images');
@@ -59,17 +56,20 @@ var main = CDLIX.main = {
     // var screenShotsMarginLeft = copyWidth + 40;
     // TODO split into separate resize function
     if ( $('#projects').hasClass('active') ) {
-      var copyMarginLeft = parseInt($('.copy').css('marginLeft')); //
-      var copyMarginRight = 50;
-      var screenshotsOffsetLeft = $('.screenshots').offset().left;
-      $('.copy').css('width', screenshotsOffsetLeft - copyMarginLeft - copyMarginRight)
+
 
       if(w < 1300) {
-        $('.arrow.next').css('right', sidebarWidth + 10);
+        var copyMarginRight = 20;
+        var posRight = 10;
       } else {
-        $('.arrow.next').css('right', sidebarWidth + 35);
+        var copyMarginRight = 30;
+        var posRight = 35;
       }
+      $('.arrow.next').css('right', sidebarWidth + posRight);
 
+      var copyMarginLeft = parseInt($('.copy').css('marginLeft')); //
+      var screenshotsOffsetLeft = $('.screenshots').offset().left;
+      $('.copy').css('width', screenshotsOffsetLeft - copyMarginLeft - copyMarginRight)
       // $('.screenshots > img').css('height', h - 80);
     }
   },

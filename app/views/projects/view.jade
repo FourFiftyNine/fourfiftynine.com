@@ -1,10 +1,12 @@
+- view_body_class.set("view");
+- page_title.set("Project Name");
 section#projects.clearfix
   a.arrow.prev(href='/')
   a.arrow.next(href='/')
   article#dekko
-    section.copy
+    .copy
       header
-        h1 Dekko Inc.
+        h1 #{title}
       section.overview
         h2 Overview
         p Dekko Inc. provided us with a clear design and user experience direction. Working along side their fantastic team we thoroughly enjoyed impelementing a top notch, HTML5, iPhone and iPad compatable WordPress theme.
@@ -22,3 +24,4 @@ section#projects.clearfix
     section.screenshots
       img(src='/images/projects/dekko/1.png', class='active')
       img(src='/images/projects/dekko/1.png')
+  //- != partial('projects/_all')

@@ -36,19 +36,21 @@ controller.index = function(req, res, next){
   }, 'PUSHER')
 
   // render template
-
-  res.render('home', {
-    projects: db.projects.getLatestPosts()
-  });
+  res.render('projects/index');
+  // res.render('index', {
+  //   projects: db.projects.getLatestPosts()
+  // });
 }
 
 controller.view = function(req, res, next){
   var name = req.params.name;
   if (req.is('json')) {
-    console.log(name);
+    // console.log(name);
     res.json({name: name});
   } else {
-    res.render('projects/view', {});
+    var data = require('../views/projects/json/' + name + '.json');
+    // console.log('json:', data);
+    res.render('projects/view', data);
   }
 }
 

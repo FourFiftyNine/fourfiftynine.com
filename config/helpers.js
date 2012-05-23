@@ -8,7 +8,6 @@ exports.create = function () {
         },
         set: function (new_value) {
            value = new_value;
-           console.log(value);
         }
     };
 }
@@ -24,6 +23,7 @@ exports.creator = function () {
 
 // body(class=bodyClasses)
 exports.body_classes = function(req, res){
-  if(typeof req.route !== 'undefined')
-    return (req.route.path === '/') ? 'home' : S(req.route.path).replaceAll('/', ' ').ltrim().s;
+  // console.log(module);
+  if(typeof req.url !== 'undefined')
+    return (req.url === '/') ? 'home' : S(req.url).replaceAll('/', ' ').ltrim().s;
 }

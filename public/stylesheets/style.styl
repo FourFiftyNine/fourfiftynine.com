@@ -45,6 +45,14 @@ body
   // top: 230px !important
   top: 250px !important
 
+ul
+  list-style-position: outside
+  margin-top: 0
+  padding-left: 20px
+  list-style-image: url(/images/bullet.png)
+  li
+    font-size: 17px
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Typography
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -55,7 +63,7 @@ body
   p
     line-height: 24px
 
-h1,h2
+h1,h2,h3
   font-family: 'tandelle', sans-serif
 
 h1
@@ -66,6 +74,11 @@ h2
   font-size: 36px
   font-weight: normal
 
+h3
+  color: blue
+  font-size: 30px
+  font-weight: normal
+  margin-bottom: 5px
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Layout
@@ -75,29 +88,42 @@ body
 #top-border
   background: url('/images/background-top.png') repeat-x top
 #content
+  width: 86%
+  h1
+    font-size: 100px
+    font-weight: normal
+    line-height: 100px
+    margin-bottom: 40px
+    margin-top: 0
+    padding-top: 40px
+    text-align: center
+    padding: 40px 20px 0
   // background: url('/images/background-top.png') repeat-x top
   opacity: 0 
   position: relative
   article
     margin: 0 auto
-#sidebar
+
+#navigation
   background: url('/images/background-sidebar.png') repeat
   border-left: 1px solid #000000
   border-left: 1px solid rgba(0,0,0,.1)
   box-shadow: 0 0 9px 0 rgba(0,0,0,.09)
   height: 100%
-  max-width: 245px
-  min-width: 175px
+  // max-width: 245px
+  // min-width: 175px
   position: fixed
   right: 0
   top: 0
-  width: 18%
+  width: 14%
+  /*~~ Logo ~~*/
   h1 // logo is 234px wide
     padding: 0 10px
     text-align: center
+    margin-top: 40px
     img
       width: 95%
-  /*~~ Navigation ~~*/ 
+  /*~~ Side Navigation ~~*/ 
   nav
     ul
       li
@@ -124,17 +150,29 @@ body
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Home
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.home #content 
-  h1
-    font-size: 60px
-    font-weight: normal
-    line-height: 60px
-    margin-bottom: 40px
-    margin-top: 0
-    padding-top: 40px
-    text-align: center
+.home
+  #content      
+    h2
+      padding: 0 40px
+      color: grey
+      text-align: center
+      p
+        line-height: 44px
+      strong
+        color: darkGrey
+        font-weight: normal
+    section
+      padding: 0 40px
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** Projects
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~ projects/index ~~*/
+.projects.index #content
   #images
-    margin: 0 auto;
+    margin: 0 auto
+    text-align: center
+    padding: 0 20px
     a
       border-radius: 5px
       border: 1px solid rgba(151,151,151,.3)
@@ -177,60 +215,73 @@ body
       #halfpretties
         background: url(/images/projects/halfpretties/1.png) no-repeat -27px 0px
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** Projects
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-#projects
-  h1
-    margin: 35px 0 0
-    font-size: 100px
-  h2
-    margin: 10px 0 10px
-  .arrow
-    background: url(/images/sprite-arrows-blue.png)
-    display: block
-    height: 65px
-    width: 29px
-    position: fixed
-    top: 420px
-    &.prev
-      left: 35px
-      background-position: 0 -65px
-    &:hover
-      opacity: .8
-  .copy
-    float: left
-    position: fixed
-    left: 0
-    margin-left: 110px
-    width: 30%
-    p
+/*~~ projects/view ~~*/
+.projects.view
+  #content
+    width: 100%
+  #projects
+    h1
+      font-size: 100px
+      line-height: 100px
+      margin: 35px 0 5px
+      padding: 0
       text-align: left
-      margin-top: 0
-      margin-bottom: 10px
-      font-size: 17px
-    .specs
-      ul
-        list-style-position: outside
+    h2
+      margin: 10px 0 10px
+    .arrow
+      background: url(/images/sprite-arrows-blue.png)
+      display: block
+      height: 65px
+      width: 29px
+      position: fixed
+      top: 420px
+      &.prev
+        left: 35px
+        background-position: 0 -65px
+      &.next
+        right: 14%
+        margin-right: 35px
+      &:hover
+        opacity: .8
+    .copy
+      float: left
+      position: fixed
+      left: 0
+      width: 35%
+      section,
+      header
+        margin-left: 110px
+      p
+        text-align: left
         margin-top: 0
-        padding-left: 20px
-        list-style-image: url(/images/bullet.png)
-        li
-          font-size: 14px
-  .screenshots
-    float: right
-    margin-top: 40px
-    margin-right: 110px
-    width: 50%
-    img
-      border-radius: 10px
-      margin-bottom: 40px
-      box-shadow: 0 0 10px 0 rgba(0,0,0,.4)
-      opacity: .5
-      width: 100%
-      &.active
-        opacity: 1
+        margin-bottom: 10px
+        font-size: 17px
 
+    .screenshots
+      margin-right: 110px;
+      margin-top: 40px;
+      position: absolute;
+      right: 14%;
+      width: 40%;
+      img
+        border-radius: 10px
+        margin-bottom: 40px
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.4)
+        opacity: .5
+        width: 100%
+        &.active
+          opacity: 1
+    /*~~ All Projects Partial ~~*/
+    #all-projects
+      background: url(/images/background-sidebar.png) repeat
+      border-radius: bottom right 10px, top right 10px
+      box-shadow: 0 0 9px 0 rgba(0,0,0,.09)
+      border: 1px solid #000000
+      border: 1px solid rgba(0,0,0,.1)
+      padding: 20px
+      position: fixed
+      bottom: 0px
+      left: 0px
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Complex Z-Indexes (might be unnecessary)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -258,29 +309,34 @@ body
   h1
 /* iPads landscape) ----------- */
 @media only screen and (max-width : 1300px) 
-  #projects
-    .arrow
-      &.prev
-        left: 10px
-    h2
-      margin: 10px 0 5px
-    .screenshots
-      margin-right: 55px
-    .copy
-      margin-left: 55px
-      p
-        font-size: 12px
-        line-height: 18px
+  .projects.view  
+    #projects
+      .arrow
+        &.prev
+          left: 10px
+        &.next
+          margin-right: 10px
+      h2
+        margin: 10px 0 5px
+      .screenshots
+        margin-right: 55px
+      .copy
+        header,section
+          margin-left: 55px
+        p
+          font-size: 14px
+          line-height: 18px
+      .specs
+        ul
+          li
+            font-size: 14px
 
 @media only screen and (max-width : 1100px)
-  #sidebar
-    min-width: 82px
-    width: 82px
+  #navigation
     h1
       a
-        background: url(/images/logo-numbers.png) no-repeat
+        background: url(/images/logo-numbers.png) no-repeat center
         height: 109px
-        width: 82px
         margin: 0 auto
         display: block
         img
@@ -288,23 +344,32 @@ body
     nav
       ul
         li
+          margin: 0
           a
-            font-size: 24px
+            font-size: 40px
+            height: 50px
+            line-height: 45px
+            margin: 10px 0
+            padding: 0 10px
             &:hover,
             &:active
-              border-radius: 10px
+              border-radius: 0
 @media only screen and (max-width : 960px) 
-  #projects
-    h1
-      font-size: 58px
+  .projects
+    .view
+      #projects
+        h1
+          font-size: 58px
 
 
 @media only screen and (max-width : 768px)
-  #projects
-    h1
-      font-size: 40px
-    h2
-      font-size: 30px
+  .projects
+    .view
+      #projects
+        h1
+          font-size: 40px
+        h2
+          font-size: 30px
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) 

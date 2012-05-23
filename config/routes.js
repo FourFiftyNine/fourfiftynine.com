@@ -1,7 +1,8 @@
 module.exports = function(app){
 
-  var projects   = require('../app/controllers/project_controller')(app),
-      admin   = require('../app/controllers/admin_controller')(app);
+  var static     = require('../app/controllers/static_controller')(app);
+  var projects   = require('../app/controllers/project_controller')(app);
+  var admin      = require('../app/controllers/admin_controller')(app);
   
   //  Load database and pass it down to the controllers
   
@@ -10,7 +11,7 @@ module.exports = function(app){
 
   //  Load Root
   
-  app.get('/', projects.index); // *Root
+  app.get('/', static.home); // *Root
   
   //  Load Project Controller + Routes
   
