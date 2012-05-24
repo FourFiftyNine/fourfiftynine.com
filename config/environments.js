@@ -32,7 +32,7 @@ module.exports = function(app){
     })
 
     this
-      .set('host', '50.116.10.181')
+      .set('host', 'morning-planet-5555.herokuapp.com')
       .set('port', port)
       .set('ENV','production')
   });
