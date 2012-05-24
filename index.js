@@ -19,7 +19,7 @@ if(!process.env.NODE_ENV) process.env.NODE_ENV="local"
 var app = require('./config/app')();
 var port = process.env.PORT || 3000;
 var host = app.set('host');
-app.listen(port, host);
+app.listen(port);
 console.log(app.address());
 
 console.log('\x1b[36mFourFiftyNine.com\x1b[90m v%s\x1b[0m running as \x1b[1m%s\x1b[0m on http://%s:%d',
