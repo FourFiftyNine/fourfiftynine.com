@@ -32,7 +32,7 @@ module.exports = function(app){
     })
 
     this
-      .set('host', 'node-blog-example.herokuapp.com')
+      .set('host', '50.116.10.181')
       .set('port', port)
       .set('ENV','production')
   });
