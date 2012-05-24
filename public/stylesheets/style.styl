@@ -54,7 +54,13 @@ ul
   list-style-image: url(/images/bullet.png)
   li
     font-size: 17px
-
+/*~~ Links ~~*/
+a:visited
+  text-decoration: none
+a:active {
+  position: relative
+  top: 1px
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Typography
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -244,7 +250,7 @@ body
       height: 65px
       width: 29px
       position: fixed
-      top: 420px
+      top: 45%
       &.prev
         left: 35px
         background-position: 0 -65px
@@ -252,10 +258,10 @@ body
         right: 14%
         margin-right: 35px
       &:hover
-        opacity: .8
+        opacity: .7
     .copy
       float: left
-      overflow: scroll
+      overflow: auto
       -webkit-overflow-scrolling: touch
       position: fixed
       left: 0
@@ -344,7 +350,6 @@ body
   .projects.view  
     #projects
       .arrow
-        top: 320px;
         &.prev
           left: 20px
         &.next
