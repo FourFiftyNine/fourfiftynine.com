@@ -1,4 +1,4 @@
-var S = require('String');
+var S = require('string');
 
 exports.create = function () {
     var value = null;
