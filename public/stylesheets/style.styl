@@ -226,8 +226,8 @@ body
         background: url(/images/projects/halfpretties/thumb.jpg) no-repeat
       #drinkchai
         background: url(/images/projects/drinkchai/thumb.jpg) no-repeat 
-      #wenergyinc
-        background: url(/images/projects/halfpretties/thumb.jpg) no-repeat 
+      #worthington-energy
+        background: url(/images/projects/worthington-energy/thumb.jpg) no-repeat 
       #half-pretties
         background: url(/images/projects/half-pretties/thumb.jpg) no-repeat 
 
@@ -261,11 +261,9 @@ body
         opacity: .7
     .copy
       float: left
-      overflow: auto
       -webkit-overflow-scrolling: touch
       position: fixed
       left: 0
-      height: 100%
       width: 35%
       section,
       header
@@ -280,12 +278,15 @@ body
 
         &.website
           a
-            color: lightGrey
+            display: block
+            color: grey
             font-size: 35px
             font-family: 'tandelle', 'sans-serif'
             text-decoration: none
             &:hover
               color: darkGrey
+            &.back-to-projects
+              font-size: 25px
       p
         text-align: left
         margin-top: 0
@@ -396,13 +397,20 @@ body
             &:hover,
             &:active
               border-radius: 0
-@media only screen and (max-width : 960px) 
+@media only screen and (max-width : 980px) 
   .projects
-    .view
+    &.view
       #projects
-        h1
-          font-size: 58px
-
+        .arrow
+          &.prev
+            left: 13px
+          &.next
+            margin-right: 13px
+        .screenshots
+          margin-right: 65px
+        .copy
+          header,section
+            margin-left: 65px
 
 @media only screen and (max-width : 768px)
   .projects

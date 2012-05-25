@@ -7,13 +7,12 @@
 (function( window, $, undefined ) {
 
 'use strict';
-// $document.ready( common.init );
 
 // global doesnt exist anywhere else yet
 var CDLIX     = window.CDLIX || {};
 var history   = window.history;
 var location  = window.location;
-var M         = window.Modernizr;
+var Modernizr = window.Modernizr;
 var $window   = $(window);
 var $document = $(document);
 
@@ -21,11 +20,22 @@ var main = CDLIX.main = {
 
   init: function() {
     
-    main.$content = $('#content');
-    main.$article = $('#content > article');
+    main.$content   = $('#content');
+    main.$article   = $('#content > article');
+    main.$copy       = $('#content #projects .copy');
+    
     // TODO... make more obvious
     main.$content.find('>section').addClass('active');
     main.fadeInContent();
+
+    $window.resize(function() {
+      var h = $(this).height();
+      if(main.$copy.height() > h) {
+        main.$copy.css('position', 'static');
+      } else {
+        main.$copy.css('position', 'fixed');
+      }
+    });
   },
 
   // now responsive - duh

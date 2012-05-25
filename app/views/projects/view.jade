@@ -19,6 +19,7 @@ section#projects.clearfix
       section.tags
       section.website
         a(href="http://#{website}", title="#{title}") &raquo; visit #{website}
+        a.back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
     section.screenshots
       each image in screenshots
         img(src='/images/projects/#{slug}/#{image}.jpg', alt="#{image}")
