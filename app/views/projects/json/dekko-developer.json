@@ -5,7 +5,7 @@
   "website" : "developer.dekko.co",
   "overview": [
     "This project is one of our favorites.  We dove into <a href='http://nodejs.org/'>Node.js</a>, a bleeding edge, event-driven, javascript web application framework.  This is the future of web application development folks, and we are pumped we can be a part of it.",
-    "We are continuing to work with dekko and their augmented reality SDK for iPhone and iPad.  The backend funcitonality of this site is currently under wraps, but we can assure you, it is pretty awesome."
+    "We are continuing to work with dekko and their augmented reality SDK for iOS.  The backend funcitonality of this site is currently under wraps, but we can assure you, it is pretty awesome."
   ],
   "specs"   : [
     "Node.js",
