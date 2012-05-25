@@ -1,0 +1,21 @@
+{
+  "title"   : "WhosRight",
+  "company" : "Worthington Energy Inc",
+  "slug"    : "whosright",
+  "website" : "whosright.com",
+  "overview": [
+    "Worthington Energy needed a brand new look.  We looked outside the company to <a href='http://evankosowski.com/'>Evan Kosowski</a>, one of the many designers we have built a relationship with over the years.  His talent and vision help us execute a new brand identity.  We took an outdated publically traded company and gave them a fresh, modern feel, and a super slick new logo."
+  ],
+  "specs"   : [
+    "Wordpress", 
+    "PHP",
+    "HTML5", 
+    "CSS3",
+    "JavaScript"
+  ],
+  "screenshots": [
+    "home",
+    "ryanseacrest",
+    "larryking"
+  ]
+}
