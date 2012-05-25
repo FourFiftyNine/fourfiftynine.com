@@ -1,0 +1,23 @@
+{
+  "title"   : "Gospel Flat Farm",
+  "company" : "Wellness Center Usa Inc",
+  "slug"    : "gospelflatfarm",
+  "website" : "gospelflatfarm.com",
+  "overview": [
+    "Worthington Energy needed a brand new look.  We looked outside the company to <a href='http://evankosowski.com/'>Evan Kosowski</a>, one of the many designers we have built a relationship over the years, for his talent and vision.",
+    "We took an old and outdated publically traded company and gave them a fresh, modern feel, and a super slick new logo."
+  ],
+  "specs"   : [
+    "Wordpress", 
+    "PHP",
+    "HTML5", 
+    "CSS3",
+    "JavaScript"
+  ],
+  "screenshots": [
+    "home",
+    "subpage-1",
+    "subpage-2",
+    "subpage-3"
+  ]
+}
