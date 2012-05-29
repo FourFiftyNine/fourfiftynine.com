@@ -4,10 +4,10 @@ section#projects.clearfix
   a.arrow.prev(href='/')
   a.arrow.next(href='/')
   article(id='#{slug}')
-    .copy
+    #copy
       header
         h1 #{title}
-      section.overview
+      section#overview
         h2 Overview
         each p in overview
           p!= p
@@ -16,12 +16,16 @@ section#projects.clearfix
         ul
           each spec in specs
             li!= spec
-      section.tags
-      section.website
-        - if(website)
-          a(href="http://#{website}", title="#{title}") &raquo; visit #{website}
-        a.back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
-    section.screenshots
+      - if(website)
+        section#tags
+      - if(website)
+        section#website
+            a(href="http://#{website}", title="#{title}") &raquo; visit #{website}
+        section#in-page-navigation
+          a#top ^ back to top
+          a#back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
+
+    section#screenshots
       each image in screenshots
         img(src='/images/projects/#{slug}/#{image}.jpg', alt="#{image}")
   //- != partial('projects/_all')

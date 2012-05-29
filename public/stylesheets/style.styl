@@ -36,7 +36,7 @@ html, button, input, select, textarea
   font-family: sans-serif
   color: darkGrey
 body
-  background: url('/images/background.png') repeat
+  background: url('/images/background.png') repeat fixed
   smooth()
   text-shadow: 3px 3px 3px rgba(0,0,0,.07)
 
@@ -219,6 +219,7 @@ body
         position: absolute
         text-align: center
         width: 100%
+      /* TODO - I dont like this much - should prob use img tags */
       #dekko
         background: url(/images/projects/dekko/thumb.jpg) no-repeat
       #dekko-developer
@@ -265,7 +266,7 @@ body
         margin-right: 35px
       &:hover
         opacity: .7
-    .copy
+    #copy
       float: left
       -webkit-overflow-scrolling: touch
       position: fixed
@@ -274,7 +275,8 @@ body
       section,
       header
         margin-left: 110px
-        &.overview
+      section
+        &#overview
           a
             text-decoration: none
             color: grey
@@ -282,7 +284,8 @@ body
             &:hover
               color: darkGrey
 
-        &.website
+        &#website,
+        &#in-page-navigation
           a
             display: block
             color: grey
@@ -291,15 +294,20 @@ body
             text-decoration: none
             &:hover
               color: darkGrey
-            &.back-to-projects
+        &#in-page-navigation
+          a
+            &#back-to-projects,
+            &#top
               font-size: 25px
+            &#top
+              display: none
       p
         text-align: left
         margin-top: 0
         margin-bottom: 10px
         font-size: 17px
 
-    .screenshots
+    #screenshots
       margin-right: 110px;
       margin-top: 40px;
       position: absolute;
@@ -331,11 +339,16 @@ body
   top: 0
   width: 100%
   z-index: 1
+#content
+  z-index: 1
+#navigation
+  z-index: 2
 #projects
   .copy
     z-index: 1
   .arrow
     z-index: 2
+
 
 // http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
 /* iPhone [portrait + landscape] */
@@ -366,15 +379,15 @@ body
         line-height: 55px
       h2
         margin: 10px 0 5px
-      .screenshots
+      #screenshots
         margin-right: 85px
-      .copy
+      #copy
         header,section
           margin-left: 85px
         p
           font-size: 12px
           line-height: 14px
-      .specs
+      #specs
         ul
           li
             font-size: 12px
@@ -412,9 +425,9 @@ body
             left: 13px
           &.next
             margin-right: 13px
-        .screenshots
+        #screenshots
           margin-right: 65px
-        .copy
+        #copy
           header,section
             margin-left: 65px
 

@@ -22,22 +22,37 @@ var main = CDLIX.main = {
     
     main.$content   = $('#content');
     main.$article   = $('#content > article');
-    main.$copy       = $('#content #projects .copy');
+    main.$copy       = $('#content #projects #copy');
     
-    // TODO... make more obvious
-    main.$content.find('>section').addClass('active');
+    // TODO... make more obvious / semantic
+    main.$content.find('>section').addClass('active'); // TODO make useful
     main.fadeInContent();
+    main.setCopyCSSPosition();
 
+    // bind window resize
     $window.resize(function() {
-      var h = $(this).height();
-      if(main.$copy.height() > h) {
-        main.$copy.css('position', 'static');
-      } else {
-        main.$copy.css('position', 'fixed');
-      }
+      main.setCopyCSSPosition();
     });
   },
 
+  setCopyCSSPosition: function() {
+    var h = $window.height();
+    var p = 'position';
+    var f = 'fixed';
+    var s = 'static';
+    var $inPageNavigation = main.$copy.find('#in-page-navigation');
+    // console.log(h);
+    // console.log(main.$copy.height());
+    if(main.$copy.height() > h) {
+      main.$copy.css(p, s);
+      // TODO figure out navigation with static copy
+      // $inPageNavigation.css(p, f);
+      // $inPageNavigation.css('bottom', '')
+
+    } else {
+      main.$copy.css(p, f);
+    }
+  },
   // now responsive - duh
   resizeContent: function() {
     if ( true /* $('.body').hasClass('home') */ ) {
@@ -77,9 +92,9 @@ var main = CDLIX.main = {
       }
       $('.arrow.next').css('right', sidebarWidth + posRight);
 
-      var copyMarginLeft = parseInt($('.copy').css('marginLeft')); //
+      var copyMarginLeft = parseInt($('#copy').css('marginLeft')); //
       var screenshotsOffsetLeft = $('.screenshots').offset().left;
-      $('.copy').css('width', screenshotsOffsetLeft - copyMarginLeft - copyMarginRight)
+      $('#copy').css('width', screenshotsOffsetLeft - copyMarginLeft - copyMarginRight)
       // $('.screenshots > img').css('height', h - 80);
     }
   },
