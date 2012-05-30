@@ -6,12 +6,22 @@ article
   nav
     ul
       li
-        a.btn.grey.active(href='#') Question
+        a.btn.grey.active(href='#') Message
       li
         a.btn.grey(href='#') Project
       li
-        a.btn.grey(href='#') Need a Job?
-
+        a.btn.grey(href='#') Work With Us
+  .form-container
+    form.clearfix(action="/question", method="post")
+      label(for="name") Name
+      div.input
+        input#name(type='text', name="name")
+      label(for="email") Email
+      div.input
+        input#email(type='email', name="email")
+      label(for="message") Message
+      div.input
+        textarea#message(name="message")
 aside#contact-info
   #call
     h3
