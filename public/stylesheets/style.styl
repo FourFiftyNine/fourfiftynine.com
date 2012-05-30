@@ -75,6 +75,10 @@ body
 h1,h3
   font-family: 'tandelle', sans-serif
 
+#projects
+  h2
+    font-family: 'tandelle', sans-serif
+
 h1
   color: darkGrey
   font-weight: normal
@@ -126,6 +130,7 @@ input, input:valid, textarea:valid
   border: 0
   padding: 10px
   width: 100%
+  -webkit-appearance: none;
 input
   height: 30px
   line-height: 30px
@@ -433,7 +438,7 @@ body
     top 9px
     height: 40px
     width: 50px
-  #call 
+  #phone 
     .icon
       background-position: 0 -37px
     p
@@ -442,7 +447,7 @@ body
     .icon
       background-position: 0 0  
     a
-      font-size: 18px
+      font-size: 20px
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Complex Z-Indexes (might be unnecessary)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -529,6 +534,16 @@ body
             &:hover,
             &:active
               border-radius: 0
+  #contact-info
+    padding-left: 3%
+    h3
+      font-size: 25px
+    span.icon
+      display: none
+    #phone p,
+    #email a
+      font-size: 15px
+
 @media only screen and (max-width : 980px) 
   .projects
     &.view
