@@ -2,7 +2,7 @@
  * Load dependencies
  */
  
-const express       = require('express')
+var express       = require('express')
     , stylus        = require('stylus')
     , mongoose      = require('mongoose')
     , nib           = require('nib')
@@ -23,7 +23,7 @@ module.exports = function () {
 
   //  Create Server
 
-  const app = express.createServer()
+  var app = express.createServer()
   
   // Load helpers
   app.dynamicHelpers ({

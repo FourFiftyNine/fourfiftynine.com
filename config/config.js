@@ -2,7 +2,7 @@
  *  Load dependencies
  */
 
-const express   = require('express')
+var express   = require('express')
     , stylus    = require('stylus')
     , expose    = require('express-expose')
     , mongoose  = require('mongoose')
@@ -19,7 +19,7 @@ module.exports = function(app){
 
   var dblink = process.env.MONGOHQ_URL || 'mongodb://localhost/fourfiftynine';
 
-  const db  = mongoose.createConnection(dblink);
+  var db  = mongoose.createConnection(dblink);
 
   // use nib + debug options
   function compile(str, path) {

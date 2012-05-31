@@ -1,5 +1,5 @@
 
-const Schema = require('mongoose').Schema
+var Schema = require('mongoose').Schema
     , ObjectId = Schema.ObjectId;
 
 /**

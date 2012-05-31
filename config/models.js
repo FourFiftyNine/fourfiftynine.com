@@ -2,7 +2,7 @@
  * Load dependencies
  */
 
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 require('express-mongoose');  
 
