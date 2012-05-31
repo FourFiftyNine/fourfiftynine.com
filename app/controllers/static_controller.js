@@ -41,9 +41,3 @@ controller.home = function(req, res, next){
   //   projects: db.projects.getLatestPosts()
   // });
 }
-
-controller.contact = function(req, res, next){
-
-  res.render('static/contact');
-
-}

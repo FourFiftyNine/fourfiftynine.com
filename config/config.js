@@ -23,8 +23,9 @@ module.exports = function(app){
 
   // use nib + debug options
   function compile(str, path) {
+    var linenos = process.env.NODE_ENV == 'local';
     return stylus(str)
-      .set('linenos', true)
+      .set('linenos', linenos)
       .set('filename', path)
       .include(nib.path);
   }

@@ -3,6 +3,7 @@ module.exports = function(app){
   var static     = require('../app/controllers/static_controller')(app);
   var projects   = require('../app/controllers/project_controller')(app);
   var admin      = require('../app/controllers/admin_controller')(app);
+  var contact      = require('../app/controllers/contact_controller')(app);
   
   //  Load database and pass it down to the controllers
   
@@ -31,6 +32,11 @@ module.exports = function(app){
   app.get('/admin', checkAuth, admin.index);
   // app.post('/update', admin.update);
   // app.post('/delete', admin.delete);
+
+  // Contact Submission
+  
+  app.get('/contact', contact.index); // contact
+  app.post('/contact', contact.submit); // contact
 
   // Todo move into module
   function checkAuth(req, res, next) {

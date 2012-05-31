@@ -35,6 +35,57 @@ var main = CDLIX.main = {
     $window.resize(function() {
       main.setCopyCSSPosition();
     });
+    
+    $.validator.addMethod("phoneUS", function(phone_number, element) {
+        phone_number = phone_number.replace(/\s+/g, ""); 
+      return this.optional(element) || phone_number.length > 9 &&
+        phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+    }, "Please specify a valid phone number");
+
+    $.validator.setDefaults({
+      rules: {
+        name: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        message: "required",
+        tel: {
+          required: true,
+          phoneUS: true
+        },
+        date: {
+          required: true,
+          date: true
+        }
+      },
+      messages: {
+        name: "Please specify your name",
+        email: {
+          required: "Please specify your email",
+          email: "Please enter a valid email"
+        },
+        message: "Please enter a message",
+        tel: {
+          required: "Please enter a phone number",
+          phoneUS: "Please enter a phone number"
+        },
+        date: {
+          required: "Choose a date",
+          date: "Invalid date"
+        }
+      },
+      submitHandler: function( form ) {
+        $(form).ajaxSubmit(function() {
+          alert('validated');
+        })
+      }
+    })
+    $('#project-message, #send-message').each(function() {
+      $(this).validate();
+    });
+
+
   },
 
   setCopyCSSPosition: function() {

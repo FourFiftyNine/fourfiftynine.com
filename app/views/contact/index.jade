@@ -1,4 +1,4 @@
-- view_body_class.set("");
+- view_body_class.set("index");
 - page_title.set("Contact Us");
 article
   header
@@ -12,22 +12,23 @@ article
       // li
         a.btn.grey(href='#') Need a Job?
   form#project-message.contact-form.clearfix.two-column.active(action="/contact", method="post")
-    .left
+    input(type="hidden", name="form", value="project")
+    .left.field
       label(for="name") Name
       input#name.text(type='text', name="name", autofocus="autofocus")
-    .right
+    .right.field
       label(for="organization") Organization
       input#name.text(type='organization', name="organization")
-    .left
+    .left.field
       label(for="email") Email
       input#email.text(type='email', name="email")
-    .right
+    .right.field
       label(for="tel") Phone
       input#tel.text(type='tel', name="tel")
-    .left
+    .left.field
       label(for="date") Desired deadline
       input#date.text(type='date', name="date")
-    .right
+    .right.field
       label(for="budget") Budget
       select#budget(name="budget")
         option(value="less than $5,000") less than $5,000
@@ -37,17 +38,22 @@ article
         option(value="$50,000 - $100,000") $50,000 - $100,000
         option(value="over $100,000") over $100,000
         option(value="Let's worry about the budget later") Let's worry about the budget later
-    label#project-message-label(for="message") Message
-    textarea#project-message(name="message")
+    .field.textarea
+      label#project-message-label(for="message") Message
+      textarea#project-message(name="message")
     input#submit.btn.grey(type="submit", value="Submit Project")
 
   form#send-message.contact-form.clearfix(action="/contact", method="post")
-    label(for="name") Name
-    input#name.text(type='text', name="name", autofocus="autofocus")
-    label(for="email") Email
-    input#email.text(type='email', name="email")
-    label(for="message") Message
-    textarea#message(name="message")
+    input(type="hidden", name="form", value="message")
+    .field
+      label(for="name") Name
+      input#name.text(type='text', name="name", autofocus="autofocus")
+    .field
+      label(for="email") Email
+      input#email.text(type='email', name="email")
+    .field
+      label(for="message") Message
+      textarea#message(name="message")
     input#submit.btn.grey(type="submit", value="Submit Message")
 
 aside#contact-info
