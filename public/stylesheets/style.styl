@@ -521,17 +521,16 @@ body
     clear: both
     .icon
       background-position: 0 0  
-    a
-      display: block
-      color: darkGrey
-      &:hover
-        color: lightGrey
   #email, #phone
     p, a
       font-size: 16px
       margin: 0
       position: relative
       top: 13px
+      display: block
+      color: darkGrey
+      &:hover
+        color: lightGrey
   #turn-around p
     padding-top: 20px
     border-top: 1px dotted #587891
@@ -607,11 +606,11 @@ body
       font-size: 25px
     span.icon
       display: none
-    #phone p,
-    #email a
-      clear: both
-      top: 0
-      font-size: 15px
+    #phone, #email 
+      a
+        clear: both
+        top: 0
+        font-size: 15px
   /*~~ Inputs~~*/
   form.two-column
     label
@@ -672,6 +671,13 @@ body
         #copy
           header,section
             margin-left: 65px
+  #contact-info
+    #phone, #email
+      a
+        font-size: 13px
+  form.two-column
+    label.error
+      font-size: 12px
 /*  #contact-info
     #phone p,
     #email a

@@ -35,7 +35,7 @@ var main = CDLIX.main = {
     $window.resize(function() {
       main.setCopyCSSPosition();
     });
-    
+
     $.validator.addMethod("phoneUS", function(phone_number, element) {
         phone_number = phone_number.replace(/\s+/g, ""); 
       return this.optional(element) || phone_number.length > 9 &&
@@ -107,6 +107,7 @@ var main = CDLIX.main = {
     }
   },
 
+  // TODO check for clicking already active form
   onClickContactFormNavigation: function() {
     var $contactFormNav = $('#contact-form-navigation');
     var $contactFormNavLink = $contactFormNav.find('a');
@@ -116,6 +117,7 @@ var main = CDLIX.main = {
       var formIDPrefix = $(this).attr('href');
       var contactPageTitle = $(this).attr('title');
 
+      // create callback on animate but `this` scope is an ass
       $('.contact-form.active').animate({opacity: 0}, 600).removeClass('active');
       $contactFormNavLink.removeClass('active');
       $(this).addClass('active');
@@ -131,50 +133,6 @@ var main = CDLIX.main = {
     });
   },
   // now responsive - duh
-  resizeContent: function() {
-    if ( true /* $('.body').hasClass('home') */ ) {
-      var sidebarWidth = $('#navigation').innerWidth();
-      var h = $(window).height();
-      var w = $(window).width();
-      var $images = $('#images');
-      var contentWidth = (w - sidebarWidth);
-
-      $("#content").css('width', contentWidth);
-      // $('.screenshots').css('height', h);
-      // TODO golf it - bogeyed out right now
-      if ( contentWidth < 540 ) {
-        $images.css('width', 270);
-      } else if (contentWidth < 810) {
-        $images.css('width', 540);
-      } else if ( contentWidth < 1080 ) {
-        $images.css('width', 810);
-      } else if ( contentWidth < 1350 ) {
-        $images.css('width', 1080);
-      } else if ( contentWidth >= 1350 ) {
-        $images.css('width', 1350);
-      }
-    }
-    // var copyWidth = $('.copy').outerWidth(true);
-    // var screenShotsMarginLeft = copyWidth + 40;
-    // TODO split into separate resize function
-    if ( $('#projects').hasClass('active') ) {
-
-
-      if(w < 1300) {
-        var copyMarginRight = 20;
-        var posRight = 10;
-      } else {
-        var copyMarginRight = 30;
-        var posRight = 35;
-      }
-      $('.arrow.next').css('right', sidebarWidth + posRight);
-
-      var copyMarginLeft = parseInt($('#copy').css('marginLeft')); //
-      var screenshotsOffsetLeft = $('.screenshots').offset().left;
-      $('#copy').css('width', screenshotsOffsetLeft - copyMarginLeft - copyMarginRight)
-      // $('.screenshots > img').css('height', h - 80);
-    }
-  },
 
   fadeInContent: function() {
     main.$content.delay(400).animate({opacity: 1}, 400);
