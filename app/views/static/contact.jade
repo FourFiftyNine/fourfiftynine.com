@@ -2,26 +2,54 @@
 - page_title.set("Contact Us");
 article
   header
-    h1 Work With Us
-  nav
+    h1 Hire Us
+  nav#contact-form-navigation
     ul
       li
-        a.btn.grey.active(href='#') Message
+        a.btn.grey.active(href='#project', title="Hire Us") Submit A Project
       li
-        a.btn.grey(href='#') Project
-      li
+        a.btn.grey(href='#send', title="Message Us") Send A Message
+      // li
         a.btn.grey(href='#') Need a Job?
-  .form-container
-    form.clearfix(action="/question", method="post")
+  form#project-message.contact-form.clearfix.two-column.active(action="/contact", method="post")
+    .left
       label(for="name") Name
-      div.input
-        input#name(type='text', name="name")
+      input#name.text(type='text', name="name", autofocus="autofocus")
+    .right
+      label(for="organization") Organization
+      input#name.text(type='organization', name="organization")
+    .left
       label(for="email") Email
-      div.input
-        input#email(type='email', name="email")
-      label(for="message") Message
-      div.input
-        textarea#message(name="message")
+      input#email.text(type='email', name="email")
+    .right
+      label(for="tel") Phone
+      input#tel.text(type='tel', name="tel")
+    .left
+      label(for="date") Desired deadline
+      input#date.text(type='date', name="date")
+    .right
+      label(for="budget") Budget
+      select#budget(name="budget")
+        option(value="less than $5,000") less than $5,000
+        option(value="$5,000 - $10,000") $5,000 - $10,000
+        option(value="$10,000 - $20,000", selected="selected") $10,000 - $20,000
+        option(value="$20,000 - $50,000") $20,000 - $50,000
+        option(value="$50,000 - $100,000") $50,000 - $100,000
+        option(value="over $100,000") over $100,000
+        option(value="Let's worry about the budget later") Let's worry about the budget later
+    label#project-message-label(for="message") Message
+    textarea#project-message(name="message")
+    input#submit.btn.grey(type="submit", value="Submit Project")
+
+  form#send-message.contact-form.clearfix(action="/contact", method="post")
+    label(for="name") Name
+    input#name.text(type='text', name="name", autofocus="autofocus")
+    label(for="email") Email
+    input#email.text(type='email', name="email")
+    label(for="message") Message
+    textarea#message(name="message")
+    input#submit.btn.grey(type="submit", value="Submit Message")
+
 aside#contact-info
   #phone
     h3
@@ -33,3 +61,6 @@ aside#contact-info
       span.icon
       | Email Us
     a(href='mailto:team@fourfiftynine.com') team@fourfiftynine.com
+  #turn-around
+    :markdown
+      We will respond to your message within 1 business day.

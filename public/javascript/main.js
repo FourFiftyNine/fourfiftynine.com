@@ -29,6 +29,8 @@ var main = CDLIX.main = {
     main.fadeInContent();
     main.setCopyCSSPosition();
 
+    main.onClickContactFormNavigation();
+    // $('.contact select').chosen({disable_search_threshold: 20});
     // bind window resize
     $window.resize(function() {
       main.setCopyCSSPosition();
@@ -52,6 +54,30 @@ var main = CDLIX.main = {
     } else {
       main.$copy.css(p, f);
     }
+  },
+
+  onClickContactFormNavigation: function() {
+    var $contactFormNav = $('#contact-form-navigation');
+    var $contactFormNavLink = $contactFormNav.find('a');
+    var $contactPageH1= $contactFormNav.siblings('header').find('h1');
+    $contactFormNavLink.click(function(e) {
+
+      var formIDPrefix = $(this).attr('href');
+      var contactPageTitle = $(this).attr('title');
+
+      $('.contact-form.active').animate({opacity: 0}, 600).removeClass('active');
+      $contactFormNavLink.removeClass('active');
+      $(this).addClass('active');
+      console.log(formIDPrefix);
+      $(formIDPrefix + '-message')
+        .css('opacity', 0)
+        .addClass('active')
+        .animate({opacity: 100}, 600);
+
+      $contactPageH1.text(contactPageTitle);
+      e.preventDefault();
+
+    });
   },
   // now responsive - duh
   resizeContent: function() {
@@ -100,7 +126,7 @@ var main = CDLIX.main = {
   },
 
   fadeInContent: function() {
-    main.$content.delay(400).animate({opacity: 1}, 250);
+    main.$content.delay(400).animate({opacity: 1}, 400);
 
   }
 };
