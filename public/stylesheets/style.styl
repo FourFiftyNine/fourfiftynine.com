@@ -501,7 +501,7 @@ body
   h3,p
     margin: 0
     padding: 0
-  dottedLink()
+  //dottedLink()
   .icon
     background: url(/images/sprite-icons.png) no-repeat
     display inline-block
@@ -514,11 +514,20 @@ body
       background-position: 0 -37px
     p
       font-size: 20px
+      margin-top: 10px
   #email 
     .icon
       background-position: 0 0  
     a
       font-size: 20px
+      color: darkGrey
+      &:hover
+        color: lightGrey
+  #turn-around p
+    padding-top: 20px
+    border-top: 2px dotted #587891
+    margin-top: 20px
+    font-size: 17px
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Complex Z-Indexes (might be unnecessary)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -608,7 +617,7 @@ body
       top: initial
       bottom: -23px
       right: -14px
-      font-size: 14px
+      font-size: 13px
     .textarea
       label.error
         top: 16px
