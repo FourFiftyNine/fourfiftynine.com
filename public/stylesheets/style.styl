@@ -40,7 +40,7 @@ html, button, input, select, textarea
 body
   background: url('/images/background.png') repeat fixed
   smooth()
-  text-shadow: 3px 3px 3px rgba(0,0,0,.07)
+  text-shadow: 1px 1px 3px rgba(0,0,0,.07)
 
 #spinner
   display: none
@@ -118,7 +118,7 @@ dottedLink()
   &.grey
     background: lightGrey
     background: linear-gradient(top, lightGrey, grey)
-    border: 0
+    border: 2px solid grey
     border-radius: 50px
     box-shadow: 3px 3px 3px 0 rgba(0,0,0,.07)
     color: white
@@ -130,9 +130,11 @@ dottedLink()
     padding: 0 20px
     &:hover,
     &.active
+      border: 2px solid lighten(blue, 10)
       background: blue
     &:active,
     &.active
+      border: 2px solid lighten(blue, 30)
       box-shadow: inset 3px 3px 3px 0 rgba(0,0,0,.17)
 
 input[type="submit"].btn.grey
@@ -143,6 +145,7 @@ input[type="submit"].btn.grey
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Forms / Inputs
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// TODO reorganize not logical at all
 form
   clear: both
   padding-right: 5%
@@ -172,14 +175,15 @@ textarea:valid
   padding: 10px
   width: 100%
   -webkit-appearance: none;
-  height: 30px
-  line-height: 30px
+  // height: 30px
+  // line-height: 30px
   font-size: 24px
+  box-sizing: border-box
 
 .two-column
   input.text
-    height: 20px
-    line-height: 20px
+    // height: 20px
+    // line-height: 20px
     font-size: 18px
   label.error
     top: 25px
@@ -189,11 +193,11 @@ textarea:valid
     clear: both
 input[type="submit"]
   margin-top: 15px
-  margin-right: -5%
   float: right
   &:active
     position: relative
     top: 1px
+
 input:focus,
 textarea:focus
   border: 3px solid blue
@@ -211,7 +215,7 @@ form
     position: relative
   .right,
   .left
-    width: 45%
+    width: 48%
   .left
     float: left
   .right
@@ -227,7 +231,8 @@ label.error
   position: absolute
   font-size: 14px
   top: 10px
-  right: -21px
+  right: 1px
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Layout
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -295,7 +300,7 @@ body
             //color: darkGrey
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** Home
+/** Home /root
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .home
   #content      
@@ -303,7 +308,7 @@ body
       padding: 0 40px
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** Projects
+/** Projects /projects
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~ projects/index ~~*/
 .projects.index #content
@@ -460,17 +465,17 @@ body
       left: 0px
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** Contact Us
+/** Contact Page /contact
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .contact
   #content
     article
-      border-right: 2px dotted blue
+      border-right: 1px dotted blue
       float: left
       margin-right: -2px
       margin-left: 5% 
       margin-top: 40px
-      max-width: 750px
+      // max-width: 750px
       width: 65%
       h1
         margin: 0 0 40px
@@ -490,15 +495,15 @@ body
       display: block
 
 #contact-info
-  margin: 40px 0
+  margin: 170px 2.5% 40px 0
   padding: 0
-  padding-left: 5%
+  padding-left: 2.5%
   float: left
-  width: 20%
-  max-width: 300px
-  margin-top: 170px
-  margin-right: 5%
+  width: 25%
+  h3
+    width 80px
   h3,p
+    float: left
     margin: 0
     padding: 0
   //dottedLink()
@@ -508,26 +513,31 @@ body
     position relative
     top 9px
     height: 40px
-    width: 50px
+    width: 45px
   #phone 
     .icon
       background-position: 0 -37px
-    p
-      font-size: 20px
-      margin-top: 10px
   #email 
+    clear: both
     .icon
       background-position: 0 0  
     a
-      font-size: 20px
+      display: block
       color: darkGrey
       &:hover
         color: lightGrey
+  #email, #phone
+    p, a
+      font-size: 16px
+      margin: 0
+      position: relative
+      top: 13px
   #turn-around p
     padding-top: 20px
-    border-top: 2px dotted #587891
+    border-top: 1px dotted #587891
     margin-top: 20px
     font-size: 17px
+    text-align: center
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Complex Z-Indexes (might be unnecessary)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -592,13 +602,15 @@ body
             line-height: 14px
   /*~~ Contact Page~~*/   
   #contact-info
-    padding-left: 3%
     h3
+      width: 60px
       font-size: 25px
     span.icon
       display: none
     #phone p,
     #email a
+      clear: both
+      top: 0
       font-size: 15px
   /*~~ Inputs~~*/
   form.two-column
@@ -606,17 +618,17 @@ body
       font-size: 17px
     input.text, textarea
       padding: 5px
-      height: 20px
-      line-height: 20px
+      // height: 20px
+      // line-height: 20px
       font-size: 15px
     .right, .left
-      width: 47%
+      width: 48%
     .field
       margin-top: 10px
     label.error
       top: initial
       bottom: -23px
-      right: -14px
+      right: 1px
       font-size: 13px
     .textarea
       label.error
@@ -660,11 +672,11 @@ body
         #copy
           header,section
             margin-left: 65px
-  #contact-info
+/*  #contact-info
     #phone p,
     #email a
       font-size: 13px
-
+*/
 
 @media only screen and (max-width : 768px)
   .projects
