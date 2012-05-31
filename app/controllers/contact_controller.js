@@ -3,6 +3,7 @@
 var controller = {}
   , app
   , db
+  , email = require('mailer');
 
 // Constructor
 
@@ -32,6 +33,25 @@ controller.submit = function(req, res, next){
   var post = req.body,
       errors = [];
   console.log(post.form);
+
+  email.send({
+      host : "smtp.gmail.com",
+      port : "465",
+      ssl : true,
+      domain : "fourfiftynine.com",
+      to : "sessa@fourfiftynine.com",
+      from : "contactform@fourfiftynine.com",
+      subject : "New Project",
+      body: "<b>Hello! This is a test of the node_mailer.</b>",
+      authentication : "login",
+      username : 'no-reply@fourfiftynine.com',
+      password : 'brgNpio5biE'
+      },
+      function(err, result){
+        if(err){  console.log(err); return;}
+        else console.log('looks good')
+  });
+
   if (post.username == 'sessa' && post.password == '123123') {
     req.session.auth = true;
     res.redirect('/admin'); 

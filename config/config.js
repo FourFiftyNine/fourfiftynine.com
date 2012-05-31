@@ -7,7 +7,6 @@ var express   = require('express')
     , expose    = require('express-expose')
     , mongoose  = require('mongoose')
     , nib       = require('nib')
-    , email     = require('mailer')
     , S         = require('string'); // Utility Class http://stringjs.com/
 
 /**
