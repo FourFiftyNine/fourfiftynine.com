@@ -7,6 +7,7 @@ var express   = require('express')
     , expose    = require('express-expose')
     , mongoose  = require('mongoose')
     , nib       = require('nib')
+    , email     = require('mailer')
     , S         = require('string'); // Utility Class http://stringjs.com/
 
 /**
@@ -64,6 +65,8 @@ module.exports = function(app){
     })
     app.set('version', '0.0.1');
   });
+
+
   // // Left Off here
   // app.configure(function () {
   //   this
