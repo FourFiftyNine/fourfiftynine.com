@@ -43,11 +43,10 @@ body
   text-shadow: 1px 1px 3px rgba(0,0,0,.07)
 
 #spinner
-  display: none
   position: absolute !important
   left: 50% !important
   // top: 230px !important
-  top: 250px !important
+  top: 50% !important
 
 ul
   list-style-position: outside
@@ -156,7 +155,7 @@ label
   margin: 15px 0 5px
   font-size: 24px
 // .input
-//  border: 1px solid #587891;
+//  border: 1px solid #587891
 /*
 input[type="text"], 
 input[type="email"], 
@@ -475,6 +474,7 @@ body
       margin-right: -2px
       margin-left: 5% 
       margin-top: 40px
+      position relative
       // max-width: 750px
       width: 65%
       h1
@@ -500,6 +500,17 @@ body
   padding-left: 2.5%
   float: left
   width: 25%
+  #spinner
+    opacity: 0
+    position: static !important
+    margin: 110px auto
+  #success-message
+    opacity: 0
+    font-size: 50px
+    line-height: @font-size
+    width: 100%
+    margin-top: 70px
+    text-align: center
   h3
     width 80px
   h3,p

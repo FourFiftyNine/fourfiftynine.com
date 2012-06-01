@@ -20,9 +20,10 @@ var main = CDLIX.main = {
 
   init: function() {
     
-    main.$content   = $('#content');
-    main.$article   = $('#content > article');
-    main.$copy       = $('#content #projects #copy');
+    main.$content = $('#content');
+    main.$article = $('#content > article');
+    main.$copy    = $('#content #projects #copy');
+    main.$spinner = $('#spinner');
     
     // TODO... make more obvious / semantic
     main.$content.find('>section').addClass('active'); // TODO make useful
@@ -36,8 +37,10 @@ var main = CDLIX.main = {
       main.setCopyCSSPosition();
     });
 
+    // bind validation to two contact forms on one page
+
     $.validator.addMethod("phoneUS", function(phone_number, element) {
-        phone_number = phone_number.replace(/\s+/g, ""); 
+        phone_number = phone_number.replace(/\s+/g, "");
       return this.optional(element) || phone_number.length > 9 &&
         phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
     }, "Please specify a valid phone number");
@@ -76,16 +79,47 @@ var main = CDLIX.main = {
         }
       },
       submitHandler: function( form ) {
-        $(form).ajaxSubmit(function() {
-          console.log('validated');
-        })
+        var spinner;
+
+        var options = {
+          dataType: "json",
+          beforeSubmit: function(formData, jqForm, options) {
+            // spinner
+            // var oldHeight = main.$article.height();
+            $('#contact-info').append(main.$spinner);
+            spinner = main.startSpinner();
+            main.$spinner.animate({'opacity': 1}, 500);
+            // $(form).fadeOut(500, function() {
+            //   main.$article.css('height', oldHeight);
+            // })
+          },
+          success: function(data) {
+            if( !data.errors ) {
+              // TODO need to iterate errors array (util func)
+              console.log((data.errors));
+            } else {
+              console.log(data.success);
+              $('#success-message').text(data.success);
+              main.$spinner.animate({'opacity': 0}, 500, function() {
+                spinner.stop()
+                $('#success-message').animate({'opacity': 1}, 500);
+                $(form).clearForm();
+              })
+
+            }
+        //     console.log('status: ' + status + '\n\nresponseText: \n' + jsonResponse + 
+        // '\n\nThe output div should have already been updated with the responseText.');
+
+          }
+        }
+        $(form).ajaxSubmit(options);
       }
-    })
+    });
+
+    // TODO - needs to be after defaults above - not sure I like this
     $('#project-message, #send-message').each(function() {
       $(this).validate();
     });
-
-
   },
 
   setCopyCSSPosition: function() {
@@ -109,19 +143,19 @@ var main = CDLIX.main = {
 
   // TODO check for clicking already active form
   onClickContactFormNavigation: function() {
-    var $contactFormNav = $('#contact-form-navigation');
+    var $contactFormNav     = $('#contact-form-navigation');
     var $contactFormNavLink = $contactFormNav.find('a');
-    var $contactPageH1= $contactFormNav.siblings('header').find('h1');
+    var $contactPageH1      = $contactFormNav.siblings('header').find('h1');
     $contactFormNavLink.click(function(e) {
 
-      var formIDPrefix = $(this).attr('href');
+      var formIDPrefix     = $(this).attr('href');
       var contactPageTitle = $(this).attr('title');
 
       // create callback on animate but `this` scope is an ass
       $('.contact-form.active').animate({opacity: 0}, 600).removeClass('active');
       $contactFormNavLink.removeClass('active');
       $(this).addClass('active');
-      console.log(formIDPrefix);
+      // console.log(formIDPrefix);
       $(formIDPrefix + '-message')
         .css('opacity', 0)
         .addClass('active')
@@ -137,6 +171,27 @@ var main = CDLIX.main = {
   fadeInContent: function() {
     main.$content.delay(400).animate({opacity: 1}, 400);
 
+  },
+  startSpinner: function() {
+    var opts = {
+      lines: 13, // The number of lines to draw
+      length: 22, // The length of each line
+      width: 7, // The line thickness
+      radius: 21, // The radius of the inner circle
+      rotate: 0, // The rotation offset
+      color: '#505050', // #rgb or #rrggbb
+      speed: 1.4, // Rounds per second
+      trail: 73, // Afterglow percentage
+      shadow: true, // Whether to render a shadow
+      hwaccel: true, // Whether to use hardware acceleration
+      className: 'spinner', // The CSS class to assign to the spinner
+      zIndex: 2e9, // The z-index (defaults to 2000000000)
+      top: 'auto', // Top position relative to parent in px
+      left: 'auto' // Left position relative to parent in px
+    };
+    var target = document.getElementById('spinner');
+    var spinner = new Spinner(opts).spin(target);
+    return spinner;
   }
 };
 /* Residual code from initial project

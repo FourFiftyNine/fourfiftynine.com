@@ -62,12 +62,18 @@ controller.submit = function(req, res, next){
   }
 
   // send mail with defined transport object
+  // res.json({'success': 'GOOOOD', 'errors': errors});
+  // return;
   smtpTransport.sendMail(mailOptions, function(error, response){
-      if(error){
-          console.log(error);
-      }else{
-          console.log("Message sent: " + response.message);
+      if( error ){
+        console.log(error);
+        errors.push(error);
+      } else {
+        console.log("Message sent: " + response.message);
       }
+
+      res.json({'success': 'Thank you for getting into touch with us.', 'errors': errors}); 
+
 
       // if you don't want to use this transport object anymore, uncomment following line
       smtpTransport.close(); // shut down the connection pool, no more messages
