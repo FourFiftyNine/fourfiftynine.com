@@ -52,15 +52,15 @@ var main = CDLIX.main = {
           required: true,
           email: true
         },
-        // message: "required",
-        // tel: {
-        //   required: true,
-        //   phoneUS: true
-        // },
-        // date: {
-        //   required: true,
-        //   date: true
-        // }
+        message: "required",
+        tel: {
+          required: true,
+          phoneUS: true
+        },
+        date: {
+          required: true,
+          date: true
+        }
       },
       messages: {
         name: "Please specify your name",
@@ -75,7 +75,7 @@ var main = CDLIX.main = {
         },
         date: {
           required: "Choose a date",
-          date: "Invalid date"
+          date: "Invalid date (M/D/Y)"
         }
       },
       submitHandler: function( form ) {
