@@ -49,15 +49,15 @@ var main = CDLIX.main = {
           required: true,
           email: true
         },
-        message: "required",
-        tel: {
-          required: true,
-          phoneUS: true
-        },
-        date: {
-          required: true,
-          date: true
-        }
+        // message: "required",
+        // tel: {
+        //   required: true,
+        //   phoneUS: true
+        // },
+        // date: {
+        //   required: true,
+        //   date: true
+        // }
       },
       messages: {
         name: "Please specify your name",
@@ -77,7 +77,7 @@ var main = CDLIX.main = {
       },
       submitHandler: function( form ) {
         $(form).ajaxSubmit(function() {
-          alert('validated');
+          console.log('validated');
         })
       }
     })

@@ -22,7 +22,6 @@ var express       = require('express')
 module.exports = function () {
 
   //  Create Server
-
   var app = express.createServer()
   
   // Load helpers

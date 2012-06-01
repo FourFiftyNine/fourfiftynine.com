@@ -20,7 +20,8 @@
       , "pusher"            : "0.0.x"
       , "string"            : ">=0.0.1"
       , "markdown-js"       : ">=0.0.3"
-      , "mailer"            : ">=0.6.7"
+      , "nodemailer"        : ">=0.3.20"
+      , "mustache"          : ">=0.4.0"
     }
   , "main"    : "./index.js"
   , "engines" : { 

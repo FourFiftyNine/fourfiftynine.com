@@ -17,6 +17,7 @@ if(!process.env.NODE_ENV) process.env.NODE_ENV="local"
 //  Load boot file and fire away!
 
 var app = require('./config/app')();
+app.set('root', __dirname);
 var port = process.env.PORT || 3000;
 var host = app.set('host');
 app.listen(port);

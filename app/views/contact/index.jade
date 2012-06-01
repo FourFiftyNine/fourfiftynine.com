@@ -12,19 +12,22 @@ article
       // li
         a.btn.grey(href='#') Need a Job?
   form#project-message.contact-form.clearfix.two-column.active(action="/contact", method="post")
-    input(type="hidden", name="form", value="project")
+    input(type="hidden", name="form", value="Project")
+
     .left.field
       label(for="name") Name
       input#name.text(type='text', name="name", autofocus="autofocus")
     .right.field
       label(for="organization") Organization
       input#name.text(type='organization', name="organization")
+
     .left.field
       label(for="email") Email
       input#email.text(type='email', name="email")
     .right.field
       label(for="tel") Phone
       input#tel.text(type='tel', name="tel")
+
     .left.field
       label(for="date") Desired deadline
       input#date.text(type='date', name="date")
@@ -37,13 +40,14 @@ article
         option(value="$20,000 - $50,000") $20,000 - $50,000
         option(value="$50,000 - $100,000") $50,000 - $100,000
         option(value="over $100,000") more than $100,000
+
     .field.textarea
       label#project-message-label(for="message") Message
       textarea#project-message(name="message")
     input#submit.btn.grey(type="submit", value="Submit Project")
 
   form#send-message.contact-form.clearfix(action="/contact", method="post")
-    input(type="hidden", name="form", value="message")
+    input(type="hidden", name="form", value="Message")
     .field
       label(for="name") Name
       input#name.text(type='text', name="name", autofocus="autofocus")

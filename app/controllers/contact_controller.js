@@ -3,7 +3,9 @@
 var controller = {}
   , app
   , db
-  , email = require('mailer');
+  , jade = require('jade')
+  , fs = require('fs')
+  , nodemailer = require('nodemailer');
 
 // Constructor
 
@@ -19,50 +21,55 @@ controller.index = function(req, res, next){
 }
 
 /**
- * Login Admin
+ * Submit Email
  *
  * @param {Request Object} req
  * @param {Response Object} res
  * @param {Callback} next
  *
  * @api public
- * @url /login
+ * @url /contact
  */ 
 
 controller.submit = function(req, res, next){
   var post = req.body,
       errors = [];
-  console.log(post.form);
 
-  email.send({
-      host : "smtp.gmail.com",
-      port : "465",
-      ssl : true,
-      domain : "fourfiftynine.com",
-      to : "sessa@fourfiftynine.com",
-      from : "contactform@fourfiftynine.com",
-      subject : "New Project",
-      body: "<b>Hello! This is a test of the node_mailer.</b>",
-      authentication : "login",
-      username : 'no-reply@fourfiftynine.com',
-      password : 'brgNpio5biE'
-      },
-      function(err, result){
-        if(err){  console.log(err); return;}
-        else console.log('looks good')
+  if( post.form == 'Message' )
+    post.organization = post.date = post.tel = post.budget = 'N/A';
+  
+  // https://github.com/andris9/Nodemailer
+  // create reusable transport method (opens pool of SMTP connections)
+  var smtpTransport = nodemailer.createTransport("SMTP",{
+      service: "Gmail",
+      auth: {
+          user: "no-reply@fourfiftynine.com",
+          pass: "brgNpio5biE"
+      }
   });
 
-  if (post.username == 'sessa' && post.password == '123123') {
-    req.session.auth = true;
-    res.redirect('/admin'); 
-  } else {
-    if (post.hasOwnProperty('username') && post.hasOwnProperty('password')) {
-        errors.push('Bad username or password');
-    } else {
-      // res.send('Please supply a username and password'.);
-    }
-    res.render('contact/index', {
-      errors: errors
-    });
+  // http://stackoverflow.com/a/7294279/361689
+  var jadefile = fs.readFileSync(process.cwd() + '/app/views/emails/contact.jade');
+  var jadetemplate = jade.compile(jadefile.toString('utf8'));
+  var html = jadetemplate(post);
+
+  var mailOptions = {
+      from: "4:59 | Contact Form <no-replay@fourfiftynine.com>", // sender address
+      to: "sessa@fourfiftynine.com", // list of receivers
+      subject: post.form, // Subject line
+      // text: "Hello world ✔", // plaintext body
+      html: html
   }
+
+  // send mail with defined transport object
+  smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+          console.log(error);
+      }else{
+          console.log("Message sent: " + response.message);
+      }
+
+      // if you don't want to use this transport object anymore, uncomment following line
+      smtpTransport.close(); // shut down the connection pool, no more messages
+  });
 }
