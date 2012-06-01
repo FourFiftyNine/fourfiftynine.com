@@ -54,9 +54,9 @@ controller.submit = function(req, res, next){
   var html = jadetemplate(post);
 
   var mailOptions = {
-      from: "4:59 | Contact Form <no-replay@fourfiftynine.com>", // sender address
+      from: post.name + '<' + post.email + '>', // sender address
       to: "sessa@fourfiftynine.com", // list of receivers
-      subject: post.form, // Subject line
+      subject: '[FourFiftyNine.com] ' + post.form, // Subject line
       // text: "Hello world ✔", // plaintext body
       html: html
   }
