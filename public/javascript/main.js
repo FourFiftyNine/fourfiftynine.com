@@ -89,6 +89,7 @@ var main = CDLIX.main = {
             $('#contact-info').append(main.$spinner);
             spinner = main.startSpinner();
             main.$spinner.animate({'opacity': 1}, 500);
+            window.document.activeElement.blur();
             // $(form).fadeOut(500, function() {
             //   main.$article.css('height', oldHeight);
             // })
@@ -103,7 +104,7 @@ var main = CDLIX.main = {
               main.$spinner.animate({'opacity': 0}, 500, function() {
                 spinner.stop()
                 $('#success-message').animate({'opacity': 1}, 500);
-                $(form).clearForm();
+                $(form).resetForm();
               })
 
             }
