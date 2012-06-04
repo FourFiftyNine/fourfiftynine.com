@@ -13,7 +13,8 @@ module.exports = function(app){
   //  Load Root
   
   app.get('/', static.home); // *Root
-  app.get('/contact', static.contact); // *contact
+  // app.get('/contact', static.contact); // *contact
+  app.get('/about', static.about); // *contact
   
   //  Load Project Controller + Routes
   

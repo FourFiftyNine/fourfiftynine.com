@@ -41,3 +41,7 @@ controller.home = function(req, res, next){
   //   projects: db.projects.getLatestPosts()
   // });
 }
+
+controller.about = function(req, res, next){
+  res.render('static/about');
+}

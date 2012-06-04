@@ -41,6 +41,7 @@ body
   background: url('/images/background.png') repeat fixed
   smooth()
   text-shadow: 1px 1px 3px rgba(0,0,0,.07)
+  overflow-y: scroll
 
 #spinner
   position: absolute !important
@@ -63,6 +64,12 @@ a:active {
   position: relative
   top: 1px
 }
+
+#content > section
+  display: none
+  margin-right: 14%
+  &.active
+    display: block
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Typography
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -240,7 +247,7 @@ body
 #top-border
   background: url('/images/background-top.png') repeat-x top
 #content
-  width: 86%
+  // width: 86%
   h1
     font-size: 100px
     font-weight: normal
@@ -310,7 +317,7 @@ body
 /** Projects /projects
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~ projects/index ~~*/
-.projects.index #content
+#projects-list
   #images
     margin: 0 auto
     text-align: center
@@ -320,7 +327,7 @@ body
       border: 1px solid rgba(151,151,151,.3)
       display: inline-block
       height: 198px
-      margin: 10px
+      margin: 25px
       width: 248px
       &:hover
         // box-shadow: 0 0 0 5px rgba(88, 120, 145,.1)
@@ -353,146 +360,147 @@ body
         text-align: center
         width: 100%
       /* TODO - I dont like this much - should prob use img tags */
-      #dekko
+      .dekko
         background: url(/images/projects/dekko/thumb.jpg) no-repeat
-      #dekko-developer
+      .dekko-developer
         background: url(/images/projects/dekko-developer/thumb.jpg) no-repeat
-      #half-pretties
+      .half-pretties
         background: url(/images/projects/half-pretties/thumb.jpg) no-repeat
-      #drinkchai
+      .drinkchai
         background: url(/images/projects/drinkchai/thumb.jpg) no-repeat 
-      #worthington-energy
+      .worthington-energy
         background: url(/images/projects/worthington-energy/thumb.jpg) no-repeat 
-      #wellness-center-usa
+      .wellness-center-usa
         background: url(/images/projects/wellness-center-usa/thumb.jpg) no-repeat 
-      #ezcustomshirts
+      .ezcustomshirts
         background: url(/images/projects/ezcustomshirts/thumb.jpg) no-repeat
-      #gospelflatfarm
+      .gospelflatfarm
         background: url(/images/projects/gospelflatfarm/thumb.jpg) no-repeat
-      #whosright
+      .whosright
         background: url(/images/projects/whosright/thumb.jpg) no-repeat
 /*~~ projects/view ~~*/
-.projects.view
-  #content
-    width: 100%
-  #projects
-    h1
-      font-size: 100px
-      line-height: 100px
-      margin: 35px 0 5px
-      padding: 0
-      text-align: left
-    h2
-      color: blue
-      font-size: 36px
-      font-weight: normal
-      margin: 10px 0 10px
-      padding: 0
-      text-align: left
-    .arrow
-      background: url(/images/sprite-arrows-blue.png)
+// .projects.view #content width: 100%
+#projects
+  article
+    display: none
+    &.active
       display: block
-      height: 65px
-      width: 29px
-      position: fixed
-      top: 45%
-      &.prev
-        left: 35px
-        background-position: 0 -65px
-      &.next
-        right: 14%
-        margin-right: 35px
-      &:hover
-        opacity: .7
-    #copy
-      float: left
-      -webkit-overflow-scrolling: touch
-      position: fixed
-      left: 0
-      width: 35%
-      section,
-      header
-        margin-left: 110px
-      section
-        &#overview
-          dottedLink()
-        &#website,
-        &#in-page-navigation
-          a
-            display: block
-            color: grey
-            font-size: 35px
-            font-family: 'tandelle', 'sans-serif'
-            text-decoration: none
-            &:hover
-              color: darkGrey
-        &#in-page-navigation
-          a
-            &#back-to-projects,
-            &#top
-              font-size: 25px
-            &#top
-              display: none
-      p
-        text-align: left
-        margin-top: 0
-        margin-bottom: 10px
-        font-size: 17px
-
-    #screenshots
-      margin-right: 110px
-      margin-top: 40px
-      position: absolute
+  h1
+    font-size: 100px
+    line-height: 100px
+    margin: 35px 0 5px
+    padding: 0
+    text-align: left
+  h2
+    color: blue
+    font-size: 36px
+    font-weight: normal
+    margin: 10px 0 10px
+    padding: 0
+    text-align: left
+  .arrow
+    background: url(/images/sprite-arrows-blue.png)
+    display: block
+    height: 65px
+    width: 29px
+    position: fixed
+    top: 45%
+    &.prev
+      left: 35px
+      background-position: 0 -65px
+    &.next
       right: 14%
-      width: 40%
-      img
-        border-radius: 10px
-        margin-bottom: 40px
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
-        // opacity: .5
-        width: 100%
-    /*~~ All Projects Partial ~~*/
-    #all-projects
-      background: url(/images/background-sidebar.png) repeat
-      border-radius: bottom right 10px, top right 10px
-      box-shadow: 0 0 9px 0 rgba(0,0,0,.09)
-      border: 1px solid #000000
-      border: 1px solid rgba(0,0,0,.1)
-      padding: 20px
-      position: fixed
-      bottom: 0px
-      left: 0px
+      margin-right: 35px
+    &:hover
+      opacity: .7
+  #copy
+    float: left
+    -webkit-overflow-scrolling: touch
+    position: fixed
+    left: 0
+    width: 35%
+    section,
+    header
+      margin-left: 110px
+    section
+      &#overview
+        dottedLink()
+      &#website,
+      &#in-page-navigation
+        a
+          display: block
+          color: grey
+          font-size: 35px
+          font-family: 'tandelle', 'sans-serif'
+          text-decoration: none
+          &:hover
+            color: darkGrey
+      &#in-page-navigation
+        a
+          &#back-to-projects,
+          &#top
+            font-size: 25px
+          &#top
+            display: none
+    p
+      text-align: left
+      margin-top: 0
+      margin-bottom: 10px
+      font-size: 17px
+
+  #screenshots
+    margin-right: 110px
+    margin-top: 40px
+    position: absolute
+    right: 14%
+    width: 40%
+    img
+      border-radius: 10px
+      margin-bottom: 40px
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
+      // opacity: .5
+      width: 100%
+  /*~~ All Projects Partial ~~*/
+  #all-projects
+    background: url(/images/background-sidebar.png) repeat
+    border-radius: bottom right 10px, top right 10px
+    box-shadow: 0 0 9px 0 rgba(0,0,0,.09)
+    border: 1px solid #000000
+    border: 1px solid rgba(0,0,0,.1)
+    padding: 20px
+    position: fixed
+    bottom: 0px
+    left: 0px
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Contact Page /contact
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.contact
-  #content
-    article
-      border-right: 1px dotted blue
-      float: left
-      margin-right: -2px
-      margin-left: 5% 
-      margin-top: 40px
-      position relative
-      // max-width: 750px
-      width: 65%
-      h1
-        margin: 0 0 40px
-        padding: 0 5px
-        text-align left
-      nav
-        width: 415px
-        li
-          float: left
-          margin-left: 10px
-          &:first-child
-            margin-left: 0
-  form
-    display: none
-    margin-bottom: 20px
-    &.active
-      display: block
+#contact
+  article
+    border-right: 1px dotted blue
+    float: left
+    margin-right: -2px
+    margin-left: 5% 
+    margin-top: 40px
+    position relative
+    // max-width: 750px
+    width: 65%
+    h1
+      margin: 0 0 40px
+      padding: 0 5px
+      text-align left
+    nav
+      width: 415px
+      li
+        float: left
+        margin-left: 10px
+        &:first-child
+          margin-left: 0
+form
+  display: none
+  margin-bottom: 20px
+  &.active
+    display: block
 
 #contact-info
   margin: 170px 2.5% 40px 0
@@ -585,31 +593,33 @@ body
   h1
 /* iPads landscape) ----------- */
 @media only screen and (max-width : 1300px) 
-  .projects.view  
-    #projects
-      .arrow
-        &.prev
-          left: 20px
-        &.next
-          margin-right: 20px
-      h1
-        font-size: 60px
-        line-height: 55px
-      h2
-        margin: 10px 0 5px
-      #screenshots
-        margin-right: 85px
-      #copy
-        header,section
-          margin-left: 85px
-        p
+  #projects-list
+    #images a
+      margin: 10px
+  #projects
+    .arrow
+      &.prev
+        left: 20px
+      &.next
+        margin-right: 20px
+    h1
+      font-size: 60px
+      line-height: 55px
+    h2
+      margin: 10px 0 5px
+    #screenshots
+      margin-right: 85px
+    #copy
+      header,section
+        margin-left: 85px
+      p
+        font-size: 12px
+        line-height: 16px
+    #specs
+      ul
+        li
           font-size: 12px
-          line-height: 16px
-      #specs
-        ul
-          li
-            font-size: 12px
-            line-height: 14px
+          line-height: 14px
   /*~~ Contact Page~~*/   
   #contact-info
     h3
@@ -622,6 +632,9 @@ body
         clear: both
         top: 0
         font-size: 15px
+    #success-message
+      font-size: 30px
+      line-height @font-size
   /*~~ Inputs~~*/
   form.two-column
     label
@@ -669,19 +682,18 @@ body
               border-radius: 0
 
 @media only screen and (max-width : 980px) 
-  .projects
-    &.view
-      #projects
-        .arrow
-          &.prev
-            left: 13px
-          &.next
-            margin-right: 13px
-        #screenshots
-          margin-right: 65px
-        #copy
-          header,section
-            margin-left: 65px
+
+  #projects
+    .arrow
+      &.prev
+        left: 13px
+      &.next
+        margin-right: 13px
+    #screenshots
+      margin-right: 65px
+    #copy
+      header,section
+        margin-left: 65px
   #contact-info
     #phone, #email
       a
@@ -696,13 +708,11 @@ body
 */
 
 @media only screen and (max-width : 768px)
-  .projects
-    .view
-      #projects
-        h1
-          font-size: 40px
-        h2
-          font-size: 30px
+  #projects
+    h1
+      font-size: 40px
+    h2
+      font-size: 30px
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) 

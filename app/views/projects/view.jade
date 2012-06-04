@@ -1,8 +1,10 @@
 - view_body_class.set("view");
 - page_title.set(title);
 section#projects.clearfix
-  a.arrow.prev(href='/')
-  a.arrow.next(href='/')
+  - if(prev)
+    a.arrow.prev.pushstate(href='/projects/#{prev}')
+  - if(next)
+    a.arrow.next.pushstate(href='/projects/#{next}')
   article(id='#{slug}')
     #copy
       header
@@ -22,8 +24,8 @@ section#projects.clearfix
         section#website
             a(href="http://#{website}", title="#{title}") &raquo; visit #{website}
         section#in-page-navigation
-          a#top ^ back to top
-          a#back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
+          a.pushstate#top ^ back to top
+          a.pushstate#back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
 
     section#screenshots
       each image in screenshots

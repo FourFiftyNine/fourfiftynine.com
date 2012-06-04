@@ -32,16 +32,16 @@ html.no-js(lang='en')
     #flash-message
     header#navigation
       h1
-        a(href='/')
+        a.pushstate(href='/')
           img(src='/images/logo.png', alt='FourFiftyNine - Web Development and Design')
       nav
         ul
           li.projects
-            a(href='/projects') projects
+            a.pushstate(href='/projects') projects
           li.about
-            a(href='/about') about
+            a.pushstate(href='/about') about
           li.contact
-            a(href='/contact') contact
+            a.pushstate(href='/contact') contact
 
     #content.clearfix
       !=body

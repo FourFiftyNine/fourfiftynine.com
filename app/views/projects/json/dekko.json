@@ -25,5 +25,7 @@
     "team",
     "blog",
     "jobs"
-  ]
+  ],
+  "prev" : null,
+  "next" : "half-pretties"
 }
