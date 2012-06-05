@@ -23,11 +23,15 @@ var main = CDLIX.main = {
     main.$article = $('#content > article'); // ehhh meh
     main.$copy    = $('#content #projects #copy'); // ehhh meh
     main.$spinner = $('#spinner'); // div containing spinner for css manipulation
-    
+
+    main.titleHistory = {};
+    main.titleHistory[location.pathname] = document.title;
+
+    main.$activeContent = main.setActiveContent();
     // TODO... make more obvious / semantic
-    main.$content.find('>section').addClass('active'); // TODO make useful
-    main.$content.find('>#projects>article').addClass('active'); // TODO make useful
-    console.log(main.$content.find('>section'));
+    // main.$content.find('>section').addClass('active'); // TODO make useful
+    // main.$content.find('>#projects>article').addClass('active'); // TODO make useful
+    // console.log(main.$content.find('>section'));
     main.fadeInContent();
 
     main.onClickContactFormNavigation();
@@ -84,7 +88,7 @@ var main = CDLIX.main = {
             // spinner
             // var oldHeight = main.$article.height();
             $('#contact-info').append(main.$spinner);
-            main.toggleSpinner();
+            // main.toggleSpinner();
             main.$spinner.animate({'opacity': 1}, 500);
             window.document.activeElement.blur();
             // $(form).fadeOut(500, function() {
@@ -99,16 +103,13 @@ var main = CDLIX.main = {
               console.log(data.success);
               $('#success-message').text(data.success);
               main.$spinner.animate({'opacity': 0}, 'fast', function() {
-                main.toggleSpinner();
+                // main.toggleSpinner();
                 main.$content.append(main.$spinner);
                 $('#success-message').animate({'opacity': 1}, 'fast');
                 $(form).resetForm();
               });
 
             }
-        //     console.log('status: ' + status + '\n\nresponseText: \n' + jsonResponse + 
-        // '\n\nThe output div should have already been updated with the responseText.');
-
           }
         };
         $(form).ajaxSubmit(options);
@@ -127,139 +128,132 @@ var main = CDLIX.main = {
       window.addEventListener('popstate', main.getContent);
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
+        // main.toggleSpinner();
         main.getContent(e, pushedUrl);
         e.preventDefault();
       })
     }
   },
+  setActiveContent: function() {
 
+    if( $('#projects').length ) {
+      
+      $('#projects').addClass('active-content').find('article').addClass('active-content');
+      return $('#projects');
+    } else {
+      return $('#content > section').addClass('active-content');
+    }
+  },
   getContent: function(e, href) {
     // TODO delegate contact events
     var href = href || location.pathname
     var pathParts = href.split('/');
         pathParts.shift(); // shift empty string off beginning // wil break further down on root / home
 
-    var newSectionId = null;
-    var newProjectId = null;
-    var isProjectsSectionLoaded = $('#projects').length;
+    var newSectionId; 
+    var newProjectId;
+    console.log(pathParts);
 
     if (pathParts.length > 1 && pathParts[0] == 'projects') {
       newSectionId = pathParts[0];
       newProjectId = pathParts[1];
     } else if (pathParts[0] == 'projects') {
-      newSectionId = 'projects-list'; 
+      newSectionId = 'projects-list';
+    } else if (pathParts[0] == '/') {
+      newSectionId = 'home';
     } else {
       newSectionId = pathParts[0];
     }
 
+    var $newProject = $('#' + newProjectId);
+    var $newSection = $('#' + newSectionId);
 
-    if( newProjectId && isProjectsSectionLoaded ) {
-      var $newProject = $('#' + newProjectId);
-      // console.log($newProject);
-      if( !$newProject.length ) { // check if project is loaded 
-        // console.log('AJAX Load New Project: ', newProjectId);
-        main.ajaxLoadNewProject(href, newProjectId)
-      } else { // project already loaded
-        main.toggleProjects(newProjectId)
-      }
+    if( $newProject.length ) {
+
+      console.log('Existing Project In DOM');
+      main.toggleContent(newSectionId, newProjectId);
+
+    } else if( newProjectId ) {
+
+      // console.log('Existing projects section, but no project: ', newSectionId);
+      main.ajaxLoadContent(href, newSectionId, newProjectId);
+    // } else if ( newProjectId ) {
+    //   main.ajaxLoadContent(href, newSectionId, newProjectId);
+    } else if ( $newSection.length ) {
+
+      console.log('Existing Section In DOM');
+      main.toggleContent(newSectionId);
+
     } else {
-      // console.log('here', newSectionId);
-      var $newSection = $('#' + newSectionId)
-      if( !$newSection.length ) {
-        console.log('AJAX Loading New Section: ', newSectionId);
-        main.ajaxLoadNewSection(href, newSectionId);
-      } else { // section already loaded
-        main.toggleSections(newSectionId);
-      }
+      console.log('Ajax loading: ', newSectionId);
+      main.ajaxLoadContent(href, newSectionId);
     }
     history.pushState(null, null, href);
-  },
-  ajaxLoadContent: function(href, newSectionId, newProjectId, callback) {
-    $.ajax({
-        url: href,
-        method: 'post',
-        dataType: 'HTML',
-        data: {},
-        success: function(data) {
-          if( newProjectId ) {
-            var $newContent = $(data).find('#' + newProjectId).appendTo('#projects');
-            // TODO prev and next links
-          } else {
-            var $newContent = $(data).find('#' + newSectionId).appendTo('#content');
-          }
-          callback($newContent); // TODO rename
-        }
-    });
-  },
-  ajaxLoadNewSection: function(href, newSectionId) {
-    $('section.active').fadeOut(500, function() {
-      $(this).removeClass('active');
-      main.toggleSpinner();
-      main.ajaxLoadContent(href, newSectionId, null, function($newContent) {
-        main.toggleSpinner();
-        if( newSectionId == 'projects' ) { // first time loading projects section
-          $newContent.find('article').addClass('active');
-        }
-        $newContent.fadeIn(500, function() {
-          $(this).addClass('active');
-        });
-      });
-    });
-  },
-  toggleSections: function(newSectionId) {
-    if( $('section.active').attr('id') != newSectionId ) { // TODO - check if active... good place?
-      console.log('toggling sections already loaded');
-      $('section.active').fadeOut(500, function() {
-        $(this).removeClass('active');
-        $('#' + newSectionId).addClass('active').fadeIn(500);
-      });
-    } else {
-      console.log('section already active');
+    if( main.titleHistory[href] ) {
+      document.title = main.titleHistory[href];
     }
   },
-  ajaxLoadNewProject: function(href, newProjectId) {
-    console.log('AJAX Load New Project: ', newProjectId);
-    var $projectsSection = $('#projects');
-    if ( !$projectsSection.hasClass('active') ) {  // project section not active
-      $('section.active').fadeOut(500, function() { // fade out current section
-        $projectsSection.find('>article').removeClass('active').hide() // remove active from all projects and display:none
-        $(this).removeClass('active'); // remove current section activeness
-        main.toggleSpinner();
-        main.ajaxLoadContent(href, null, newProjectId, function($newContent) {
-          main.toggleSpinner();
-          $newContent.show().addClass('active');
-          $projectsSection.fadeIn(500, function() {
-            $(this).addClass('active')
-          });
-        });
-      });
-    } else { // prev & next arrows
-      // $('#projects').addClass('active');
-      $projectsSection.find('article.active').fadeOut(500, function() {
-        $(this).removeClass('active');
-        main.ajaxLoadContent(href, null, newProjectId, function($newContent) {
-          main.toggleSpinner();
-          $newContent.fadeIn(500, function() {
-            $(this).addClass('active');
-            main.toggleSpinner();
-          });
-        });
-      });
-    }
-    
+  ajaxLoadContent: function(href, newId, newProjectId) {
+    // console.log(main.$activeContent);
+        $.ajax({
+            url: href,
+            method: 'post',
+            dataType: 'HTML',
+            data: {},
+            success: function(data) {
+              if( $('#projects').length && newProjectId ) {
+                $(data).find('#' + newProjectId).appendTo('#projects');
+              } else {
+                $(data).find('#' + newId).appendTo('#content');
+              }
+              if(!main.titleHistory[href]) {
+                main.titleHistory[href] = $(data).filter('title').text();
+              }               
+              document.title = main.titleHistory[href];
+              main.toggleContent(newId, newProjectId);
 
+              if ( typeof window.pageTracker !== 'undefined' ) {
+                window.pageTracker._trackPageview(href);
+              }
+            }
+        });
   },
-  toggleProjects: function(newProjectId) { // TODO combine with toggleSections
-    console.log('PROJCSCASSDA');
-    if( $('#projects article.active').attr('id') != newProjectId ) { // TODO - check if active... good place?
-      console.log('toggling project already loaded');
-      $('#projects article.active').fadeOut(500, function() {
-        $(this).removeClass('active');
-        $('#' + newProjectId).addClass('active').fadeIn(500);
-      });
+  toggleContent: function(newSectionId, newProjectId) {
+
+
+    if( !$('#' + newSectionId).hasClass('active-content') && !$('#' + newProjectId).hasClass('active-content')) {
+
+      if ( newProjectId ) { // if adding a project
+        if ( $('#projects').length && $('#projects').hasClass('active-content') ) { // if projects exist already
+
+        } else {
+          main.$activeContent.fadeOut(500, function() {
+            $(this).removeClass('active-content');
+            $(this).children('.active-content').hide().removeClass('active-content');
+            $('#' + newProjectId).show().addClass('active-content');
+            $('#' + newSectionId).fadeIn(500, function() {
+              main.$activeContent = $(this).addClass('active-content');
+            });
+            
+          });
+          
+        }
+        
+      } else { // if a normal section
+        main.$activeContent.fadeOut(500, function() {
+          $(this).removeClass('active-content');
+          $(this).children('.active-content').hide().removeClass('active-content');
+          $('#' + newSectionId).fadeIn(500, function() {
+            main.$activeContent = $(this).addClass('active-content');
+          });
+        });
+      }
     } else {
-      console.log('section already active');
+      console.log('Content already active...do nothing');
     }
+  },
+  toggleProject: function() {
+
   },
   setCopyCSSPosition: function() {
     var windowHeight = $window.height();
@@ -321,7 +315,6 @@ var main = CDLIX.main = {
 
   },
   toggleSpinner: function() {
-
     if( main.spinner ) {
       main.spinner.stop()
     } else {
