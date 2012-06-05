@@ -244,6 +244,9 @@ var main = CDLIX.main = {
 
     main.togglingContent = true;
 
+    if( newSectionId == 'contact' ) {
+      main.onClickContactFormNavigation();
+    }
     // TODO this nestedness is vomit
     // TODO hasClass, make into isActive() ??
     if( !$newSection.hasClass('active-content') && !$newProject.hasClass('active-content')) {
