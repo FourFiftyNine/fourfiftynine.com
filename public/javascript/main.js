@@ -265,17 +265,15 @@ var main = CDLIX.main = {
         });
       }
     } else if ($newSection.hasClass('active-content') && !$newProject.hasClass('active-content')) {
-
       main.$activeContent.find('article.active-content').fadeOut(500, function() {
-        main.setPrevNextControls($newProject)
-        $(this).removeClass('active-content')
+        main.setPrevNextControls($newProject);
+        $(this).removeClass('active-content');
         $newProject.fadeIn(500, function() {
-          $(this).addClass('active-content')
+          $(this).addClass('active-content');
           main.togglingContent = false;
         });
       });
-      
-      console.log('add just a project no section');
+      main.togglingContent = false;
     } else {
       console.log('Content already active...do nothing');
       main.togglingContent = false;
@@ -296,9 +294,9 @@ var main = CDLIX.main = {
     var nextSlug = $controls.attr('data-next');
 
     if( prevSlug ) {
-      $('#prev').attr('href', projects + prevSlug).removeClass('hidden')
+      $('#prev').attr('href', projects + prevSlug).removeClass('hidden');
     } else {
-      $('#prev').addClass('hidden')
+      $('#prev').addClass('hidden');
     }
 
     if( nextSlug ) {
