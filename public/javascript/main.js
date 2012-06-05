@@ -29,7 +29,7 @@ var main = CDLIX.main = {
     main.togglingContent = false;
 
     main.$activeContent = main.setActiveContent();
-    ('h1, h2, h3, h4, h5, p').ieffembedfix();
+    $('h1, h2, h3, h4, h5, p').ieffembedfix();
     // TODO... make more obvious / semantic
     // main.$content.find('>section').addClass('active'); // TODO make useful
     // main.$content.find('>#projects>article').addClass('active'); // TODO make useful
