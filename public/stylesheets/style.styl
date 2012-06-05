@@ -308,10 +308,10 @@ body
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Home /root
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.home
-  #content      
-    section
-      padding: 0 40px
+#content      
+  section#home,
+  section#about
+    padding: 0 40px
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Projects /projects
@@ -405,10 +405,10 @@ body
     width: 29px
     position: fixed
     top: 45%
-    &.prev
+    &#prev
       left: 35px
       background-position: 0 -65px
-    &.next
+    &#next
       right: 14%
       margin-right: 35px
     &:hover
@@ -598,9 +598,9 @@ form
       margin: 10px
   #projects
     .arrow
-      &.prev
+      &#prev
         left: 20px
-      &.next
+      &#next
         margin-right: 20px
     h1
       font-size: 60px
@@ -685,9 +685,9 @@ form
 
   #projects
     .arrow
-      &.prev
+      &#prev
         left: 13px
-      &.next
+      &#next
         margin-right: 13px
     #screenshots
       margin-right: 65px

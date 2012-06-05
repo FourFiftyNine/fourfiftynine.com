@@ -26,6 +26,7 @@ var main = CDLIX.main = {
 
     main.titleHistory = {};
     main.titleHistory[location.pathname] = document.title;
+    main.togglingContent = false;
 
     main.$activeContent = main.setActiveContent();
     // TODO... make more obvious / semantic
@@ -47,6 +48,7 @@ var main = CDLIX.main = {
       return this.optional(element) || phone_number.length > 9 &&
         phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
     }, "Please specify a valid phone number");
+    
     $.validator.setDefaults({
       rules: {
         name: "required",
@@ -87,6 +89,7 @@ var main = CDLIX.main = {
           beforeSubmit: function(formData, jqForm, options) {
             // spinner
             // var oldHeight = main.$article.height();
+            // move spinner into aside on contact page
             $('#contact-info').append(main.$spinner);
             // main.toggleSpinner();
             main.$spinner.animate({'opacity': 1}, 500);
@@ -104,6 +107,7 @@ var main = CDLIX.main = {
               $('#success-message').text(data.success);
               main.$spinner.animate({'opacity': 0}, 'fast', function() {
                 // main.toggleSpinner();
+                // move spinner back into #content
                 main.$content.append(main.$spinner);
                 $('#success-message').animate({'opacity': 1}, 'fast');
                 $(form).resetForm();
@@ -126,40 +130,50 @@ var main = CDLIX.main = {
     // TODO delegate using jquery $.on();
     if (Modernizr.history) {
       window.addEventListener('popstate', main.getContent);
+
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
         main.getContent(e, pushedUrl);
+        history.pushState(null, null, pushedUrl);
         e.preventDefault();
-      })
+      });
     }
   },
+
   setActiveContent: function() {
 
     if( $('#projects').length ) {
-      
       $('#projects').addClass('active-content').find('article').addClass('active-content');
       return $('#projects');
     } else {
       return $('#content > section').addClass('active-content');
     }
   },
+
   getContent: function(e, href) {
+
+    // make sure we arent currently loading in content
+    // right now this only follows the animation since we dont do true
+    // async based animation
+    if( main.togglingContent ) {
+      return false;
+    }
+      
     // TODO delegate contact events
-    var href = href || location.pathname
+    href = href || location.pathname;
     var pathParts = href.split('/');
-        pathParts.shift(); // shift empty string off beginning // wil break further down on root / home
+        pathParts.shift(); // shift empty string off beginning
 
     var newSectionId; 
     var newProjectId;
-    console.log(pathParts);
 
-    if (pathParts.length > 1 && pathParts[0] == 'projects') {
+    if (pathParts.length > 1 && pathParts[0] === 'projects') {
       newSectionId = pathParts[0];
       newProjectId = pathParts[1];
-    } else if (pathParts[0] == 'projects') {
+    } else if (pathParts[0] === 'projects') {
       newSectionId = 'projects-list';
-    } else if (pathParts[0] == '/') {
+    } else if (pathParts[0] === '') {
       newSectionId = 'home';
     } else {
       newSectionId = pathParts[0];
@@ -170,97 +184,137 @@ var main = CDLIX.main = {
 
     if( $newProject.length ) {
 
-      console.log('Existing Project In DOM');
+      console.log('Existing PROJECT In DOM');
       main.toggleContent(newSectionId, newProjectId);
 
     } else if( newProjectId ) {
 
-      // console.log('Existing projects section, but no project: ', newSectionId);
+      console.log('AJAX Loading new project: ', newProjectId);
       main.ajaxLoadContent(href, newSectionId, newProjectId);
     // } else if ( newProjectId ) {
     //   main.ajaxLoadContent(href, newSectionId, newProjectId);
     } else if ( $newSection.length ) {
 
-      console.log('Existing Section In DOM');
+      console.log('Existing SECTION In DOM');
       main.toggleContent(newSectionId);
 
     } else {
       console.log('Ajax loading: ', newSectionId);
       main.ajaxLoadContent(href, newSectionId);
     }
-    history.pushState(null, null, href);
+
     if( main.titleHistory[href] ) {
       document.title = main.titleHistory[href];
     }
   },
-  ajaxLoadContent: function(href, newId, newProjectId) {
-    // console.log(main.$activeContent);
-        $.ajax({
-            url: href,
-            method: 'post',
-            dataType: 'HTML',
-            data: {},
-            success: function(data) {
-              if( $('#projects').length && newProjectId ) {
-                $(data).find('#' + newProjectId).appendTo('#projects');
-              } else {
-                $(data).find('#' + newId).appendTo('#content');
-              }
-              if(!main.titleHistory[href]) {
-                main.titleHistory[href] = $(data).filter('title').text();
-              }               
-              document.title = main.titleHistory[href];
-              main.toggleContent(newId, newProjectId);
 
-              if ( typeof window.pageTracker !== 'undefined' ) {
-                window.pageTracker._trackPageview(href);
-              }
-            }
-        });
+  ajaxLoadContent: function(href, newSectionId, newProjectId) {
+    // console.log(main.$activeContent);
+    $.ajax({
+        url: href,
+        method: 'post',
+        dataType: 'HTML',
+        data: {},
+        success: function(data) {
+          if( $('#projects').length && newProjectId ) {
+            $(data).find('#' + newProjectId).appendTo('#projects');
+          } else {
+            $(data).find('#' + newSectionId).appendTo('#content');
+          }
+
+          // Set and Save page title
+          if(!main.titleHistory[href]) {
+            main.titleHistory[href] = $(data).filter('title').text();
+          }               
+          document.title = main.titleHistory[href];
+          main.toggleContent(newSectionId, newProjectId);
+
+          // Update for google analytics (find source in ajaxify)
+          if ( typeof window.pageTracker !== 'undefined' ) {
+            window.pageTracker._trackPageview(href);
+          }
+        }
+    });
   },
+
   toggleContent: function(newSectionId, newProjectId) {
 
+    var $newSection = $('#' + newSectionId);
+    var $newProject = $('#' + newProjectId);
 
-    if( !$('#' + newSectionId).hasClass('active-content') && !$('#' + newProjectId).hasClass('active-content')) {
+    main.togglingContent = true;
+
+    // TODO this nestedness is vomit
+    // TODO hasClass, make into isActive() ??
+    if( !$newSection.hasClass('active-content') && !$newProject.hasClass('active-content')) {
 
       if ( newProjectId ) { // if adding a project
         if ( $('#projects').length && $('#projects').hasClass('active-content') ) { // if projects exist already
 
         } else {
           main.$activeContent.fadeOut(500, function() {
-            $(this).removeClass('active-content');
-            $(this).children('.active-content').hide().removeClass('active-content');
-            $('#' + newProjectId).show().addClass('active-content');
-            $('#' + newSectionId).fadeIn(500, function() {
-              main.$activeContent = $(this).addClass('active-content');
-            });
-            
+            $newProject.show().addClass('active-content');
+            main.fadeInAndSetActiveContent($newSection);
           });
           
         }
         
       } else { // if a normal section
         main.$activeContent.fadeOut(500, function() {
-          $(this).removeClass('active-content');
-          $(this).children('.active-content').hide().removeClass('active-content');
-          $('#' + newSectionId).fadeIn(500, function() {
-            main.$activeContent = $(this).addClass('active-content');
-          });
+          main.fadeInAndSetActiveContent($newSection);
         });
       }
+    } else if ($newSection.hasClass('active-content') && !$newProject.hasClass('active-content')) {
+
+      main.$activeContent.find('article.active-content').fadeOut(500, function() {
+        main.setPrevNextControls($newProject)
+        $(this).removeClass('active-content')
+        $newProject.fadeIn(500, function() {
+          $(this).addClass('active-content')
+          main.togglingContent = false;
+        });
+      });
+      
+      console.log('add just a project no section');
     } else {
       console.log('Content already active...do nothing');
+      main.togglingContent = false;
     }
   },
-  toggleProject: function() {
 
+  fadeInAndSetActiveContent: function($newActiveContent) {
+    main.$activeContent.removeClass('active-content').children('.active-content').hide().removeClass('active-content');
+    $newActiveContent.fadeIn(500, function() {
+      main.$activeContent = $(this).addClass('active-content');
+      main.togglingContent = false;
+    });
+  },
+  setPrevNextControls: function($content) {
+    var $controls = $content.find('#controls');
+    var projects = '/projects/';
+    var prevSlug = $controls.attr('data-prev');
+    var nextSlug = $controls.attr('data-next');
+
+    if( prevSlug ) {
+      $('#prev').attr('href', projects + prevSlug).removeClass('hidden')
+    } else {
+      $('#prev').addClass('hidden')
+    }
+
+    if( nextSlug ) {
+      $('#next').attr('href', projects + nextSlug).removeClass('hidden');
+    } else {
+      $('#next').addClass('hidden');
+    }
   },
   setCopyCSSPosition: function() {
     var windowHeight = $window.height();
     var position = 'position';
     var fixedPos = 'fixed';
     var staticPos = 'static'; // static is reserved
-    var $inPageNavigation = main.$copy.find('#in-page-navigation');
+
+    // TODO find way to have the bottom navigation be fixed when scrolling with fixed copy
+    // var $inPageNavigation = main.$copy.find('#in-page-navigation');
     // console.log(h);
     // console.log(main.$copy.height());
 
@@ -280,8 +334,9 @@ var main = CDLIX.main = {
     var $contactFormNav     = $('#contact-form-navigation');
     var $contactFormNavLink = $contactFormNav.find('a');
     var $contactPageH1      = $contactFormNav.siblings('header').find('h1');
+    
     $contactFormNavLink.click(function(e) {
-      var $clicked            = $(this);
+      var $clicked         = $(this);
       var formIDPrefix     = $(this).attr('href');
       var contactPageTitle = $(this).attr('title');
 
@@ -316,7 +371,7 @@ var main = CDLIX.main = {
   },
   toggleSpinner: function() {
     if( main.spinner ) {
-      main.spinner.stop()
+      main.spinner.stop();
     } else {
       var opts = {
         lines: 13, // The number of lines to draw

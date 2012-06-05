@@ -1,10 +1,10 @@
 - view_body_class.set("view");
 - page_title.set(title);
 section#projects.clearfix
-  - if(prev)
-    a.arrow.prev.pushstate(href='/projects/#{prev}')
-  - if(next)
-    a.arrow.next.pushstate(href='/projects/#{next}')
+  - prevClass = (!prev) ? ' hidden' : '';
+  - nextClass = (!next) ? ' hidden' : '';
+  a#prev(href='/projects/#{prev}', class="arrow pushstate#{prevClass}")
+  a#next(href='/projects/#{next}', class="arrow pushstate#{nextClass}")
   article(id='#{slug}')
     #copy
       header
@@ -30,4 +30,5 @@ section#projects.clearfix
     section#screenshots
       each image in screenshots
         img(src='/images/projects/#{slug}/#{image}.jpg', alt="#{image}")
-  //- != partial('projects/_all')
+    //- != partial('projects/_all')
+    #controls.hidden(data-prev="#{prev}", data-next="#{next}")
