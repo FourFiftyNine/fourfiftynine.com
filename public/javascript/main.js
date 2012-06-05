@@ -21,7 +21,6 @@ var main = CDLIX.main = {
     
     main.$content = $('#content'); // goodness
     main.$article = $('#content > article'); // ehhh meh
-    main.$copy    = $('#content #projects #copy'); // ehhh meh
     main.$spinner = $('#spinner'); // div containing spinner for css manipulation
 
     main.titleHistory = {};
@@ -29,14 +28,19 @@ var main = CDLIX.main = {
     main.togglingContent = false;
 
     main.$activeContent = main.setActiveContent();
-    $('h1, h2, h3, h4, h5, p').ieffembedfix();
+    // TODO
+    // $('h1, h2, h3, h4, h5, p').ieffembedfix();
     // TODO... make more obvious / semantic
     // main.$content.find('>section').addClass('active'); // TODO make useful
     // main.$content.find('>#projects>article').addClass('active'); // TODO make useful
     // console.log(main.$content.find('>section'));
     main.fadeInContent();
 
-    main.onClickContactFormNavigation();
+    // TODO change to delegation - $.on()
+    if( ~location.pathname.indexOf('contact') ) { 
+      main.onClickContactFormNavigation();
+    }
+
     // $('.contact select').chosen({disable_search_threshold: 20});
     // bind window resize
     $window.resize(function() {
@@ -92,8 +96,7 @@ var main = CDLIX.main = {
             // var oldHeight = main.$article.height();
             // move spinner into aside on contact page
             $('#contact-info').append(main.$spinner);
-            // main.toggleSpinner();
-            main.$spinner.animate({'opacity': 1}, 500);
+            main.toggleSpinner();
             window.document.activeElement.blur();
             // $(form).fadeOut(500, function() {
             //   main.$article.css('height', oldHeight);
@@ -102,29 +105,25 @@ var main = CDLIX.main = {
           success: function(data) {
             if( !data.errors ) {
               // TODO need to iterate errors array (util func)
-              console.log((data.errors));
+              // console.log((data.errors));
             } else {
-              console.log(data.success);
+              // console.log(data.success);
               $('#success-message').text(data.success);
               main.$spinner.animate({'opacity': 0}, 'fast', function() {
-                // main.toggleSpinner();
-                // move spinner back into #content
+                main.toggleSpinner();
                 main.$content.append(main.$spinner);
                 $('#success-message').animate({'opacity': 1}, 'fast');
                 $(form).resetForm();
               });
-
             }
           }
         };
         $(form).ajaxSubmit(options);
       }
     });
-
+    
+    main.onContactFormSubmit();
     // TODO - needs to be after defaults above - not sure I like this
-    $('#project-message, #send-message').each(function() {
-      $(this).validate();
-    });
 
 
     ////// PUSHSTATE ///////
@@ -185,22 +184,22 @@ var main = CDLIX.main = {
 
     if( $newProject.length ) {
 
-      console.log('Existing PROJECT In DOM');
+      // console.log('Existing PROJECT In DOM');
       main.toggleContent(newSectionId, newProjectId);
 
     } else if( newProjectId ) {
 
-      console.log('AJAX Loading new project: ', newProjectId);
+      // console.log('AJAX Loading new project: ', newProjectId);
       main.ajaxLoadContent(href, newSectionId, newProjectId);
     // } else if ( newProjectId ) {
     //   main.ajaxLoadContent(href, newSectionId, newProjectId);
     } else if ( $newSection.length ) {
 
-      console.log('Existing SECTION In DOM');
+      // console.log('Existing SECTION In DOM');
       main.toggleContent(newSectionId);
 
     } else {
-      console.log('Ajax loading: ', newSectionId);
+      // console.log('Ajax loading: ', newSectionId);
       main.ajaxLoadContent(href, newSectionId);
     }
 
@@ -237,7 +236,10 @@ var main = CDLIX.main = {
         }
     });
   },
+  // TODO - make state local global
+  ajaxLoadContentSuccess: function(data, newSectionId, newProjectId) {
 
+  },
   toggleContent: function(newSectionId, newProjectId) {
 
     var $newSection = $('#' + newSectionId);
@@ -245,8 +247,14 @@ var main = CDLIX.main = {
 
     main.togglingContent = true;
 
+
+    // TODO check if contact form already loaded and bound?
+    // console.log(main.contactFormBound);
     if( newSectionId == 'contact' ) {
-      main.onClickContactFormNavigation();
+      if( !main.contactFormBound ) { // TODO change to delegation? $.on()
+        main.onClickContactFormNavigation();
+      }
+      main.onContactFormSubmit();
     }
     // TODO this nestedness is vomit
     // TODO hasClass, make into isActive() ??
@@ -279,7 +287,7 @@ var main = CDLIX.main = {
       });
       main.togglingContent = false;
     } else {
-      console.log('Content already active...do nothing');
+      // console.log('Content already active...do nothing');
       main.togglingContent = false;
     }
   },
@@ -289,10 +297,12 @@ var main = CDLIX.main = {
     $newActiveContent.fadeIn(500, function() {
       main.$activeContent = $(this).addClass('active-content');
       main.togglingContent = false;
+      main.setCopyCSSPosition();
     });
   },
+
   setPrevNextControls: function($content) {
-    var $controls = $content.find('#controls');
+    var $controls = $content.find('.controls');
     var projects = '/projects/';
     var prevSlug = $controls.attr('data-prev');
     var nextSlug = $controls.attr('data-next');
@@ -309,33 +319,45 @@ var main = CDLIX.main = {
       $('#next').addClass('hidden');
     }
   },
+
   setCopyCSSPosition: function() {
     var windowHeight = $window.height();
     var position = 'position';
     var fixedPos = 'fixed';
     var staticPos = 'static'; // static is reserved
+    var $activeProjectCopy = $('#projects article.active-content .copy');
 
     // TODO find way to have the bottom navigation be fixed when scrolling with fixed copy
     // var $inPageNavigation = main.$copy.find('#in-page-navigation');
     // console.log(h);
     // console.log(main.$copy.height());
 
-    if ( main.$copy.height() > windowHeight ) {
-      main.$copy.css(position, staticPos);
+    if ( $activeProjectCopy.height() > windowHeight ) {
+      $activeProjectCopy.css({
+        position: staticPos,
+        width: '40%'
+      });
       // TODO figure out navigation with static copy
       // $inPageNavigation.css(p, f);
       // $inPageNavigation.css('bottom', '')
 
     } else {
-      main.$copy.css(position, fixedPos);
+      $activeProjectCopy.css({position: fixedPos, width: '35%'});
     }
   },
 
+  onContactFormSubmit: function() {
+    // console.log('here');
+    $('#project-message, #send-message').each(function() {
+      $(this).validate();
+    });
+  },
   // TODO check for clicking already active form
   onClickContactFormNavigation: function() {
     var $contactFormNav     = $('#contact-form-navigation');
     var $contactFormNavLink = $contactFormNav.find('a');
     var $contactPageH1      = $contactFormNav.siblings('header').find('h1');
+    main.contactFormBound = true; // TODO change to delegation? $.on()
     
     $contactFormNavLink.click(function(e) {
       var $clicked         = $(this);
@@ -393,6 +415,7 @@ var main = CDLIX.main = {
       };
       var target = document.getElementById('spinner');
       main.spinner = new Spinner(opts).spin(target);
+      main.$spinner.animate({'opacity': 1}, 500);
     }
   }
 };

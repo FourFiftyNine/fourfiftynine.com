@@ -413,7 +413,7 @@ body
       margin-right: 35px
     &:hover
       opacity: .7
-  #copy
+  .copy
     float: left
     -webkit-overflow-scrolling: touch
     position: fixed
@@ -423,10 +423,10 @@ body
     header
       margin-left: 110px
     section
-      &#overview
+      &.overview
         dottedLink()
-      &#website,
-      &#in-page-navigation
+      &.website,
+      &.in-page-navigation
         a
           display: block
           color: grey
@@ -435,12 +435,12 @@ body
           text-decoration: none
           &:hover
             color: darkGrey
-      &#in-page-navigation
+      &.in-page-navigation
         a
-          &#back-to-projects,
-          &#top
+          &.back-to-projects
+          &.top
             font-size: 25px
-          &#top
+          &.top
             display: none
     p
       text-align: left
@@ -448,7 +448,7 @@ body
       margin-bottom: 10px
       font-size: 17px
 
-  #screenshots
+  .screenshots
     margin-right: 110px
     margin-top: 40px
     position: absolute
@@ -607,15 +607,15 @@ form
       line-height: 55px
     h2
       margin: 10px 0 5px
-    #screenshots
+    .screenshots
       margin-right: 85px
-    #copy
+    .copy
       header,section
         margin-left: 85px
       p
         font-size: 12px
         line-height: 16px
-    #specs
+    .specs
       ul
         li
           font-size: 12px
@@ -689,9 +689,9 @@ form
         left: 13px
       &#next
         margin-right: 13px
-    #screenshots
+    .screenshots
       margin-right: 65px
-    #copy
+    .copy
       header,section
         margin-left: 65px
   #contact-info

@@ -6,29 +6,29 @@ section#projects.clearfix
   a#prev(href='/projects/#{prev}', class="arrow pushstate#{prevClass}")
   a#next(href='/projects/#{next}', class="arrow pushstate#{nextClass}")
   article(id='#{slug}')
-    #copy
+    .copy
       header
         h1 #{title}
-      section#overview
+      section.overview
         h2 Overview
         each p in overview
           p!= p
-      section#specs
+      section.specs
         h2 Technical Specs
         ul
           each spec in specs
             li!= spec
       - if(website)
-        section#tags
+        section.tags
       - if(website)
-        section#website
+        section.website
             a(href="http://#{website}", title="#{title}") &raquo; visit #{website}
-        section#in-page-navigation
-          a.pushstate#top ^ back to top
-          a.pushstate#back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
+        section.in-page-navigation
+          a.pushstate.top ^ back to top
+          a.pushstate.back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
 
-    section#screenshots
+    section.screenshots
       each image in screenshots
         img(src='/images/projects/#{slug}/#{image}.jpg', alt="#{image}")
     //- != partial('projects/_all')
-    #controls.hidden(data-prev="#{prev}", data-next="#{next}")
+    .controls.hidden(data-prev="#{prev}", data-next="#{next}")
