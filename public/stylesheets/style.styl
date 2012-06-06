@@ -75,12 +75,12 @@ a:active {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 body
   font-family: 'museo-slab', serif
-  font-size: 14px
+  font-size: 17px
   font-weight: 500
   p
-    line-height: 24px
+    line-height: 26px
 
-h1,h3
+h1,h3,h4
   font-family: 'tandelle', sans-serif
 
 #projects
@@ -103,11 +103,16 @@ h2
     color: darkGrey
     font-weight: normal
 
-h3
+h3, h4
   color: blue
-  font-size: 30px
+  font-size: 24px
   font-weight: normal
   margin-bottom: 5px
+
+h4
+  font-size: 45px
+  margin-top: 30px
+  margin-bottom: -10px
 
 dottedLink()
   a
@@ -306,13 +311,48 @@ body
             //color: darkGrey
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/** Home /root
+/** Home /root & About Pages
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content      
   section#home,
   section#about
     padding: 0 40px
+    article
+      max-width: 1080px
 
+section#about
+  #origin
+    margin-top: 20px
+    font-size: 20px
+    line-height: 30px
+    .sessa
+      float: left
+      border-radius: 10px
+      width: 20%
+    .text
+      float: left
+      width: 80%
+      p
+        margin: 0 0 0 25px
+        line-height: 35px
+        .time
+          color: darkGrey
+          line-height: 0px
+          font-size: 45px
+          font-family: 'tandelle'
+          position: relative
+          top: 9px
+          .colon
+            color: lightGrey
+            position: relative
+            top: -8px
+            margin: 0 4px
+        .signature
+          font-size: 14px
+          position: relative
+          top: -3px
+          left: 20px
+          
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Projects /projects
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
