@@ -22,7 +22,7 @@ section#projects.clearfix
         section.tags
       - if(website)
         section.website
-            a(href="http://#{website}", title="#{title}") &raquo; visit #{website}
+            a(href="http://#{website}", title="#{title}", target="_blank") &raquo; visit #{website}
         section.in-page-navigation
           a.pushstate.top ^ back to top
           a.pushstate.back-to-projects(href="/projects", title="#{title}") &laquo; back to projects

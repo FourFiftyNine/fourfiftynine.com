@@ -362,33 +362,37 @@ section#about
     margin: 0 auto
     text-align: center
     padding: 0 20px
-    a
-      border-radius: 5px
-      border: 1px solid rgba(151,151,151,.3)
+    a.project
+      border-radius: 6px
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
+      cursor: pointer
       display: inline-block
-      height: 198px
       margin: 25px
-      width: 248px
+      position: relative
       &:hover
-        // box-shadow: 0 0 0 5px rgba(88, 120, 145,.1)
-        box-shadow: 0 0 0 5px rgba(0,0,0,.1)
-        .image
-          box-shadow: none
+        box-shadow: 0 0 0 5px rgba(0,0,0,.1);
       &:active
-        box-shadow: 0 0 20px 0 rgba(0,0,0,.50) inset
-        .image
-          box-shadow: 0 0 0 5px blue
-          box-shadow: 0 0 0 5px rgba(0,0,0,.1)
-      .image
-        border-radius: 5px
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
-        float: left
-        height: 200px
-        left: -1px
+        .image-border
+          border-color: rgba(0,0,0,.50)
+        box-shadow: 0 0 0 5px rgba(0,0,0,.1);
+        top: 0
+        .image-border
+          box-shadow: 0 0 20px 0 rgba(0,0,0,.50) inset
+      img.image
         position: relative
-        top: -1px
-        width: 250px
-        z-index: -1
+        border-radius: 6px
+        width: 250
+        height: 200
+      .image-border
+        border-radius: 5px
+        border: 1px solid rgba(255,255,255, 0.35)
+        box-sizing: border-box
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: @height
+        z-index: 2
       .name
         background: rgba(0,0,0,.5)
         border-radius: bottom 5px
@@ -399,25 +403,7 @@ section#about
         position: absolute
         text-align: center
         width: 100%
-      /* TODO - I dont like this much - should prob use img tags */
-      .dekko
-        background: url(/images/projects/dekko/thumb.jpg) no-repeat
-      .dekko-developer
-        background: url(/images/projects/dekko-developer/thumb.jpg) no-repeat
-      .half-pretties
-        background: url(/images/projects/half-pretties/thumb.jpg) no-repeat
-      .drinkchai
-        background: url(/images/projects/drinkchai/thumb.jpg) no-repeat 
-      .worthington-energy
-        background: url(/images/projects/worthington-energy/thumb.jpg) no-repeat 
-      .wellness-center-usa
-        background: url(/images/projects/wellness-center-usa/thumb.jpg) no-repeat 
-      .ezcustomshirts
-        background: url(/images/projects/ezcustomshirts/thumb.jpg) no-repeat
-      .gospelflatfarm
-        background: url(/images/projects/gospelflatfarm/thumb.jpg) no-repeat
-      .whosright
-        background: url(/images/projects/whosright/thumb.jpg) no-repeat
+        z-index: 1
 /*~~ projects/view ~~*/
 // .projects.view #content width: 100%
 #projects
@@ -515,6 +501,8 @@ section#about
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Contact Page /contact
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content > section#contact 
+  padding: 0
 #contact
   article
     border-right: 1px dotted blue
@@ -634,8 +622,13 @@ form
 /* iPads landscape) ----------- */
 @media only screen and (max-width : 1300px) 
   #projects-list
-    #images a
+    #images a.project
       margin: 10px
+      .image
+        width: 225px
+        height: 180px
+      .name
+        font-size: 15px
   #projects
     .arrow
       &#prev
