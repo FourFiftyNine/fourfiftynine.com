@@ -92,7 +92,11 @@ h1
   color: darkGrey
   font-weight: normal
 h2
-  padding: 0 0px;
+  padding: 20px 0px;
+  margin: 0
+  margin-bottom: 20px
+  border-bottom: 1px dotted blue
+  border-top: @border-bottom
   color: grey
   font-family: 'museo-slab'
   font-size: 25px
@@ -100,6 +104,7 @@ h2
   text-align: center
   p
     line-height: 35px
+    margin: 0
   strong
     color: darkGrey
     font-weight: normal
@@ -255,12 +260,12 @@ body
 #content
   // width: 86%
   h1
-    font-size: 100px
+    font-size: 95px
     font-weight: normal
-    line-height: 100px
+    line-height: @font-size
     margin-bottom: 40px
     margin-top: 0
-    padding-top: 40px
+    padding-top: 60px
     text-align: center
   // background: url('/images/background-top.png') repeat-x top
   opacity: 0 
@@ -303,7 +308,7 @@ body
             background: rgba(0,0,0,.04)
             border-radius: 50px
           &:active
-            box 
+            //box 
             position: relative
             top: 1px
             background: rgba(0,0,0,.08)
@@ -315,9 +320,74 @@ body
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #content      
   section#home,
-  section#about
-    article
+  section#about,
+  section#projects-list
+    >article
       max-width: 1080px
+
+section#home
+  //strong
+  h2
+    border-bottom: none
+    border-top: none
+    margin-bottom: 0
+  h3
+    margin-top: 20px
+    margin-bottom: 0
+    color: darkGrey
+    font-size: 65px
+  .love
+    font-size: 30px
+    line-height: 30px
+    margin-bottom: 25px
+    text-align: center
+    padding-bottom: @margin-bottom
+    padding-top: @margin-bottom
+    border-bottom: 1px dotted blue
+    border-top: @border-bottom
+  .branding 
+    float: left
+    background: url(/images/sprite-tech-badges-vertical.png) no-repeat
+    width: 160px
+    margin-right: 15px
+    margin-top: 5px
+  article.technology-description
+    p
+    margin: 0
+    margin-top: 6px
+    float: none
+    dottedLink()
+    //float: left
+  section
+    clear: both
+    margin-bottom: 25px
+
+  #html5
+    .branding
+      background-position: 30px 0
+      height: 151px
+  #wordpress
+    .branding
+      background-position: 0 -370px
+      height: 110px
+  #shopify
+    .branding
+      background-position: 0 -650px
+      height: 130px
+  #magento
+    .branding
+      margin-top: 0
+      background-position: 0 -767px
+      height: 135px
+  #nodejs
+    .branding
+      background-position: 0 -505px
+      height: 130px
+  #github
+    .branding
+      background-position: 0 -1040px
+      height: 70px
+
 
 section#about
   #origin
