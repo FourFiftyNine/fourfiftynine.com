@@ -275,8 +275,8 @@ body
 
 #navigation
   background: url('/images/background-sidebar.png') repeat
-  border-left: 1px solid #000000
-  border-left: 1px solid rgba(0,0,0,.1)
+  // border-left: 1px solid blue
+  border-left: 1px dotted blue
   box-shadow: 0 0 9px 0 rgba(0,0,0,.09)
   height: 100%
   // max-width: 245px
@@ -285,6 +285,9 @@ body
   right: 0
   top: 0
   width: 14%
+  transition: all .3s .1s ease-in-out
+  &:hover
+    transition: all .3s .1s ease-in-out
   /*~~ Logo ~~*/
   h1 // logo is 234px wide
     padding: 0 10px
@@ -304,9 +307,13 @@ body
           font-family: 'tandelle'
           font-size: 48px
           text-decoration: none
+          background: none
+          border-radius: 50px
+          transition: background .3s .1s ease-in-out
           &:hover
             background: rgba(0,0,0,.04)
             border-radius: 50px
+            transition: background .3s .1s ease-in-out
           &:active
             //box 
             position: relative
@@ -622,6 +629,7 @@ form
     text-align: center
   h3
     width 80px
+    font-size: 30px
   h3,p
     float: left
     margin: 0
@@ -793,6 +801,7 @@ form
             line-height: 45px
             margin: 10px 0
             padding: 0 10px
+            border-radius: 0
             &:hover,
             &:active
               border-radius: 0

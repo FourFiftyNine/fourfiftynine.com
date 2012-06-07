@@ -294,6 +294,11 @@ var main = CDLIX.main = {
 
   fadeInAndSetActiveContent: function($newActiveContent) {
     main.$activeContent.removeClass('active-content').children('.active-content').hide().removeClass('active-content');
+    // if(Modernizr.csstransitions) {
+    //   main.$activeContent = $newActiveContent.addClass('active-content');
+    //   console.log('modernizr');
+    //   return;
+    // }
     $newActiveContent.fadeIn(500, function() {
       main.$activeContent = $(this).addClass('active-content');
       main.togglingContent = false;
