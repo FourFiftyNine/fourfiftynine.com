@@ -15,6 +15,7 @@ module.exports = function(app){
   app.get('/', static.home); // *Root
   // app.get('/contact', static.contact); // *contact
   app.get('/about', static.about); // *contact
+  app.get('/technology', static.technology); // *contact
   
   //  Load Project Controller + Routes
   

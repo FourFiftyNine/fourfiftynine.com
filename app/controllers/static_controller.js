@@ -5,6 +5,7 @@ var pusher = require('pusher')
   , app
   , db
 
+// TODO mimic cakephp pages controller
 // Constructor
 
 module.exports = function (_app) {
@@ -44,4 +45,7 @@ controller.home = function(req, res, next){
 
 controller.about = function(req, res, next){
   res.render('static/about');
+}
+controller.technology = function(req, res, next){
+  res.render('static/technology');
 }
