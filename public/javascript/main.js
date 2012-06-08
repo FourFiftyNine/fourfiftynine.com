@@ -393,11 +393,11 @@ var main = CDLIX.main = {
   // now responsive - duh
 
   fadeInContent: function() {
-    main.$content.delay(400).animate({opacity: 1}, 400, function() {
-      main.setCopyCSSPosition(); // this is luckily here for now because of section.active set in the init()... yuck
-    });
-    
-
+    if(!$('html').hasClass('lt-ie9')) {
+      main.$content.delay(400).fadeIn(500, function() {
+        main.setCopyCSSPosition(); // this is luckily here for now because of section.active set in the init()... yuck
+      });
+    }    
   },
   toggleSpinner: function() {
     if( main.spinner ) {
