@@ -287,9 +287,7 @@ body
   background: url('/images/background-sidebar.png') repeat
   // border-left: 1px solid blue
   border-left: 1px dotted blue
-  // box-shadow: 0 0 9px 0 rgba(0,0,0,.25)
-  box-shadow: 0 0 9px -1px #adadad
-
+  box-shadow: 0 0 9px 0 rgba(0,0,0,.25)
   height: 100%
   // max-width: 245px
   // min-width: 175px
@@ -298,7 +296,6 @@ body
   top: 0
   width: 14%
   transition: all .3s .1s ease-in-out
-  behavior: url(/stylesheets/PIE.htc)
   &:hover
     transition: all .3s .1s ease-in-out
   /*~~ Logo ~~*/
@@ -456,26 +453,20 @@ section#about
     padding: 0 // 20px
     a.project
       border-radius: 6px
-      box-shadow: 0 0 10px -2px #adadad
-      //box-shadow: 0px 2px 5px 0 #adadad
-
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
       cursor: pointer
       display: inline-block
       margin: 25px
       position: relative
-      behavior: url(/stylesheets/PIE.htc)
       &:hover
-        box-shadow: 0 0 0 5px rgba(0,0,0,.1)
-        behavior: url(/stylesheets/PIE.htc)
+        box-shadow: 0 0 0 5px rgba(0,0,0,.1);
       &:active
         .image-border
           border-color: rgba(0,0,0,.50)
-        box-shadow: 0 0 0 5px rgba(0,0,0,.1)
+        box-shadow: 0 0 0 5px rgba(0,0,0,.1);
         top: 0
-        behavior: url(/stylesheets/PIE.htc)
         .image-border
           box-shadow: 0 0 20px 0 rgba(0,0,0,.50) inset
-          behavior: url(/stylesheets/PIE.htc)
       img.image
         position: relative
         border-radius: 6px
@@ -491,7 +482,6 @@ section#about
         top: 0
         width: @height
         z-index: 2
-        behavior: url(/stylesheets/PIE.htc)
       .name
         background: rgba(0,0,0,.5)
         border-radius: bottom 5px
@@ -504,7 +494,6 @@ section#about
         text-align: center
         width: 100%
         z-index: 1
-        behavior: url(/stylesheets/PIE.htc);
 /*~~ projects/view ~~*/
 // .projects.view #content width: 100%
 #projects
@@ -584,11 +573,9 @@ section#about
     img
       border-radius: 10px
       margin-bottom: 40px
-      // box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
-      box-shadow: 0 0 10px -2px #adadad
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
       // opacity: .5
       width: 100%
-      behavior: url(/stylesheets/PIE.htc);
   /*~~ All Projects Partial ~~*/
   #all-projects
     background: url(/images/background-sidebar.png) repeat
