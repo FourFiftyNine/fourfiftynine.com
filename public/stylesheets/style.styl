@@ -304,7 +304,8 @@ body
   background: url('/images/background-sidebar.png') repeat
   // border-left: 1px solid blue
   border-left: 1px dotted blue
-  box-shadow: 0 0 9px 0 rgba(0,0,0,.25)
+  // box-shadow: 0 0 9px 0 rgba(0,0,0,.25)
+  box-shadow: 0 0 9px -2px #adadad
   height: 100%
   // max-width: 245px
   // min-width: 175px
@@ -313,6 +314,7 @@ body
   top: 0
   width: 14%
   transition: all .3s .1s ease-in-out
+  behavior: url(/stylesheets/PIE.htc)
   &:hover
     transition: all .3s .1s ease-in-out
   /*~~ Logo ~~*/
@@ -471,11 +473,14 @@ section#about
     padding: 0 // 20px
     a.project
       border-radius: 6px
-      box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
+      // box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
+      box-shadow: 0 0 10px -4px #adadad
+
       cursor: pointer
       display: inline-block
       margin: 25px
       position: relative
+      behavior: url(/stylesheets/PIE.htc)
       &:hover
         box-shadow: 0 0 0 5px rgba(0,0,0,.1);
       &:active
@@ -490,8 +495,10 @@ section#about
         border-radius: 6px
         width: 250
         height: 200
+        behavior: url(/stylesheets/PIE.htc)
       .image-border
         border-radius: 5px
+        border: 1px solid #ffffff
         border: 1px solid rgba(255,255,255, 0.35)
         box-sizing: border-box
         height: 100%
@@ -500,6 +507,7 @@ section#about
         top: 0
         width: @height
         z-index: 2
+        behavior: url(/stylesheets/PIE.htc)
       .name
         background: rgba(0,0,0,.5)
         border-radius: bottom 5px
@@ -591,7 +599,9 @@ section#about
     img
       border-radius: 10px
       margin-bottom: 40px
-      box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
+      // box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
+      box-shadow: 0 0 10px 0 #adadad
+      behavior: url(/stylesheets/PIE.htc)
       // opacity: .5
       width: 100%
   /*~~ All Projects Partial ~~*/
@@ -713,7 +723,7 @@ section#about
   position: fixed
   top: 0
   width: 100%
-  z-index: 1
+  z-index: 3
 #content
   z-index: 2
 footer
