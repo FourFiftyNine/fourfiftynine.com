@@ -34,6 +34,7 @@ var main = CDLIX.main = {
     // main.$content.find('>section').addClass('active'); // TODO make useful
     // main.$content.find('>#projects>article').addClass('active'); // TODO make useful
     // console.log(main.$content.find('>section'));
+
     main.fadeInContent();
 
     // TODO change to delegation - $.on()

@@ -56,6 +56,9 @@ ul
   list-style-image: url(/images/bullet.png)
   li
     font-size: 17px
+.lt-ie9
+  ul
+    list-style-image: none
 /*~~ Links ~~*/
 a,
 a:visited
@@ -64,6 +67,11 @@ a:active {
   position: relative
   top: 1px
 }
+
+transparentPng()
+  background: transparent
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)" /* IE8 */   
+  zoom: 1
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Layout
@@ -101,6 +109,7 @@ h1,h3,h4
 h1
   color: darkGrey
   font-weight: normal
+  filter: unquote('progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF)')
 h2
   padding: 20px 0px;
   margin: 0
@@ -370,6 +379,7 @@ section#technology
     width: 160px
     margin-right: 15px
     margin-top: 5px
+    filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF)")
   article.technology-description
     p
     margin: 0
@@ -515,7 +525,7 @@ section#about
     padding: 0
     text-align: left
   .arrow
-    background: url(/images/sprite-arrows-blue.png)
+    transparentPng()
     display: block
     height: 65px
     width: 29px

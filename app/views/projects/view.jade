@@ -4,7 +4,9 @@ section#projects.clearfix
   - prevClass = (!prev) ? ' hidden' : '';
   - nextClass = (!next) ? ' hidden' : '';
   a#prev(href='/projects/#{prev}', class="arrow pushstate#{prevClass}")
+    img(src="/images/arrow-blue-left.png")
   a#next(href='/projects/#{next}', class="arrow pushstate#{nextClass}")
+    img(src="/images/arrow-blue-right.png")
   article(id='#{slug}')
     .copy
       header
