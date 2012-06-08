@@ -614,11 +614,23 @@ section#about
         margin-left: 10px
         &:first-child
           margin-left: 0
-form
-  display: none
-  margin-bottom: 20px
-  &.active
-    display: block
+  form
+    display: none
+    margin-bottom: 20px
+    &.active
+      display: block
+.lt-ie9
+  #contact form
+    label.error
+      position: relative
+      top: 0
+    .field
+      float: none
+      input, textarea
+        width: 400px
+      textarea
+        height: 200px
+
 
 #contact-info
   margin: 170px 2.5% 40px 0
