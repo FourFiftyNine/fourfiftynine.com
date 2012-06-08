@@ -23,6 +23,9 @@ html.no-js(lang='en')
     
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
+    //if lt IE9
+      <script src="dist/html5shiv.js"></script>
+    //<![endif]
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascript/libs/modernizr-2.5.3.min.js')
     script(src='http://use.typekit.com/mzx2wbd.js')
@@ -49,6 +52,7 @@ html.no-js(lang='en')
       !=body
       #spinner
     #top-border
+    
 
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')

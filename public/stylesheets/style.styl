@@ -65,12 +65,22 @@ a:active {
   top: 1px
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/** Layout
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// #content
+//  border-bottom: 1px dotted blue
+//  box-shadow: 0 0 9px 0 rgba(0,0,0,.45)
 #content > section
   display: none
   margin-right: 14%
   padding: 0 40px 40px
   &.active-content
     display: block
+
+footer
+  height: 30px
+  background: darken(blue, 10)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Typography
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -277,7 +287,7 @@ body
   background: url('/images/background-sidebar.png') repeat
   // border-left: 1px solid blue
   border-left: 1px dotted blue
-  box-shadow: 0 0 9px 0 rgba(0,0,0,.09)
+  box-shadow: 0 0 9px 0 rgba(0,0,0,.25)
   height: 100%
   // max-width: 245px
   // min-width: 175px
@@ -440,7 +450,7 @@ section#about
   #images
     margin: 0 auto
     text-align: center
-    padding: 0 20px
+    padding: 0 // 20px
     a.project
       border-radius: 6px
       box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
@@ -675,9 +685,12 @@ form
   width: 100%
   z-index: 1
 #content
-  z-index: 1
-#navigation
   z-index: 2
+footer
+  z-index: 1
+
+#navigation
+  z-index: 3
 #projects
   .copy
     z-index: 1
