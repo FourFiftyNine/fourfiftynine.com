@@ -73,6 +73,19 @@ transparentPng()
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)" /* IE8 */   
   zoom: 1
 
+// Transparent image border
+.image-border
+  border-radius: 5px
+  border: 1px solid #ffffff
+  border: 1px solid rgba(255,255,255, 0.35)
+  box-sizing: border-box
+  height: 100%
+  left: 0
+  position: absolute
+  top: 0
+  width: @height
+  z-index: 2
+  behavior: url(/stylesheets/PIE.htc)
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Layout
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -437,8 +450,11 @@ section#about
     font-size: 20px
     line-height: 30px
     .sessa
+      position: relative
+    .sessa img
       float: left
-      border-radius: 10px
+      border-radius: 6px
+      box-shadow: 0 0 10px -2px #adadad
       width: 20%
     .text
       float: left
@@ -498,18 +514,6 @@ section#about
         border-radius: 6px
         width: 250
         height: 200
-        behavior: url(/stylesheets/PIE.htc)
-      .image-border
-        border-radius: 5px
-        border: 1px solid #ffffff
-        border: 1px solid rgba(255,255,255, 0.35)
-        box-sizing: border-box
-        height: 100%
-        left: 0
-        position: absolute
-        top: 0
-        width: @height
-        z-index: 2
         behavior: url(/stylesheets/PIE.htc)
       .name
         background: rgba(0,0,0,.5)
@@ -744,20 +748,8 @@ footer
 
 
 // http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
-/* iPhone [portrait + landscape] */
-@media only screen and (max-device-width: 480px)
-  .selector-01 { margin: 10px }
-  .selector-02 { margin: 10px }
-  .selector-03 { margin: 10px }
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) 
-  h1
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) 
-  h1
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) 
-  h1
+
+
 /* iPads landscape) ----------- */
 @media only screen and (max-width : 1300px) 
   #projects-list
@@ -914,22 +906,79 @@ footer
             margin: 0 3px
             top: -5px
 
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) 
-  h1
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) 
-  h1
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) 
-  h1
-/* Large screens ----------- */
-@media only screen and (min-width : 1824px) 
-  h1
+/* iPhone [landscape] */
+@media only screen and (max-width: 480px)
+  #content > section
+    margin-right: 0
+    padding: 0 5px
+  #navigation
+    background: none
+    box-shadow: none
+    position: static
+    width: 100%
+    h1
+      margin: 0
+      padding: 0
+      a
+        background: none
+        padding: 20px 0 0
+        height: auto
+        img
+          display: block
+          width: 45%
+          margin: 0 auto
+    nav
+      width: 90%
+      margin: 0 auto
+      ul
+        li
+          float: left
+          width: 25%
+          a
+            font-size: 25px
+            padding: 0
+            margin: 0
+            height: auto
+            line-height: auto
+            border-radius: 5px
+            &:active,
+            &:hover
+              border-radius: 5px
+  #content
+    h1
+      font-size: 40px
+      line-height: 40px
+      padding-top: 10px
+      margin-bottom: 20px
+    h2
+      font-size: 15px
+      padding: 10px 0
+      p
+        line-height: 25px
+  #projects-list
+    #images a.project
+      margin: 10px
+      .image
+        width: 175px
+        height: 140px
+      .name
+        font-size: 15px
+
+/* iPhone [portrait] */
+@media only screen and (max-width: 320px)
+  #projects-list
+    #images a.project
+      margin: 10px
+      .image
+        width: 125px
+        height: 100px
+      .name
+        font-size: 10px
+        padding: 5px 0
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
   h1
-// @media only screern and (min-width: 35em)
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /** Utility

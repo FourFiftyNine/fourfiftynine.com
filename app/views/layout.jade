@@ -34,7 +34,7 @@ html.no-js(lang='en')
   view_name = view_body_class.get();
   body(class="#{body_classes} #{view_name}")
     //- #flash-message
-    header#navigation
+    header#navigation.clearfix
       h1
         a.pushstate(href='/')
           img(src='/images/logo.png', alt='FourFiftyNine - Web Development and Design')
