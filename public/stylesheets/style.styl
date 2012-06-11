@@ -607,7 +607,7 @@ section#about
       border-radius: 10px
       margin-bottom: 40px
       // box-shadow: 0 0 10px 0 rgba(0,0,0,.12)
-      box-shadow: 0 0 10px 0 #adadad
+      box-shadow: 0 0 10px -2px #adadad
       behavior: url(/stylesheets/PIE.htc)
       // opacity: .5
       width: 100%
@@ -919,6 +919,7 @@ footer
   #navigation
     background: none
     box-shadow: none
+    border-left: 0
     position: static
     width: 100%
     h1
@@ -974,11 +975,13 @@ footer
       .name
         font-size: 15px
   #content #projects
+    margin-bottom: 30px
     h2
       font-size: 30px
     .copy
       float: none
-      width: 100% !important
+      margin: 0 auto
+      width: 95% !important
       position: static !important
       header,
       section
@@ -990,7 +993,7 @@ footer
       img
         display: block
         margin: 10px auto
-        width: 90%
+        width: 92%
     .arrow
       background: url(/images/sprite-arrows-blue.png)
       height: 36px
@@ -1005,6 +1008,12 @@ footer
         background-position: 0 -160px
         right: -11px
         margin: 0
+    .website
+      float: right
+      margin-right: 20px
+    .in-page-navigation
+      float: left
+      margin-left: 20px
 
 /* iPhone [portrait] */
 @media only screen and (max-width: 320px)
