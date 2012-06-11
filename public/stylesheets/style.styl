@@ -329,10 +329,10 @@ body
   right: 0
   top: 0
   width: 14%
-  transition: all .3s .1s ease-in-out
+  // transition: all .3s .1s ease-in-out
   behavior: url(/stylesheets/PIE.htc)
   &:hover
-    transition: all .3s .1s ease-in-out
+    // transition: all .3s .1s ease-in-out
   /*~~ Logo ~~*/
   h1 // logo is 234px wide
     padding: 0 10px
@@ -673,7 +673,7 @@ section#about
   margin: 170px 2.5% 40px 0
   padding: 0
   padding-left: 2.5%
-  float: left
+  float: right
   width: 25%
   #spinner
     opacity: 0
@@ -910,12 +910,23 @@ footer
 
 /* iPhone [landscape] */
 @media only screen and (max-width: 745px)
-  #content > section
-    margin-right: 0
-    padding: 0
-    // padding: 0 5px
-    article
-      padding: 0 10px
+  #content
+    h1
+      font-size: 40px
+      line-height: 40px
+      padding-top: 0
+      margin-bottom: 20px
+    h2
+      font-size: 13px
+      padding: 10px 5px
+      p
+        line-height: 15px
+    > section
+      margin-right: 0
+      padding: 0
+      // padding: 0 5px
+      article
+        padding: 0 10px
   #navigation
     background: none
     box-shadow: none
@@ -955,17 +966,6 @@ footer
             &:active,
             &:hover
               border-radius: 5px
-  #content
-    h1
-      font-size: 40px
-      line-height: 40px
-      padding-top: 0
-      margin-bottom: 20px
-    h2
-      font-size: 13px
-      padding: 10px 5px
-      p
-        line-height: 15px
   #projects-list
     #images a.project
       margin: 10px
@@ -976,8 +976,13 @@ footer
         font-size: 15px
   #content #projects
     margin-bottom: 30px
+    h1
+      text-align: center
+      font-size: 70px
+      line-height: 70px
     h2
       font-size: 30px
+      text-align: center
     .copy
       float: none
       margin: 0 auto
@@ -1010,11 +1015,55 @@ footer
         margin: 0
     .website
       float: right
-      margin-right: 20px
+      margin-right: 10px
+      a
+        line-height: 25px
+        font-size: 25px
     .in-page-navigation
       float: left
       margin-left: 20px
+      a
+        font-size: 20px
+  section#contact
+    #success-message
+      display: none
+    article
+      h1
+        margin: 20px 0
+        text-align: center
+      width: 100%
+      float: none
+      border: 0
+      margin: 0
+      padding: 0
+      header,form
+        padding: 0 5px
+      form
+        margin: 0 0 20px
 
+      nav
+        width: 100%
+        ul li
+          margin: 0
+          width: 50%
+          a
+            padding: 0
+            width: 100%
+            margin: 0
+            border-radius: 0
+            border: 0
+            text-align: center
+    #contact-info
+      text-align: center
+      margin: 0
+      float: none
+      padding: 0 5px
+      width: 100%
+      h3
+        text-align: center
+        width: 100%
+      #turn-around p
+        width: 100%
 /* iPhone [portrait] */
 @media only screen and (max-width: 320px)
   #projects-list

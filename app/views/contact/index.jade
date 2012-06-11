@@ -1,6 +1,22 @@
 - view_body_class.set("index");
 - page_title.set("Contact Us");
 section#contact
+  aside#contact-info
+    #phone
+      h3
+        // span.icon
+        | Call Us
+      a (646) 770-2459
+    #email
+      h3
+        // span.icon
+        | Email Us
+      a(href='mailto:team@fourfiftynine.com') team@fourfiftynine.com
+    #turn-around.clearfix
+      :markdown
+        We will respond to your message within 1 business day.
+    h3#success-message
+
   article
     header
       h1 Hire Us
@@ -61,19 +77,3 @@ section#contact
         label(for="message") Message
         textarea#message(name="message")
       input#submit.btn.grey(type="submit", value="Submit Message")
-
-  aside#contact-info
-    #phone
-      h3
-        // span.icon
-        | Call Us
-      a(href="tel:6467702459") (646) 770-2459
-    #email
-      h3
-        // span.icon
-        | Email Us
-      a(href='mailto:team@fourfiftynine.com') team@fourfiftynine.com
-    #turn-around.clearfix
-      :markdown
-        We will respond to your message within 1 business day.
-    h3#success-message
