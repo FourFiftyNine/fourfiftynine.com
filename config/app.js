@@ -31,6 +31,8 @@ module.exports = function () {
     body_classes: function(req, res) { return helpers.body_classes(req, res); }
   });
 
+  // helpers(app);
+
   //  Load Mongoose Models
   
   models(app);

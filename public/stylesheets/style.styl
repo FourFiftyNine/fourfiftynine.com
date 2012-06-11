@@ -94,7 +94,7 @@ transparentPng()
 //  box-shadow: 0 0 9px 0 rgba(0,0,0,.45)
 #content > section
   display: none
-  margin-right: 14%
+  margin-right: 16%
   padding: 0 40px 40px
   &.active-content
     display: block
@@ -112,9 +112,9 @@ footer
 body
   font-family: 'museo-slab', serif
   font-size: 17px
-  font-weight: 500
-  p
-    line-height: 26px
+  font-weight: 300
+  // p
+  // line-height: 26px
 
 h1,h3,h4
   font-family: 'tandelle', sans-serif
@@ -125,7 +125,7 @@ h1,h3,h4
 
 h1
   color: darkGrey
-  font-weight: normal
+  font-weight: 300
   filter: unquote('progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF)  ')
 h2
   padding: 20px 0px;
@@ -136,19 +136,19 @@ h2
   color: grey
   font-family: 'museo-slab'
   font-size: 25px
-  font-weight: normal
+  font-weight: 500
   text-align: center
+  line-height: 35px
   p
-    line-height: 35px
     margin: 0
   strong
     color: darkGrey
-    font-weight: normal
+    font-weight: 500
 
 h3, h4
   color: blue
   font-size: 24px
-  font-weight: normal
+  font-weight: 300
   margin-bottom: 5px
 
 h4
@@ -302,7 +302,7 @@ body
   position: relative
   h1
     font-size: 95px
-    font-weight: normal
+    font-weight: 300
     line-height: @font-size
     margin-bottom: 40px
     margin-top: 0
@@ -543,9 +543,9 @@ section#about
   h2
     color: blue
     font-size: 36px
-    font-weight: normal
+    font-weight: 300
     margin: 10px 0 10px
-    padding: 0
+    padding: 10px 0
     text-align: left
   .arrow
     transparentPng()
@@ -558,7 +558,7 @@ section#about
       left: 35px
       background-position: 0 -65px
     &#next
-      right: 14%
+      right: 16%
       margin-right: 35px
     &:hover
       opacity: .7
@@ -601,8 +601,8 @@ section#about
     margin-right: 110px
     margin-top: 40px
     position: absolute
-    right: 14%
-    width: 40%
+    right: 16%
+    width: 38%
     img
       border-radius: 10px
       margin-bottom: 40px
@@ -770,6 +770,8 @@ footer
       font-size: 60px
       line-height: 55px
     h2
+      font-size: 30px
+      padding: 5px 0
       margin: 10px 0 5px
     .screenshots
       margin-right: 85px
@@ -833,6 +835,7 @@ footer
             top: -5px
 @media only screen and (max-width : 1100px)
   #navigation
+    width: 16%
     h1
       a
         background: url(/images/logo-numbers.png) no-repeat center
@@ -890,7 +893,6 @@ footer
       font-size: 30px
   section#about #origin
     .sessa
-      width: 125px
       margin: 0 25px 10px 0;
     .text 
       font-size: 13px
@@ -907,10 +909,13 @@ footer
             top: -5px
 
 /* iPhone [landscape] */
-@media only screen and (max-width: 480px)
+@media only screen and (max-width: 745px)
   #content > section
     margin-right: 0
-    padding: 0 5px
+    padding: 0
+    // padding: 0 5px
+    article
+      padding: 0 10px
   #navigation
     background: none
     box-shadow: none
@@ -928,8 +933,13 @@ footer
           width: 45%
           margin: 0 auto
     nav
-      width: 90%
-      margin: 0 auto
+      //width: 90%
+      padding: 5px 10px
+      margin: 15px 0 20px
+      border-left: 0
+      border-top: 1px dotted blue
+      border-bottom: @border-top
+      background: url('/images/background-sidebar.png') 
       ul
         li
           float: left
@@ -948,13 +958,13 @@ footer
     h1
       font-size: 40px
       line-height: 40px
-      padding-top: 10px
+      padding-top: 0
       margin-bottom: 20px
     h2
-      font-size: 15px
-      padding: 10px 0
+      font-size: 13px
+      padding: 10px 5px
       p
-        line-height: 25px
+        line-height: 15px
   #projects-list
     #images a.project
       margin: 10px
@@ -963,6 +973,38 @@ footer
         height: 140px
       .name
         font-size: 15px
+  #content #projects
+    h2
+      font-size: 30px
+    .copy
+      float: none
+      width: 100% !important
+      position: static !important
+      header,
+      section
+        margin-left: 0
+    .screenshots
+      position: static
+      margin: 0
+      width: 100%
+      img
+        display: block
+        margin: 10px auto
+        width: 90%
+    .arrow
+      background: url(/images/sprite-arrows-blue.png)
+      height: 36px
+      top: auto
+      bottom: 30px
+      img
+        display: none
+      &#prev
+        background-position: 0 -128px
+        left: 6px
+      &#next
+        background-position: 0 -160px
+        right: -11px
+        margin: 0
 
 /* iPhone [portrait] */
 @media only screen and (max-width: 320px)

@@ -8,6 +8,12 @@ section#projects.clearfix
   a#next(href='/projects/#{next}', class="arrow pushstate#{nextClass}")
     img(src="/images/arrow-blue-right.png")
   article(id='#{slug}')
+    section.screenshots
+      each image, index in screenshots
+        - firstClass = (!index) ? ' first' : '';
+        img(src='/images/projects/#{slug}/#{image}.jpg', alt="#{image}", class="#{firstClass}")
+    //- != partial('projects/_all')
+
     .copy
       header
         h1 #{title}
@@ -28,9 +34,4 @@ section#projects.clearfix
         section.in-page-navigation
           a.pushstate.top ^ back to top
           a.pushstate.back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
-
-    section.screenshots
-      each image in screenshots
-        img(src='/images/projects/#{slug}/#{image}.jpg', alt="#{image}")
-    //- != partial('projects/_all')
     .controls.hidden(data-prev="#{prev}", data-next="#{next}")
