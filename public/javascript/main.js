@@ -433,15 +433,20 @@ var main = CDLIX.main = {
     }
   },
   initSlider: function() {
-    $('#slideshow').cycle({
-      // fx: 'scrollHorz',
-      slideExpr: '.slide',
-      slideResize: 0,
-      containerResize: 0,
-      fit: 1,
-      pager: '#slideshow-nav'
-
-    });
+    var $slideshow = $('#slideshow');
+    if( !$slideshow.hasClass('initiated') ) {
+      $slideshow.cycle({
+        // fx: 'scrollHorz',
+        slideExpr: '.slide',
+        slideResize: 0,
+        containerResize: 0,
+        fit: 1,
+        pager: '#slideshow-nav',
+        after: function() {
+          $slideshow.addClass('initiated');
+        }
+      });
+    }
   }
 };
 /* Residual code from initial project
