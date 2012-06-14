@@ -29,15 +29,8 @@ var main = CDLIX.main = {
 
     main.$activeContent = main.setActiveContent();
 
-    $('#slideshow').cycle({
-      // fx: 'scrollHorz',
-      slideExpr: '.slide',
-      slideResize: 0,
-      containerResize: 0,
-      fit: 1,
-      pager: '#slideshow-nav'
+    main.initSlider(); // TODO implement better detection.
 
-    });
     // TODO
     // $('h1, h2, h3, h4, h5, p').ieffembedfix();
     // TODO... make more obvious / semantic
@@ -186,6 +179,7 @@ var main = CDLIX.main = {
       newSectionId = 'projects-list';
     } else if (pathParts[0] === '') {
       newSectionId = 'home';
+      
     } else {
       newSectionId = pathParts[0];
     }
@@ -267,6 +261,7 @@ var main = CDLIX.main = {
       }
       main.onContactFormSubmit();
     }
+
     // TODO this nestedness is vomit
     // TODO hasClass, make into isActive() ??
     if( !$newSection.hasClass('active-content') && !$newProject.hasClass('active-content')) {
@@ -310,7 +305,11 @@ var main = CDLIX.main = {
     //   console.log('modernizr');
     //   return;
     // }
+
     $newActiveContent.fadeIn(500, function() {
+      if( $(this).attr('id') == 'home' ) {
+        main.initSlider();
+      }
       main.$activeContent = $(this).addClass('active-content');
       main.togglingContent = false;
       main.setCopyCSSPosition();
@@ -433,6 +432,17 @@ var main = CDLIX.main = {
       main.spinner = new Spinner(opts).spin(target);
       main.$spinner.animate({'opacity': 1}, 500);
     }
+  },
+  initSlider: function() {
+    $('#slideshow').cycle({
+      // fx: 'scrollHorz',
+      slideExpr: '.slide',
+      slideResize: 0,
+      containerResize: 0,
+      fit: 1,
+      pager: '#slideshow-nav'
+
+    });
   }
 };
 /* Residual code from initial project
