@@ -66,34 +66,6 @@ module.exports = function(app){
     app.set('version', '0.0.1');
   });
 
-  app.configure(function() {
-    // Compress JavaScript
-    // Using UglifyJS
-    new compressor.minify({
-        type: 'uglifyjs',
-        fileIn: [
-          'public/javascript/libs/jquery.form.js',
-          'public/javascript/libs/cycle/jquery.cycle.all.js',
-          'public/javascript/plugins.js',
-          'public/javascript/main.js', 
-        ],
-        fileOut: 'public/javascript/all.min.js',
-        tempPath: 'tmp/',
-        callback: function(err){
-            // console.log(err);
-        }
-    });
-
-    new compressor.minify({
-        type: 'yui-css',
-        fileIn: 'public/stylesheets/style.css',
-        fileOut: 'public/stylesheets/compressed.css',
-        tempPath: 'tmp/',
-        callback: function(err){
-            // console.log(err);
-        }
-    });
-  })
 
   // // Left Off here
   // app.configure(function () {
