@@ -28,6 +28,15 @@ var main = CDLIX.main = {
     main.togglingContent = false;
 
     main.$activeContent = main.setActiveContent();
+
+    $('#slideshow').cycle({
+      slideExpr: '.slide',
+      slideResize: 0,
+      containerResize: 0,
+      fit: 1,
+      pager: '#slideshow-nav'
+
+    });
     // TODO
     // $('h1, h2, h3, h4, h5, p').ieffembedfix();
     // TODO... make more obvious / semantic

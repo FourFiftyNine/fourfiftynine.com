@@ -1,0 +1,3 @@
+[submodule "public/javascript/libs/cycle"]
+	path = public/javascript/libs/cycle
+	url = git://github.com/malsup/cycle.git

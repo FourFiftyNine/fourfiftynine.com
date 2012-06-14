@@ -2,18 +2,18 @@
 ## FourFiftyNine.com ##
  - Anthony Sessa - sessa.com
  
-  444       444        555555555555555
- 44444     44444        555555555555555
- 44444     44444        555555555555555
- 44444     44444  [][]  55555
- 444444444444444  [][]  55555
- 444444444444444        55555
- 444444444444444  [][]  555555555555555
-           44444  [][]  555555555555555
-           44444                  55555
-           44444                  55555
-           44444                  55555
-           44444                  55555
+  444       444         555555555555555    99999999999
+ 44444     44444        555555555555555  999999999999999
+ 44444     44444        55555      555   99999     99999
+ 44444     44444  [][]  55555            99999     99999
+ 444444444444444  [][]  55555            99999     99999
+ 444444444444444        555555555555555  999999999999999
+ 444444444444444  [][]  555555555555555    9999999999999
+           44444  [][]            55555            99999
+           44444                  55555            99999
+           44444         555      55555            99999
+           44444        555555555555555            99999
+           44444        555555555555555            99999
 
 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -377,6 +377,39 @@ body
   section#technology
     >article
       max-width: 1080px
+
+section#home
+  .slideshow-container
+    width: 100%
+    // max-width: 1080px
+  #slideshow
+    // width: 100% !important
+    // height: auto !important
+    img
+      max-width: 100%
+      height: auto
+      width: auto
+      border-radius: 5px
+      box-shadow: 0 0 10px -2px #adadad
+      behavior: url(/stylesheets/PIE.htc)
+    nav
+      // position: absolute
+      // bottom: 0px
+      // margin: 0 auto
+      margin-top: 5px
+      text-align: center
+      a
+        display: inline-block
+        background: darkGrey
+        height: 10px
+        width: 10px
+        border-radius: 3px
+        text-indent: -99999px
+        margin-right: 5px
+        box-shadow: 1px 1px 3px -1px #adadad
+        behavior: url(/stylesheets/PIE.htc)
+        &.activeSlide
+          background: blue
 
 section#technology
   //strong
