@@ -87,6 +87,7 @@ module.exports = function(app){
       type: 'yui-css',
       fileIn: 'public/stylesheets/style.css',
       fileOut: 'public/stylesheets/style.min.css',
+      tempPath: 'tmp/',
       callback: function(err){
           // console.log(err);
       }
