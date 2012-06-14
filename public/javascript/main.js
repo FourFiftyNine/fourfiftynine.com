@@ -268,11 +268,12 @@ var main = CDLIX.main = {
 
       if ( newProjectId ) { // if adding a project
         if ( $('#projects').length && $('#projects').hasClass('active-content') ) { // if projects exist already
-
+          main.setPrevNextControls($newProject);
         } else {
           main.$activeContent.fadeOut(500, function() {
             $newProject.show().addClass('active-content');
             main.fadeInAndSetActiveContent($newSection);
+            main.setPrevNextControls($newProject);
           });
           
         }
