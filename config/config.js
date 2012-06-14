@@ -86,7 +86,7 @@ module.exports = function(app){
   new compressor.minify({
       type: 'yui-css',
       fileIn: 'public/stylesheets/style.css',
-      fileOut: 'public/stylesheets/style-min.css',
+      fileOut: 'public/stylesheets/compressed.css',
       tempPath: 'tmp/',
       callback: function(err){
           // console.log(err);
