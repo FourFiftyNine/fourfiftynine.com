@@ -30,6 +30,7 @@ var main = CDLIX.main = {
     main.$activeContent = main.setActiveContent();
 
     $('#slideshow').cycle({
+      // fx: 'scrollHorz',
       slideExpr: '.slide',
       slideResize: 0,
       containerResize: 0,
