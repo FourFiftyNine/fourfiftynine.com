@@ -77,7 +77,7 @@ module.exports = function(app){
         'public/javascript/main.js', 
       ],
       fileOut: 'public/javascript/all.min.js',
-      tempPath: '/tmp',
+      tempPath: '/tmp/',
       callback: function(err){
           // console.log(err);
       }
