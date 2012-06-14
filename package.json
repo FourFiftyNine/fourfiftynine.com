@@ -23,6 +23,7 @@
       , "nodemailer"        : ">=0.3.20"
       , "mustache"          : ">=0.4.0"
       , "node-minify"       : ">=0.4.1"
+      , "gzippo"            : ">=0.1.4"
     }
   , "main"    : "./index.js"
   , "engines" : { 

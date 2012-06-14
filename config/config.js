@@ -8,6 +8,7 @@ var express   = require('express')
     , mongoose    = require('mongoose')
     , nib         = require('nib')
     , compressor  = require('node-minify')
+    , gzippo      = require('gzippo')
     , S           = require('string'); // Utility Class http://stringjs.com/
 
 /**
@@ -53,7 +54,7 @@ module.exports = function(app){
         src: __dirname + '/../public', 
         compile: compile 
       }))
-      .use(express.static(__dirname + '/../public'))
+      .use(gzippo.staticGzip(__dirname + '/../public'))
   });
 
   //  Save reference to database connection
@@ -68,6 +69,7 @@ module.exports = function(app){
 
   // Compress JavaScript
   // Using UglifyJS
+
   new compressor.minify({
       type: 'uglifyjs',
       fileIn: [
