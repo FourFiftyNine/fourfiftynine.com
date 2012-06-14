@@ -337,7 +337,6 @@ var main = CDLIX.main = {
 
   setCopyCSSPosition: function() {
     var windowHeight = $window.height();
-    var position = 'position';
     var fixedPos = 'fixed';
     var staticPos = 'static'; // static is reserved
     var $activeProjectCopy = $('#projects article.active-content .copy');

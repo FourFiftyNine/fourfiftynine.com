@@ -27,10 +27,15 @@ html.no-js(lang='en')
       //if lt IE9
         <script src="dist/html5shiv.js"></script>
       //<![endif]
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    - if (process.env.NODE_ENV == 'production')
+      link(rel='stylesheet', href='/stylesheets/style.min.css')
+    - else 
+      link(rel='stylesheet', href='/stylesheets/style.css')
+
     script(src='/javascript/libs/modernizr-2.5.3.min.js')
     script(src='http://use.typekit.com/mzx2wbd.js')
     script try{Typekit.load();}catch(e){}
+
   view_name = view_body_class.get();
   body(class="#{body_classes} #{view_name}")
     //- #flash-message
@@ -53,26 +58,28 @@ html.no-js(lang='en')
       !=body
       #spinner
     #top-border
-    
-
-
+  
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
-    //- script(src='/javascript/orientation-detect.js')
     script
-      window.jQuery || document.write('<script src="javascript/libs/jquery-1.7.2.min.js"><\\/script>')
+      window.jQuery || document.write("<script src='javascript/libs/jquery-1.7.2.min.js'><\\/script>")
+
+    //- script(src='/javascript/orientation-detect.js')
     //- script(src="http://js.pusher.com/1.11/pusher.min.js")
-    script(src="/javascript/libs/cycle/jquery.cycle.all.js")
-    script(src="/javascript/libs/jquery.form.js")
+    //- script(src="/javascript/libs/chosen/chosen.jquery.min.js")
+
     script(src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js")
     script(src="http://fgnass.github.com/spin.js/dist/spin.min.js") //- TODO localize
-    //- script(src="/javascript/libs/chosen/chosen.jquery.min.js")
-    script(src='/javascript/plugins.js')
-    script(src= '/javascript/main.js')
 
-    //- change UA-XXXXX-X to your id and outdent the following:
-    //-
+
+    - if (process.env.NODE_ENV == 'production')
+      script(src= '/javascript/all.min.js')
       script
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
         g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
+    - else
+      script(src="/javascript/libs/cycle/jquery.cycle.all.js")
+      script(src="/javascript/libs/jquery.form.js")
+      script(src='/javascript/plugins.js')
+      script(src='/javascript/main.js')

@@ -22,6 +22,7 @@
       , "markdown-js"       : ">=0.0.3"
       , "nodemailer"        : ">=0.3.20"
       , "mustache"          : ">=0.4.0"
+      , "node-minify"       : ">=0.4.1"
     }
   , "main"    : "./index.js"
   , "engines" : { 
