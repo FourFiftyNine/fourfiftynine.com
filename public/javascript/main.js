@@ -140,6 +140,7 @@ var main = CDLIX.main = {
         // main.toggleSpinner();
         main.getContent(e, pushedUrl);
         history.pushState(null, null, pushedUrl);
+        // _gaq.push(['_trackPageview', pushedUrl]);
         e.preventDefault();
       });
     }
@@ -156,7 +157,7 @@ var main = CDLIX.main = {
   },
 
   getContent: function(e, href) {
-
+    $window._gaq.push(['_trackPageview', href]);
     // make sure we arent currently loading in content
     // right now this only follows the animation since we dont do true
     // async based animation
@@ -235,9 +236,9 @@ var main = CDLIX.main = {
           main.toggleContent(newSectionId, newProjectId);
 
           // Update for google analytics (find source in ajaxify)
-          if ( typeof window.pageTracker !== 'undefined' ) {
-            window.pageTracker._trackPageview(href);
-          }
+          // if ( typeof window.pageTracker !== 'undefined' ) {
+          //   window.pageTracker._trackPageview(href);
+          // }
         }
     });
   },
