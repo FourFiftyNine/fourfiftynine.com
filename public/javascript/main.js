@@ -138,9 +138,9 @@ var main = CDLIX.main = {
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
-        main.getContent(e, pushedUrl);
         history.pushState(null, null, pushedUrl);
-        // _gaq.push(['_trackPageview', pushedUrl]);
+        main.getContent(e, pushedUrl);
+        
         e.preventDefault();
       });
     }
