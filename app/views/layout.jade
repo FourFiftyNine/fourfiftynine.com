@@ -36,16 +36,16 @@ html.no-js(lang='en')
     script(src='http://use.typekit.com/mzx2wbd.js')
     script try{Typekit.load();}catch(e){}
 
-    - if (process.env.NODE_ENV == 'production')
-      script
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-32695090-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+      //- - if (process.env.NODE_ENV == 'production')
+    script
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32695090-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
   view_name = view_body_class.get();
   body(class="#{body_classes} #{view_name}")
     //- #flash-message
