@@ -212,7 +212,7 @@ var main = CDLIX.main = {
       document.title = main.titleHistory[href];
     }
     if ( typeof window._gaq !== 'undefined' ) {
-      // window._gaq.push(['_trackPageview', href]); 
+      window._gaq.push(['_trackPageview', href]); 
       // console.log('trackPageView', href);
     }
   },
@@ -235,7 +235,7 @@ var main = CDLIX.main = {
           if(!main.titleHistory[href]) {
             main.titleHistory[href] = $(data).filter('title').text();
           }               
-          // document.title = main.titleHistory[href];
+          document.title = main.titleHistory[href];
           main.toggleContent(newSectionId, newProjectId);
 
           // Update for google analytics (find source in ajaxify)
