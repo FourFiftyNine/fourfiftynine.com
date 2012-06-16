@@ -191,7 +191,10 @@ var main = CDLIX.main = {
 
       // console.log('Existing PROJECT In DOM');
       main.toggleContent(newSectionId, newProjectId);
-
+      if ( typeof window._gaq !== 'undefined' ) {
+        window._gaq.push(['_trackPageview', href]); 
+        // console.log('trackPageView', href);
+      }
     } else if( newProjectId ) {
 
       // console.log('AJAX Loading new project: ', newProjectId);
@@ -202,7 +205,10 @@ var main = CDLIX.main = {
 
       // console.log('Existing SECTION In DOM');
       main.toggleContent(newSectionId);
-
+      if ( typeof window._gaq !== 'undefined' ) {
+        window._gaq.push(['_trackPageview', href]); 
+        // console.log('trackPageView', href);
+      }
     } else {
       // console.log('Ajax loading: ', newSectionId);
       main.ajaxLoadContent(href, newSectionId);
@@ -211,10 +217,7 @@ var main = CDLIX.main = {
     if( main.titleHistory[href] ) {
       document.title = main.titleHistory[href];
     }
-    if ( typeof window._gaq !== 'undefined' ) {
-      window._gaq.push(['_trackPageview', href]); 
-      // console.log('trackPageView', href);
-    }
+
   },
 
   ajaxLoadContent: function(href, newSectionId, newProjectId) {
@@ -237,7 +240,10 @@ var main = CDLIX.main = {
           }               
           document.title = main.titleHistory[href];
           main.toggleContent(newSectionId, newProjectId);
-
+          if ( typeof window._gaq !== 'undefined' ) {
+            window._gaq.push(['_trackPageview', href]); 
+            // console.log('trackPageView', href);
+          }
           // Update for google analytics (find source in ajaxify)
           // if ( typeof window.pageTracker !== 'undefined' ) {
           //   window.pageTracker._trackPageview(href);
