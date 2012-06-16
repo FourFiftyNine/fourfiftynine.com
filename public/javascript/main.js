@@ -157,9 +157,9 @@ var main = CDLIX.main = {
   },
 
   getContent: function(e, href) {
-    console.log('here');
     if ( typeof window._gaq !== 'undefined' ) {
       window._gaq.push(['_trackPageview', href]); 
+      log('trackPageView', href);
     }
     // make sure we arent currently loading in content
     // right now this only follows the animation since we dont do true
