@@ -157,10 +157,6 @@ var main = CDLIX.main = {
   },
 
   getContent: function(e, href) {
-    if ( typeof window._gaq !== 'undefined' ) {
-      window._gaq.push(['_trackPageview', href]); 
-      // console.log('trackPageView', href);
-    }
     // make sure we arent currently loading in content
     // right now this only follows the animation since we dont do true
     // async based animation
@@ -214,6 +210,10 @@ var main = CDLIX.main = {
 
     if( main.titleHistory[href] ) {
       document.title = main.titleHistory[href];
+    }
+    if ( typeof window._gaq !== 'undefined' ) {
+      window._gaq.push(['_trackPageview', href]); 
+      // console.log('trackPageView', href);
     }
   },
 
