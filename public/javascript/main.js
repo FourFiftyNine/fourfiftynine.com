@@ -435,7 +435,7 @@ var main = CDLIX.main = {
   },
   initSlider: function() {
     var $slideshow = $('#slideshow');
-    if( !$slideshow.hasClass('initiated') ) {
+    if( !$slideshow.hasClass('initiated') && $slideshow.length ) {
       $slideshow.cycle({
         // fx: 'scrollHorz',
         slideExpr: '.slide',
