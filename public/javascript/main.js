@@ -191,6 +191,9 @@ var main = CDLIX.main = {
 
       // console.log('Existing PROJECT In DOM');
       main.toggleContent(newSectionId, newProjectId);
+      if( main.titleHistory[href] ) {
+        document.title = main.titleHistory[href];
+      }
       if ( typeof window._gaq !== 'undefined' ) {
         window._gaq.push(['_trackPageview', href]); 
         // console.log('trackPageView', href);
@@ -205,6 +208,9 @@ var main = CDLIX.main = {
 
       // console.log('Existing SECTION In DOM');
       main.toggleContent(newSectionId);
+      if( main.titleHistory[href] ) {
+        document.title = main.titleHistory[href];
+      }
       if ( typeof window._gaq !== 'undefined' ) {
         window._gaq.push(['_trackPageview', href]); 
         // console.log('trackPageView', href);
@@ -214,9 +220,6 @@ var main = CDLIX.main = {
       main.ajaxLoadContent(href, newSectionId);
     }
 
-    if( main.titleHistory[href] ) {
-      document.title = main.titleHistory[href];
-    }
 
   },
 
@@ -240,6 +243,8 @@ var main = CDLIX.main = {
           }               
           document.title = main.titleHistory[href];
           main.toggleContent(newSectionId, newProjectId);
+
+          // TODO function
           if ( typeof window._gaq !== 'undefined' ) {
             window._gaq.push(['_trackPageview', href]); 
             // console.log('trackPageView', href);
