@@ -158,6 +158,9 @@ var main = CDLIX.main = {
           return false;
         }
 
+        // make sure we arent currently loading in content
+        // right now this only follows the animation since we dont do true
+        // async based animation
         if( main.togglingContent ) {
           return false;
         }
@@ -179,9 +182,7 @@ var main = CDLIX.main = {
   },
 
   getContent: function(e, href) {
-    // make sure we arent currently loading in content
-    // right now this only follows the animation since we dont do true
-    // async based animation
+
     // console.log(e);
     // console.log('oppostate?');
     // console.log(main.$activeContent);
@@ -330,7 +331,7 @@ var main = CDLIX.main = {
           main.togglingContent = false;
         });
       });
-      main.togglingContent = false;
+      // main.togglingContent = false;
     } else {
       // console.log('Content already active...do nothing');
       main.togglingContent = false;
