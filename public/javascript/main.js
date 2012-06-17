@@ -150,6 +150,7 @@ var main = CDLIX.main = {
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
+        console.log('here',main.togglingContent);
 
         e.preventDefault();
 
@@ -182,7 +183,6 @@ var main = CDLIX.main = {
   },
 
   getContent: function(e, href) {
-
     // console.log(e);
     // console.log('oppostate?');
     // console.log(main.$activeContent);
@@ -285,7 +285,6 @@ var main = CDLIX.main = {
 
   },
   toggleContent: function(newSectionId, newProjectId) {
-
     var $newSection = $('#' + newSectionId);
     var $newProject = $('#' + newProjectId);
 
@@ -444,6 +443,7 @@ var main = CDLIX.main = {
     if(!$('html').hasClass('lt-ie9')) {
       main.$content.delay(400).fadeIn(500, function() {
         main.setCopyCSSPosition(); // this is luckily here for now because of section.active set in the init()... yuck
+        main.togglingContent = false;
       });
     }    
   },
