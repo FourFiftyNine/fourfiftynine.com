@@ -150,7 +150,6 @@ var main = CDLIX.main = {
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
-        console.log('here',main.togglingContent);
 
         e.preventDefault();
 
