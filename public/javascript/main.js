@@ -1,5 +1,4 @@
 // FourFiftyNine.com
-// main.js - Used in all views
 
 /*jshint asi: false, browser: true, curly: true, devel: true, eqeqeq: false, forin: false, newcap: true, noempty: true, strict: true, undef: true */
 /*global jQuery: true, Spinner:false */
@@ -133,15 +132,38 @@ var main = CDLIX.main = {
     ////// PUSHSTATE ///////
     // TODO delegate using jquery $.on();
     if (Modernizr.history) {
-      window.addEventListener('popstate', main.getContent);
+      window.addEventListener('popstate', function(e) {
+        if(e.type === 'popstate' && main.togglingContent) {
+
+          var intervalId = setInterval(function() {
+            if(!main.togglingContent) {
+              main.getContent();
+              clearInterval(intervalId);
+            }
+          }, 50);
+          return false;
+        } else {
+          main.getContent();
+        }
+      });
 
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
+
+        e.preventDefault();
+
+        // dont push same url into history stack
+        if(location.pathname == pushedUrl) {
+          return false;
+        }
+
+        if( main.togglingContent ) {
+          return false;
+        }
         history.pushState(null, null, pushedUrl);
         main.getContent(e, pushedUrl);
         
-        e.preventDefault();
       });
     }
   },
@@ -160,9 +182,10 @@ var main = CDLIX.main = {
     // make sure we arent currently loading in content
     // right now this only follows the animation since we dont do true
     // async based animation
-    if( main.togglingContent ) {
-      return false;
-    }
+    // console.log(e);
+    // console.log('oppostate?');
+    // console.log(main.$activeContent);
+
       
     // TODO delegate contact events
     href = href || location.pathname;
