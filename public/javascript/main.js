@@ -26,6 +26,8 @@ var main = CDLIX.main = {
     main.titleHistory[location.pathname] = document.title;
     main.togglingContent = false;
 
+    main.onClickNavigation();
+
     main.$activeContent = main.setActiveContent();
 
     main.initSlider(); // TODO implement better detection.
@@ -170,7 +172,14 @@ var main = CDLIX.main = {
       });
     }
   },
-
+  onClickNavigation: function() {
+    var $navigationLinks = $('#navigation nav a');
+    $navigationLinks.click(function(e) {
+      $navigationLinks.removeClass('active');
+      $(this).addClass('active');
+      e.preventDefault();
+    });
+  },
   setActiveContent: function() {
 
     if( $('#projects').length ) {

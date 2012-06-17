@@ -331,8 +331,9 @@ body
   width: 14%
   // transition: all .3s .1s ease-in-out
   behavior: url(/stylesheets/PIE.htc)
-  &:hover
-    // transition: all .3s .1s ease-in-out
+  // &:hover
+  // transition: all .3s .1s ease-in-out
+
   /*~~ Logo ~~*/
   h1 // logo is 234px wide
     padding: 0 10px
@@ -355,7 +356,7 @@ body
           background: none
           border-radius: 50px
           transition: background .3s .1s ease-in-out
-          &:hover
+          &:hover,&.active
             background: rgba(0,0,0,.04)
             border-radius: 50px
             transition: background .3s .1s ease-in-out
@@ -934,7 +935,8 @@ footer
             padding: 0 10px
             border-radius: 0
             &:hover,
-            &:active
+            &:active,
+            &.active
               border-radius: 0
 
 @media only screen and (max-width : 980px) 
