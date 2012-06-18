@@ -1122,7 +1122,7 @@ section#technology section {
 
 /* line 492 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 section#technology #html5 .branding {
-  background-position: 30px 0;
+  background-position: 0 0;
   height: 151px;
 }
 
@@ -1130,7 +1130,7 @@ section#technology #html5 .branding {
 
 /* line 496 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 section#technology #rubyonrails .branding {
-  background-position: 30px -170px;
+  background-position: 0 -170px;
   height: 151px;
 }
 
@@ -1138,7 +1138,7 @@ section#technology #rubyonrails .branding {
 
 /* line 500 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 section#technology #wordpress .branding {
-  background-position: 0 -370px;
+  background-position: -30px -370px;
   height: 110px;
 }
 
@@ -1146,7 +1146,7 @@ section#technology #wordpress .branding {
 
 /* line 504 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 section#technology #shopify .branding {
-  background-position: 0 -650px;
+  background-position: -30px -650px;
   height: 130px;
 }
 
@@ -1155,7 +1155,7 @@ section#technology #shopify .branding {
 /* line 508 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 section#technology #magento .branding {
   margin-top: 0;
-  background-position: 0 -767px;
+  background-position: -30px -767px;
   height: 135px;
 }
 
@@ -1163,7 +1163,7 @@ section#technology #magento .branding {
 
 /* line 513 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 section#technology #nodejs .branding {
-  background-position: 0 -505px;
+  background-position: -30px -505px;
   height: 130px;
 }
 
@@ -1171,7 +1171,7 @@ section#technology #nodejs .branding {
 
 /* line 517 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 section#technology #github .branding {
-  background-position: 0 -1040px;
+  background-position: -30px -1040px;
   height: 70px;
 }
 
