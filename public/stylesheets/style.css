@@ -883,7 +883,7 @@ label.error {
   position: fixed;
   right: 0;
   top: 0;
-  width: 14%;
+  width: 16%;
   behavior: url("/stylesheets/PIE.htc");
 /*~~ Logo ~~*/
 /*~~ Side Navigation ~~*/
@@ -1475,10 +1475,10 @@ section#about #origin .text p .signature {
   margin-top: 40px;
   position: absolute;
   right: 16%;
-  width: 38%;
+  width: 39%;
 }
 
-/* line 681 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 683 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #projects .screenshots img {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -1491,7 +1491,7 @@ section#about #origin .text p .signature {
   width: 100%;
 }
 
-/* line 690 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 692 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #projects #all-projects {
   background: url("/images/background-sidebar.png") repeat;
   -moz-border-radius-bottomright: 10px;
@@ -1511,21 +1511,21 @@ section#about #origin .text p .signature {
   left: 0px;
 }
 
-/* line 701 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/* line 702 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-/** Contact Page /contact
+/* line 703 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* line 704 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/** Contact Page /contact
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* line 706 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #content > section#contact {
   padding: 0;
 }
 
-/* line 706 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 708 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 707 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 709 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact article {
   border-right: 1px dotted #587891;
   float: left;
@@ -1536,41 +1536,41 @@ section#about #origin .text p .signature {
   width: 65%;
 }
 
-/* line 716 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 718 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact article h1 {
   margin: 0 0 40px;
   padding: 0 5px;
   text-align: left;
 }
 
-/* line 720 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 722 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact article nav {
   width: 415px;
 }
 
-/* line 722 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 724 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact article nav li {
   float: left;
   margin-left: 10px;
 }
 
-/* line 725 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 727 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact article nav li:first-child {
   margin-left: 0;
 }
 
-/* line 727 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 729 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact form {
   display: none;
   margin-bottom: 20px;
 }
 
-/* line 730 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 732 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact form.active {
   display: block;
 }
 
-/* line 732 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 734 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /*
 .lt-ie9
   #contact form
@@ -1585,7 +1585,7 @@ section#about #origin .text p .signature {
         height: 200px
 */
 
-/* line 747 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 749 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info {
   margin: 170px 2.5% 40px 0;
   padding: 0;
@@ -1594,7 +1594,7 @@ section#about #origin .text p .signature {
   width: 25%;
 }
 
-/* line 753 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 755 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #spinner {
   opacity: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -1602,7 +1602,7 @@ section#about #origin .text p .signature {
   margin: 110px auto;
 }
 
-/* line 757 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 759 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #success-message {
   opacity: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -1613,13 +1613,13 @@ section#about #origin .text p .signature {
   text-align: center;
 }
 
-/* line 764 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 766 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info h3 {
   width: 80px;
   font-size: 30px;
 }
 
-/* line 767 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 769 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info h3,
 #contact-info p {
   float: left;
@@ -1627,7 +1627,7 @@ section#about #origin .text p .signature {
   padding: 0;
 }
 
-/* line 772 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 774 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info .icon {
   background: url("/images/sprite-icons.png") no-repeat;
   display: inline-block;
@@ -1637,26 +1637,26 @@ section#about #origin .text p .signature {
   width: 45px;
 }
 
-/* line 779 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 781 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 780 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 782 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #phone .icon {
   background-position: 0 -37px;
 }
 
-/* line 782 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 784 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #email {
   clear: both;
 }
 
-/* line 784 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 786 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #email .icon {
   background-position: 0 0;
 }
 
-/* line 786 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 788 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 787 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 789 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #email p,
 #contact-info #phone p,
 #contact-info #email a,
@@ -1669,7 +1669,7 @@ section#about #origin .text p .signature {
   color: #505050;
 }
 
-/* line 794 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 796 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #email p:hover,
 #contact-info #phone p:hover,
 #contact-info #email a:hover,
@@ -1677,7 +1677,7 @@ section#about #origin .text p .signature {
   color: #b3adaf;
 }
 
-/* line 796 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 798 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #contact-info #turn-around p {
   padding-top: 20px;
   border-top: 1px dotted #587891;
@@ -1686,14 +1686,14 @@ section#about #origin .text p .signature {
   text-align: center;
 }
 
-/* line 802 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/* line 803 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-/** Complex Z-Indexes (might be unnecessary)
+/* line 804 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* line 805 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/** Complex Z-Indexes (might be unnecessary)
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* line 807 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #top-border {
   height: 19px;
   position: fixed;
@@ -1702,129 +1702,129 @@ section#about #origin .text p .signature {
   z-index: 3;
 }
 
-/* line 811 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 813 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #content {
   z-index: 2;
 }
 
-/* line 813 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 815 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 footer {
   z-index: 1;
 }
 
-/* line 816 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 818 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #navigation {
   z-index: 3;
 }
 
-/* line 818 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 820 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 819 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 821 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #projects .copy {
   z-index: 1;
 }
 
-/* line 821 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 823 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 #projects .arrow {
   z-index: 2;
 }
 
-/* line 828 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 830 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /* iPads landscape) ----------- */
 
-/* line 829 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 831 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media only screen and (max-width : 1300px) {
 
-/* line 830 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 832 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 831 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 833 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project {
     margin: 10px;
   }
 
-/* line 833 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 835 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project .image {
     width: 225px;
     height: 180px;
   }
 
-/* line 836 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 838 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project .name {
     font-size: 15px;
   }
 
-/* line 838 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
-/* line 839 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
 /* line 840 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 841 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 842 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .arrow#prev {
     left: 20px;
   }
 
-/* line 842 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 844 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .arrow#next {
     margin-right: 20px;
   }
 
-/* line 844 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 846 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects h1 {
     font-size: 60px;
     line-height: 55px;
   }
 
-/* line 847 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 849 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects h2 {
     font-size: 30px;
     padding: 5px 0;
     margin: 10px 0 5px;
   }
 
-/* line 851 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 853 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .screenshots {
     margin-right: 85px;
   }
 
-/* line 853 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 855 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 854 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 856 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .copy header,
   #projects .copy section {
     margin-left: 85px;
   }
 
-/* line 856 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 858 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .copy p {
     font-size: 12px;
     line-height: 16px;
   }
 
-/* line 859 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
-/* line 860 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
 /* line 861 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 862 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 863 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .specs ul li {
     font-size: 12px;
     line-height: 14px;
   }
 
-/* line 865 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 867 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 866 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 868 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #contact-info h3 {
     width: 60px;
     font-size: 25px;
   }
 
-/* line 869 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 871 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #contact-info span.icon {
     display: none;
   }
 
-/* line 871 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 873 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 872 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 874 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #contact-info #phone a,
   #contact-info #email a {
     clear: both;
@@ -1832,38 +1832,38 @@ footer {
     font-size: 15px;
   }
 
-/* line 876 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 878 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #contact-info #success-message {
     font-size: 30px;
     line-height: 30px;
   }
 
-/* line 880 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 882 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 881 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 883 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   form.two-column label {
     font-size: 17px;
   }
 
-/* line 883 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 885 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   form.two-column input.text,
   form.two-column textarea {
     padding: 5px;
     font-size: 15px;
   }
 
-/* line 888 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 890 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   form.two-column .right,
   form.two-column .left {
     width: 48%;
   }
 
-/* line 890 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 892 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   form.two-column .field {
     margin-top: 10px;
   }
 
-/* line 892 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 894 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   form.two-column label.error {
     top: initial;
     bottom: -23px;
@@ -1871,56 +1871,56 @@ footer {
     font-size: 13px;
   }
 
-/* line 897 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 899 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 898 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 900 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   form.two-column .textarea label.error {
     top: 16px;
   }
 
-/* line 901 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 903 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 902 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 904 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin {
     font-size: 17px;
   }
 
-/* line 904 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 906 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p {
     line-height: 26px;
   }
 
-/* line 906 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 908 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p .time {
     font-size: 30px;
     top: 5px;
   }
 
-/* line 909 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 911 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p .time .colon {
     top: -5px;
   }
 }
 
-/* line 911 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 913 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media only screen and (max-width : 1100px) {
 
-/* line 912 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 914 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 913 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 915 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   header h2 {
     font-size: 20px;
     line-height: 25px;
   }
 
-/* line 916 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 918 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation {
     width: 16%;
   }
 
-/* line 918 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 920 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 919 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 921 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation h1 a {
     background: url("/images/logo-numbers.png") no-repeat center;
     height: 109px;
@@ -1928,21 +1928,21 @@ footer {
     display: block;
   }
 
-/* line 924 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 926 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation h1 a img {
     display: none;
   }
 
-/* line 926 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
-/* line 927 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
 /* line 928 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 929 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 930 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation nav ul li {
     margin: 0;
   }
 
-/* line 930 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 932 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation nav ul li a {
     font-size: 30px;
     height: 35px;
@@ -1954,7 +1954,7 @@ footer {
     border-radius: 0;
   }
 
-/* line 937 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 939 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation nav ul li a:hover,
   #navigation nav ul li a:active,
   #navigation nav ul li a.active {
@@ -1964,153 +1964,153 @@ footer {
   }
 }
 
-/* line 942 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 944 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media only screen and (max-width : 980px) {
 
-/* line 943 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
-/* line 944 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
 /* line 945 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 946 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 947 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .arrow#prev {
     left: 13px;
   }
 
-/* line 947 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 949 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .arrow#next {
     margin-right: 13px;
   }
 
-/* line 949 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 951 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .screenshots {
     margin-right: 65px;
     width: 35%;
   }
 
-/* line 952 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 954 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 953 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 955 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects .copy header,
   #projects .copy section {
     margin-left: 65px;
   }
 
-/* line 955 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
-/* line 956 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
 /* line 957 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 958 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 959 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #contact-info #phone a,
   #contact-info #email a {
     font-size: 13px;
   }
 
-/* line 959 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 961 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 960 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 962 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   form.two-column label.error {
     font-size: 12px;
   }
 }
 
-/* line 962 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 964 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /*  #contact-info
     #phone p,
     #email a
       font-size: 13px
 */
 
-/* line 968 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 970 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media only screen and (max-width : 768px) {
 
-/* line 969 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 971 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content header h1 {
     font-size: 70px;
     line-height: 70px;
   }
 
-/* line 972 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 974 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 973 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 975 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects h1 {
     font-size: 40px;
   }
 
-/* line 975 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 977 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects h2 {
     font-size: 30px;
   }
 
-/* line 977 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 979 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 978 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 980 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .sessa {
     margin: 0 25px 10px 0;
   }
 
-/* line 980 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 982 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text {
     font-size: 13px;
     float: none;
     width: 100%;
   }
 
-/* line 984 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 986 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p {
     margin: 0;
     line-height: 18px;
   }
 
-/* line 987 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 989 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p .time {
     font-size: 24px;
     top: 4px;
   }
 
-/* line 990 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 992 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p .time .colon {
     margin: 0 3px;
     top: -5px;
   }
 
-/* line 993 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
-/* line 994 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-
 /* line 995 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 996 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+
+/* line 997 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#home .development h3 {
     font-size: 40px;
   }
 
-/* line 997 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 999 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#home .development section {
     float: none;
     width: 100%;
   }
 
-/* line 1000 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1002 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#home .development section h4 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
-/* line 1004 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1006 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /* iPhone [landscape] */
 
-/* line 1005 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1007 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media only screen and (max-width: 545px) {
 
-/* line 1006 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1008 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1007 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1009 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   body p {
     font-size: 12px;
   }
 
-/* line 1009 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1011 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1010 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1012 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content header h1 {
     font-size: 40px;
     line-height: 40px;
@@ -2118,29 +2118,29 @@ footer {
     margin-bottom: 20px;
   }
 
-/* line 1015 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1017 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content header h2 {
     font-size: 13px;
     padding: 10px 5px;
   }
 
-/* line 1018 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1020 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content header h2 p {
     line-height: 15px;
   }
 
-/* line 1020 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1022 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content > section {
     margin-right: 0;
     padding: 0;
   }
 
-/* line 1024 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1026 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content > section article {
     padding: 0 10px;
   }
 
-/* line 1026 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1028 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation {
     background: none;
     -webkit-box-shadow: none;
@@ -2151,27 +2151,27 @@ footer {
     width: 100%;
   }
 
-/* line 1032 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1034 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation h1 {
     margin: 0;
     padding: 0;
   }
 
-/* line 1035 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1037 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation h1 a {
     background: none;
     padding: 20px 0 0;
     height: auto;
   }
 
-/* line 1039 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1041 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation h1 a img {
     display: block;
     width: 45%;
     margin: 0 auto;
   }
 
-/* line 1043 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1045 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation nav {
     padding: 5px 10px;
     margin: 15px 0 20px;
@@ -2181,15 +2181,15 @@ footer {
     background: url("/images/background-sidebar.png");
   }
 
-/* line 1051 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1053 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1052 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1054 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation nav ul li {
     float: left;
     width: 25%;
   }
 
-/* line 1055 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1057 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation nav ul li a {
     font-size: 25px;
     padding: 0;
@@ -2201,7 +2201,7 @@ footer {
     border-radius: 5px;
   }
 
-/* line 1062 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1064 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #navigation nav ul li a:active,
   #navigation nav ul li a:hover {
     -webkit-border-radius: 5px;
@@ -2209,30 +2209,30 @@ footer {
     border-radius: 5px;
   }
 
-/* line 1065 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1067 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1066 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1068 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project {
     margin: 10px;
   }
 
-/* line 1068 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1070 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project .image {
     width: 175px;
     height: 140px;
   }
 
-/* line 1071 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1073 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project .name {
     font-size: 15px;
   }
 
-/* line 1073 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1075 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects {
     margin-bottom: 30px;
   }
 
-/* line 1075 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1077 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects h1 {
     margin-top: 0;
     text-align: center;
@@ -2240,13 +2240,13 @@ footer {
     line-height: 70px;
   }
 
-/* line 1080 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1082 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects h2 {
     font-size: 30px;
     text-align: center;
   }
 
-/* line 1083 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1085 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .copy {
     float: none;
     margin: 0 auto;
@@ -2254,27 +2254,27 @@ footer {
     position: static !important;
   }
 
-/* line 1088 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1090 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .copy header,
   #content #projects .copy section {
     margin-left: 0;
   }
 
-/* line 1091 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1093 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .screenshots {
     position: static;
     margin: 0;
     width: 100%;
   }
 
-/* line 1095 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1097 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .screenshots img {
     display: block;
     margin: 10px auto;
     width: 92%;
   }
 
-/* line 1099 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1101 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .arrow {
     background: url("/images/sprite-arrows-blue.png");
     height: 36px;
@@ -2282,96 +2282,96 @@ footer {
     bottom: 30px;
   }
 
-/* line 1104 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1106 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .arrow img {
     display: none;
   }
 
-/* line 1106 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1108 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .arrow#prev {
     background-position: 0 -128px;
     left: 6px;
   }
 
-/* line 1109 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1111 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .arrow#next {
     background-position: 0 -160px;
     right: -11px;
     margin: 0;
   }
 
-/* line 1113 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1115 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .website {
     float: right;
     margin-right: 10px;
   }
 
-/* line 1116 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1118 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .website a {
     line-height: 25px;
     font-size: 25px;
   }
 
-/* line 1119 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1121 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .in-page-navigation {
     float: left;
     margin-left: 20px;
     margin-bottom: 20px;
   }
 
-/* line 1123 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1125 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content #projects .in-page-navigation a {
     font-size: 20px;
   }
 
-/* line 1125 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1127 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1126 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1128 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about h2 {
     margin-bottom: 0;
   }
 
-/* line 1128 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1130 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about h4 {
     margin: 15px 0 5px;
     font-size: 30px;
     text-align: center;
   }
 
-/* line 1132 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1134 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1133 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1135 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .sessa {
     margin: 0;
   }
 
-/* line 1135 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1137 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .sessa img {
     width: 25%;
     margin: 0 10px 2px 0;
   }
 
-/* line 1138 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1140 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1139 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1141 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p {
     font-size: 10px;
     line-height: 11px;
   }
 
-/* line 1142 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1144 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#about #origin .text p .time {
     font-size: 17px;
   }
 
-/* line 1144 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1146 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1145 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1147 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact #success-message {
     display: none;
   }
 
-/* line 1147 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1149 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article {
     width: 100%;
     float: none;
@@ -2380,40 +2380,40 @@ footer {
     padding: 0;
   }
 
-/* line 1148 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1150 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article h1 {
     margin: 20px 0;
     text-align: center;
   }
 
-/* line 1156 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1158 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article header,
   section#contact article form {
     padding: 0 5px;
   }
 
-/* line 1158 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1160 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article form {
     margin: 0 0 20px;
   }
 
-/* line 1160 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1162 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article form select {
     font-size: 10px;
   }
 
-/* line 1163 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1165 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article nav {
     width: 100%;
   }
 
-/* line 1165 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1167 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article nav ul li {
     margin: 0;
     width: 50%;
   }
 
-/* line 1168 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1170 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact article nav ul li a {
     padding: 0;
     width: 100%;
@@ -2425,7 +2425,7 @@ footer {
     text-align: center;
   }
 
-/* line 1175 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1177 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact #contact-info {
     text-align: center;
     margin: 0;
@@ -2434,67 +2434,67 @@ footer {
     padding: 0;
   }
 
-/* line 1181 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1183 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact #contact-info h3 {
     text-align: center;
     width: 100%;
   }
 
-/* line 1184 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1186 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#contact #contact-info #turn-around p {
     width: 100%;
   }
 
-/* line 1186 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1188 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1187 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1189 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   section#technology .branding {
     margin: 0 auto;
     float: none;
   }
 }
 
-/* line 1190 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1192 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /* iPhone [portrait] */
 
-/* line 1191 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1193 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media only screen and (max-width: 320px) {
 
-/* line 1192 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1194 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 
-/* line 1193 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1195 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project {
     margin: 10px;
   }
 
-/* line 1195 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1197 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project .image {
     width: 125px;
     height: 100px;
   }
 
-/* line 1198 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1200 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #projects-list #images a.project .name {
     font-size: 10px;
     padding: 5px 0;
   }
 }
 
-/* line 1201 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1203 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /* iPhone 4 ----------- */
 
-/* line 1202 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1204 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
 }
 
-/* line 1206 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/* line 1207 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
-/** Utility
+/* line 1208 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* line 1209 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/** Utility
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* line 1211 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .ir {
   display: block;
   border: 0;
@@ -2507,18 +2507,18 @@ footer {
   *line-height: 0;
 }
 
-/* line 1220 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1222 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .ir br {
   display: none;
 }
 
-/* line 1223 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1225 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* line 1227 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1229 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -2530,7 +2530,7 @@ footer {
   width: 1px;
 }
 
-/* line 1237 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1239 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -2541,32 +2541,32 @@ footer {
   width: auto;
 }
 
-/* line 1245 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1247 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .invisible {
   visibility: hidden;
 }
 
-/* line 1248 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1250 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
 }
 
-/* line 1252 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1254 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .clearfix:after {
   clear: both;
 }
 
-/* line 1255 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1257 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 .clearfix {
   *zoom: 1;
 }
 
-/* line 1258 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1260 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
 @media print {
 
-/* line 1259 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1261 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   * {
     background: transparent;
     color: #000;
@@ -2578,58 +2578,58 @@ footer {
     -ms-filter: none;
   }
 
-/* line 1267 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1269 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-/* line 1270 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1272 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-/* line 1273 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1275 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-/* line 1276 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1278 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-/* line 1279 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1281 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-/* line 1283 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1285 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   thead {
     display: table-header-group;
   }
 
-/* line 1286 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1288 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-/* line 1289 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1291 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   img {
     max-width: 100%;
   }
 
-/* line 1292 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1294 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   @page {
     margin: 0.5cm;
   }
 
-/* line 1295 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1297 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   p,
   h2,
   h3 {
@@ -2637,7 +2637,7 @@ footer {
     widows: 3;
   }
 
-/* line 1299 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
+/* line 1301 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   h2,
   h3 {
     page-break-after: avoid;
