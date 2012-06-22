@@ -150,6 +150,7 @@ var main = CDLIX.main = {
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
+        e.preventDefault();
         if( $(this).parents('#navigation').length ) {
           main.onClickNavigation($(this));
           console.log('change navigation');
@@ -172,7 +173,7 @@ var main = CDLIX.main = {
         history.pushState(null, null, pushedUrl);
         console.log('after pushstate');
         main.getContent(e, pushedUrl);
-        e.preventDefault();
+        
 
       });
     }
