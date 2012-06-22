@@ -26,7 +26,7 @@ var main = CDLIX.main = {
     main.titleHistory[location.pathname] = document.title;
     main.togglingContent = false;
 
-    main.onClickNavigation();
+    // main.onClickNavigation();
 
     main.$activeContent = main.setActiveContent();
 
@@ -152,7 +152,9 @@ var main = CDLIX.main = {
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
-
+        if( $(this).parents('#navigation').length ) {
+          main.onClickNavigation($(this));
+        }
         e.preventDefault();
 
         // dont push same url into history stack
@@ -172,13 +174,11 @@ var main = CDLIX.main = {
       });
     }
   },
-  onClickNavigation: function() {
+  onClickNavigation: function($clickedLink) {
     var $navigationLinks = $('#navigation nav a');
-    $navigationLinks.click(function(e) {
-      $navigationLinks.removeClass('active');
-      $(this).addClass('active');
-      e.preventDefault();
-    });
+    
+    $navigationLinks.removeClass('active');
+    $clickedLink.addClass('active');
   },
   setActiveContent: function() {
 
