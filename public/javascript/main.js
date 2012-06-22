@@ -26,8 +26,6 @@ var main = CDLIX.main = {
     main.titleHistory[location.pathname] = document.title;
     main.togglingContent = false;
 
-    // main.onClickNavigation();
-
     main.$activeContent = main.setActiveContent();
 
     main.initSlider(); // TODO implement better detection.
@@ -154,11 +152,12 @@ var main = CDLIX.main = {
         // main.toggleSpinner();
         if( $(this).parents('#navigation').length ) {
           main.onClickNavigation($(this));
+          console.log('change navigation');
         }
-        e.preventDefault();
 
         // dont push same url into history stack
         if(location.pathname == pushedUrl) {
+          console.log('same url');
           return false;
         }
 
@@ -166,11 +165,15 @@ var main = CDLIX.main = {
         // right now this only follows the animation since we dont do true
         // async based animation
         if( main.togglingContent ) {
+          console.log('toggling');
           return false;
         }
+        console.log('before pushstate');
         history.pushState(null, null, pushedUrl);
+        console.log('after pushstate');
         main.getContent(e, pushedUrl);
-        
+        e.preventDefault();
+
       });
     }
   },
