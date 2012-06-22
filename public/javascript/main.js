@@ -25,6 +25,7 @@ var main = CDLIX.main = {
     main.titleHistory = {};
     main.titleHistory[location.pathname] = document.title;
     main.togglingContent = false;
+    main.initialLoad = true;
 
     main.$activeContent = main.setActiveContent();
 
@@ -133,7 +134,7 @@ var main = CDLIX.main = {
     // TODO delegate using jquery $.on();
     if (Modernizr.history) {
       window.addEventListener('popstate', function(e) {
-        if(e.type === 'popstate' && main.togglingContent) {
+        if(e.type === 'popstate' && main.togglingContent ) {
 
           var intervalId = setInterval(function() {
             if(!main.togglingContent) {
@@ -142,23 +143,19 @@ var main = CDLIX.main = {
             }
           }, 50);
           return false;
-        } else {
+        } else if ( !main.initialLoad ) {
           main.getContent();
         }
       });
-
       $('body').on('click', 'a.pushstate', function(e) {
         var pushedUrl = $(this).attr('href');
         // main.toggleSpinner();
-        e.preventDefault();
-        if( $(this).parents('#navigation').length ) {
+        if( $(this).parents('#navigation').length && !main.togglingContent ) {
           main.onClickNavigation($(this));
-          console.log('change navigation');
         }
 
         // dont push same url into history stack
         if(location.pathname == pushedUrl) {
-          console.log('same url');
           return false;
         }
 
@@ -166,14 +163,12 @@ var main = CDLIX.main = {
         // right now this only follows the animation since we dont do true
         // async based animation
         if( main.togglingContent ) {
-          console.log('toggling');
           return false;
         }
-        console.log('before pushstate');
         history.pushState(null, null, pushedUrl);
-        console.log('after pushstate');
         main.getContent(e, pushedUrl);
-        
+        e.preventDefault();
+
 
       });
     }
@@ -199,7 +194,6 @@ var main = CDLIX.main = {
     // console.log('oppostate?');
     // console.log(main.$activeContent);
 
-      
     // TODO delegate contact events
     href = href || location.pathname;
     var pathParts = href.split('/');
@@ -241,7 +235,6 @@ var main = CDLIX.main = {
     // } else if ( newProjectId ) {
     //   main.ajaxLoadContent(href, newSectionId, newProjectId);
     } else if ( $newSection.length ) {
-
       // console.log('Existing SECTION In DOM');
       main.toggleContent(newSectionId);
       if( main.titleHistory[href] ) {
@@ -456,6 +449,8 @@ var main = CDLIX.main = {
       main.$content.delay(400).fadeIn(500, function() {
         main.setCopyCSSPosition(); // this is luckily here for now because of section.active set in the init()... yuck
         main.togglingContent = false;
+        main.initialLoad = false;
+
       });
     }    
   },
