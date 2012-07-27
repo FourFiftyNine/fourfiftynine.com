@@ -9,6 +9,7 @@
 // global doesnt exist anywhere else yet
 var CDLIX     = window.CDLIX || {};
 var history   = window.history;
+var History   = window.History; // History.js - github
 var location  = window.location;
 var Modernizr = window.Modernizr;
 var $window   = $(window);
@@ -22,27 +23,19 @@ var main = CDLIX.main = {
     main.$article = $('#content > article'); // ehhh meh
     main.$spinner = $('#spinner'); // div containing spinner for css manipulation
 
-    main.titleHistory = {};
-    main.titleHistory[location.pathname] = document.title;
-    main.togglingContent = false;
-    main.initialLoad = true;
+    // PUSHSTATE SETUP
+    main.setupInternalHelper();
+    main.setupAjaxification();
+    main.setupHistory();
+    main.onStateChange();
 
-    main.$activeContent = main.setActiveContent();
-
-    main.initSlider(); // TODO implement better detection.
-
-    // TODO
-    // $('h1, h2, h3, h4, h5, p').ieffembedfix();
-    // TODO... make more obvious / semantic
-    // main.$content.find('>section').addClass('active'); // TODO make useful
-    // main.$content.find('>#projects>article').addClass('active'); // TODO make useful
-    // console.log(main.$content.find('>section'));
+    main.initSlider();
 
     main.fadeInContent();
 
     // TODO change to delegation - $.on()
     if( ~location.pathname.indexOf('contact') ) { 
-      main.onClickContactFormNavigation();
+      main.setupContactBindings();
     }
 
     // $('.contact select').chosen({disable_search_threshold: 20});
@@ -51,6 +44,177 @@ var main = CDLIX.main = {
       main.setCopyCSSPosition();
     });
 
+  },
+  setupHistory: function() {
+    if ( !History.enabled ) {
+      return false;
+    }
+
+    main.contentSelector = '#content';
+    main.$content = $(main.contentSelector).filter(':first');
+    main.contentNode = main.$content.get(0);
+    main.$menu = $('nav').filter(':first');
+    main.activeClass = 'active';
+    main.activeSelector = '.active,.selected,.current,.youarehere';
+    main.menuChildrenSelector = '> ul > li > a';
+    /* Application Generic Variables */
+    main.$body = $(document.body);
+    main.rootUrl = History.getRootUrl();
+    main.$body.ajaxify();
+
+  },
+  setupInternalHelper: function() {
+    $.expr[':'].internal = function(obj, index, meta, stack){
+      // Prepare
+      var
+        $this = $(obj),
+        url = $this.attr('href')||'',
+        isInternalLink;
+      
+      // Check link
+      isInternalLink = url.substring(0,main.rootUrl.length) === main.rootUrl || url.indexOf(':') === -1;
+      
+      // Ignore or Keep
+      return isInternalLink;
+    };
+  },
+  documentHTML: function(html) {
+    var result = String(html)
+      .replace(/<\!DOCTYPE[^>]*>/i, '')
+      .replace(/<(html|head|body|title|meta|script)([\s\>])/gi,'<div class="document-$1"$2')
+      .replace(/<\/(html|head|body|title|meta|script)\>/gi,'</div>')
+    ;
+
+    // Return
+    return result;
+  },
+  setupAjaxification: function(){
+    $.fn.ajaxify = function(){
+      // Prepare
+      var $this = $(this);
+      
+      // Ajaxify
+      $this.find('a:internal:not(.no-ajaxy)').click(function(event){
+        // Prepare
+        var
+          $this = $(this),
+          url = $this.attr('href'),
+          title = $this.attr('title')||null;
+        
+        // Continue as normal for cmd clicks etc
+        if ( event.which == 2 || event.metaKey ) { return true; }
+        
+        // Ajaxify this link
+        History.pushState(null,title,url);
+        event.preventDefault();
+        return false;
+      });
+      
+      // Chain
+      return $this;
+    }
+  },
+  onStateChange: function() {
+    $(window).bind('statechange',function(){
+      // Prepare Variables
+      var
+        State = History.getState(),
+        url = State.url,
+        relativeUrl = url.replace(main.rootUrl,'');
+
+      // Set Loading
+      main.$body.addClass('loading');
+
+      // Start Fade Out
+      // Animating to opacity to 0 still keeps the element's height intact
+      // Which prevents that annoying pop bang issue when loading in new content
+      // main.$content.animate({opacity:0},660);
+      main.$content.fadeOut(660);
+      
+      // Ajax Request the Traditional Page
+      $.ajax({
+        url: url,
+        success: function(data, textStatus, jqXHR){
+          // Prepare
+          var
+            $data = $(main.documentHTML(data)),
+            $dataBody = $data.find('.document-body:first'),
+            $dataContent = $dataBody.find(main.contentSelector).filter(':first'),
+            $menuChildren, contentHtml, $scripts;
+          
+          // console.log($dataContent);
+          var section = $dataContent.find('section').attr('id');
+          // console.log(section);
+
+          // Fetch the scripts
+          $scripts = $dataContent.find('.document-script');
+          if ( $scripts.length ) {
+            $scripts.detach();
+          }
+
+          // Fetch the content
+          contentHtml = $dataContent.html()||$data.html();
+          if ( !contentHtml ) {
+            document.location.href = url;
+            return false;
+          }
+          
+          // Update the menu
+          $menuChildren = main.$menu.find(main.menuChildrenSelector);
+          $menuChildren.filter(main.activeSelector).removeClass(main.activeClass);
+          $menuChildren = $menuChildren.has('a[href^="'+relativeUrl+'"],a[href^="/'+relativeUrl+'"],a[href^="'+url+'"]');
+          if ( $menuChildren.length === 1 ) { $menuChildren.addClass(main.activeClass); }
+
+          // Update the content
+          main.$content.stop(true,true);
+
+          // main.$content.html(contentHtml).ajaxify().css('opacity',100).show(); /* you could fade in here if you'd like */
+          main.$content.html(contentHtml).ajaxify();
+          if ( section === 'home' ) {
+            main.initSlider();
+          } else if ( section === 'contact' ) {
+            main.setupContactBindings();
+          }
+          main.$content.fadeIn(660);
+          // Update the title
+          document.title = $data.find('.document-title:first').text();
+          try {
+            document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<','&lt;').replace('>','&gt;').replace(' & ',' &amp; ');
+          }
+          catch ( Exception ) { }
+          
+          // Add the scripts
+          $scripts.each(function(){
+            var $script = $(this), scriptText = $script.text(), scriptNode = document.createElement('script');
+            console.log($script);
+            scriptNode.appendChild(document.createTextNode(scriptText));
+            contentNode.appendChild(scriptNode);
+          });
+
+          // Complete the change
+          if ( main.$body.ScrollTo||false ) { main.$body.ScrollTo(scrollOptions); } /* http://balupton.com/projects/jquery-scrollto */
+          main.$body.removeClass('loading');
+    
+          // Inform Google Analytics of the change
+          if ( typeof window.pageTracker !== 'undefined' ) {
+            window.pageTracker._trackPageview(relativeUrl);
+          }
+
+          // Inform ReInvigorate of a state change
+          if ( typeof window.reinvigorate !== 'undefined' && typeof window.reinvigorate.ajax_track !== 'undefined' ) {
+            reinvigorate.ajax_track(url);
+            // ^ we use the full url here as that is what reinvigorate supports
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+          document.location.href = url;
+          return false;
+        }
+      }); // end ajax
+
+    }); // end onStateChange
+  },
+  validationSetup: function() {
     // bind validation to two contact forms on one page
     $.validator.addMethod("phoneUS", function(phone_number, element) {
         phone_number = phone_number.replace(/\s+/g, "");
@@ -125,241 +289,7 @@ var main = CDLIX.main = {
         $(form).ajaxSubmit(options);
       }
     });
-    
-    main.onContactFormSubmit();
-    // TODO - needs to be after defaults above - not sure I like this
-
-
-    ////// PUSHSTATE ///////
-    // TODO delegate using jquery $.on();
-    if (Modernizr.history) {
-      window.addEventListener('popstate', function(e) {
-        if(e.type === 'popstate' && main.togglingContent ) {
-
-          var intervalId = setInterval(function() {
-            if(!main.togglingContent) {
-              main.getContent();
-              clearInterval(intervalId);
-            }
-          }, 50);
-          return false;
-        } else if ( !main.initialLoad ) {
-          main.getContent();
-        }
-      });
-      $('body').on('click', 'a.pushstate', function(e) {
-        var pushedUrl = $(this).attr('href');
-        // main.toggleSpinner();
-        if( $(this).parents('#navigation').length && !main.togglingContent ) {
-          main.onClickNavigation($(this));
-        }
-
-        // dont push same url into history stack
-        if(location.pathname == pushedUrl) {
-          return false;
-        }
-
-        // make sure we arent currently loading in content
-        // right now this only follows the animation since we dont do true
-        // async based animation
-        if( main.togglingContent ) {
-          return false;
-        }
-        history.pushState(null, null, pushedUrl);
-        main.getContent(e, pushedUrl);
-        e.preventDefault();
-
-
-      });
-    }
   },
-  onClickNavigation: function($clickedLink) {
-    var $navigationLinks = $('#navigation nav a');
-    
-    $navigationLinks.removeClass('active');
-    $clickedLink.addClass('active');
-  },
-  setActiveContent: function() {
-
-    if( $('#projects').length ) {
-      $('#projects').addClass('active-content').find('article').addClass('active-content');
-      return $('#projects');
-    } else {
-      return $('#content > section').addClass('active-content');
-    }
-  },
-
-  getContent: function(e, href) {
-    // console.log(e);
-    // console.log('oppostate?');
-    // console.log(main.$activeContent);
-
-    // TODO delegate contact events
-    href = href || location.pathname;
-    var pathParts = href.split('/');
-        pathParts.shift(); // shift empty string off beginning
-
-    var newSectionId; 
-    var newProjectId;
-
-    if (pathParts.length > 1 && pathParts[0] === 'projects') {
-      newSectionId = pathParts[0];
-      newProjectId = pathParts[1];
-    } else if (pathParts[0] === 'projects') {
-      newSectionId = 'projects-list';
-    } else if (pathParts[0] === '') {
-      newSectionId = 'home';
-      
-    } else {
-      newSectionId = pathParts[0];
-    }
-
-    var $newProject = $('#' + newProjectId);
-    var $newSection = $('#' + newSectionId);
-
-    if( $newProject.length ) {
-
-      // console.log('Existing PROJECT In DOM');
-      main.toggleContent(newSectionId, newProjectId);
-      if( main.titleHistory[href] ) {
-        document.title = main.titleHistory[href];
-      }
-      if ( typeof window._gaq !== 'undefined' ) {
-        window._gaq.push(['_trackPageview', href]); 
-        // console.log('trackPageView', href);
-      }
-    } else if( newProjectId ) {
-
-      // console.log('AJAX Loading new project: ', newProjectId);
-      main.ajaxLoadContent(href, newSectionId, newProjectId);
-    // } else if ( newProjectId ) {
-    //   main.ajaxLoadContent(href, newSectionId, newProjectId);
-    } else if ( $newSection.length ) {
-      // console.log('Existing SECTION In DOM');
-      main.toggleContent(newSectionId);
-      if( main.titleHistory[href] ) {
-        document.title = main.titleHistory[href];
-      }
-      if ( typeof window._gaq !== 'undefined' ) {
-        window._gaq.push(['_trackPageview', href]); 
-        // console.log('trackPageView', href);
-      }
-    } else {
-      // console.log('Ajax loading: ', newSectionId);
-      main.ajaxLoadContent(href, newSectionId);
-    }
-
-
-  },
-
-  ajaxLoadContent: function(href, newSectionId, newProjectId) {
-    // console.log(main.$activeContent);
-    $.ajax({
-        url: href,
-        method: 'post',
-        dataType: 'HTML',
-        data: {},
-        success: function(data) {
-          if( $('#projects').length && newProjectId ) {
-            $(data).find('#' + newProjectId).appendTo('#projects');
-          } else {
-            $(data).find('#' + newSectionId).appendTo('#content');
-          }
-
-          // Set and Save page title
-          if(!main.titleHistory[href]) {
-            main.titleHistory[href] = $(data).filter('title').text();
-          }               
-          document.title = main.titleHistory[href];
-          main.toggleContent(newSectionId, newProjectId);
-
-          // TODO function
-          if ( typeof window._gaq !== 'undefined' ) {
-            window._gaq.push(['_trackPageview', href]); 
-            // console.log('trackPageView', href);
-          }
-          // Update for google analytics (find source in ajaxify)
-          // if ( typeof window.pageTracker !== 'undefined' ) {
-          //   window.pageTracker._trackPageview(href);
-          // }
-        }
-    });
-  },
-  // TODO - make state local global
-  ajaxLoadContentSuccess: function(data, newSectionId, newProjectId) {
-
-  },
-  toggleContent: function(newSectionId, newProjectId) {
-    var $newSection = $('#' + newSectionId);
-    var $newProject = $('#' + newProjectId);
-
-    main.togglingContent = true;
-
-
-    // TODO check if contact form already loaded and bound?
-    // console.log(main.contactFormBound);
-    if( newSectionId == 'contact' ) {
-      if( !main.contactFormBound ) { // TODO change to delegation? $.on()
-        main.onClickContactFormNavigation();
-      }
-      main.onContactFormSubmit();
-    }
-
-    // TODO this nestedness is vomit
-    // TODO hasClass, make into isActive() ??
-    if( !$newSection.hasClass('active-content') && !$newProject.hasClass('active-content')) {
-
-      if ( newProjectId ) { // if adding a project
-        if ( $('#projects').length && $('#projects').hasClass('active-content') ) { // if projects exist already
-          main.setPrevNextControls($newProject);
-        } else {
-          main.$activeContent.fadeOut(500, function() {
-            $newProject.show().addClass('active-content');
-            main.fadeInAndSetActiveContent($newSection);
-            main.setPrevNextControls($newProject);
-          });
-          
-        }
-        
-      } else { // if a normal section
-        main.$activeContent.fadeOut(500, function() {
-          main.fadeInAndSetActiveContent($newSection);
-        });
-      }
-    } else if ($newSection.hasClass('active-content') && !$newProject.hasClass('active-content')) {
-      main.$activeContent.find('article.active-content').fadeOut(500, function() {
-        main.setPrevNextControls($newProject);
-        $(this).removeClass('active-content');
-        $newProject.fadeIn(500, function() {
-          $(this).addClass('active-content');
-          main.togglingContent = false;
-        });
-      });
-      // main.togglingContent = false;
-    } else {
-      // console.log('Content already active...do nothing');
-      main.togglingContent = false;
-    }
-  },
-
-  fadeInAndSetActiveContent: function($newActiveContent) {
-    main.$activeContent.removeClass('active-content').children('.active-content').hide().removeClass('active-content');
-    // if(Modernizr.csstransitions) {
-    //   main.$activeContent = $newActiveContent.addClass('active-content');
-    //   console.log('modernizr');
-    //   return;
-    // }
-
-    $newActiveContent.fadeIn(500, function() {
-      if( $(this).attr('id') == 'home' ) {
-        main.initSlider();
-      }
-      main.$activeContent = $(this).addClass('active-content');
-      main.togglingContent = false;
-      main.setCopyCSSPosition();
-    });
-  },
-
   setPrevNextControls: function($content) {
     var $controls = $content.find('.controls');
     var projects = '/projects/';
@@ -403,7 +333,11 @@ var main = CDLIX.main = {
       $activeProjectCopy.css({position: fixedPos, width: '35%'});
     }
   },
-
+  setupContactBindings: function() {
+    main.onClickContactFormNavigation();
+    main.validationSetup();
+    main.onContactFormSubmit();
+  },
   onContactFormSubmit: function() {
     // console.log('here');
     $('#project-message, #send-message').each(function() {

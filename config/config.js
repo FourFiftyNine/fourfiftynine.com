@@ -76,6 +76,7 @@ module.exports = function(app){
         'public/javascript/libs/jquery.form.js',
         'public/javascript/libs/cycle/jquery.cycle.all.js',
         'public/javascript/plugins.js',
+        // 'public/javascript/push-state.js',
         'public/javascript/main.js', 
       ],
       fileOut: 'public/javascript/all.min.js',
