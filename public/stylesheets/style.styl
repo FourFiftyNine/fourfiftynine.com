@@ -347,6 +347,10 @@ body
       li
         margin: 10px 10px
         text-align: center
+        &.active a
+          background: rgba(0,0,0,.04)
+          border-radius: 50px
+          transition: background .3s .1s ease-in-out
         a
           color: blue
           display: block
@@ -925,6 +929,8 @@ footer
       ul
         li
           margin: 0
+          &.active a
+            border-radius: 0
           a
             font-size: 30px
             height: 35px

@@ -56,7 +56,7 @@ var main = CDLIX.main = {
     main.$menu = $('nav').filter(':first');
     main.activeClass = 'active';
     main.activeSelector = '.active,.selected,.current,.youarehere';
-    main.menuChildrenSelector = '> ul > li > a';
+    main.menuChildrenSelector = '> ul > li';
     /* Application Generic Variables */
     main.$body = $(document.body);
     main.rootUrl = History.getRootUrl();

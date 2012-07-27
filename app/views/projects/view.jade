@@ -3,9 +3,9 @@
 section#projects.clearfix
   - prevClass = (!prev) ? ' hidden' : '';
   - nextClass = (!next) ? ' hidden' : '';
-  a#prev(href='/projects/#{prev}', class="arrow pushstate#{prevClass}")
+  a#prev(href='/projects/#{prev}', class="arrow#{prevClass}")
     img(src="/images/arrow-blue-left.png")
-  a#next(href='/projects/#{next}', class="arrow pushstate#{nextClass}")
+  a#next(href='/projects/#{next}', class="arrow#{nextClass}")
     img(src="/images/arrow-blue-right.png")
   article(id='#{slug}')
     .copy
@@ -24,10 +24,10 @@ section#projects.clearfix
         section.tags
       - if(website)
         section.website
-            a(href="http://#{website}", title="#{title}", target="_blank") &raquo; visit #{website}
+            a.no-ajaxy(href="http://#{website}", title="#{title}", target="_blank") &raquo; visit #{website}
       section.in-page-navigation
-        a.pushstate.top ^ back to top
-        a.pushstate.back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
+        a.top ^ back to top
+        a.back-to-projects(href="/projects", title="#{title}") &laquo; back to projects
     section.screenshots
       each image, index in screenshots
         - firstClass = (!index) ? ' first' : '';
