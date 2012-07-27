@@ -195,9 +195,13 @@ var main = CDLIX.main = {
           if ( main.$body.ScrollTo||false ) { main.$body.ScrollTo(scrollOptions); } /* http://balupton.com/projects/jquery-scrollto */
           main.$body.removeClass('loading');
     
-          // Inform Google Analytics of the change
-          if ( typeof window.pageTracker !== 'undefined' ) {
-            window.pageTracker._trackPageview(relativeUrl);
+          // // Inform Google Analytics of the change
+          // if ( typeof window.pageTracker !== 'undefined' ) {
+          //   window.pageTracker._trackPageview(relativeUrl);
+          // }
+          if ( typeof window._gaq !== 'undefined' ) {
+            window._gaq.push(['_trackPageview', relativeUrl]); 
+            // console.log('trackPageView', href);
           }
 
           // Inform ReInvigorate of a state change
