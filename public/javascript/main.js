@@ -199,8 +199,9 @@ var main = CDLIX.main = {
           // if ( typeof window.pageTracker !== 'undefined' ) {
           //   window.pageTracker._trackPageview(relativeUrl);
           // }
+          // console.log(relativeUrl);
           if ( typeof window._gaq !== 'undefined' ) {
-            window._gaq.push(['_trackPageview', relativeUrl]); 
+            window._gaq.push(['_trackPageview', '/' + relativeUrl]); 
             // console.log('trackPageView', href);
           }
 
