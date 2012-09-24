@@ -318,13 +318,14 @@ var main = CDLIX.main = {
     var windowHeight = $window.height();
     var fixedPos = 'fixed';
     var staticPos = 'static'; // static is reserved
-    var $activeProjectCopy = $('#projects article.active-content .copy');
+    var $activeProjectCopy = $('#projects article .copy');
 
     // TODO find way to have the bottom navigation be fixed when scrolling with fixed copy
     // var $inPageNavigation = main.$copy.find('#in-page-navigation');
     // console.log(h);
     // console.log(main.$copy.height());
-
+    console.log($activeProjectCopy.height() );
+    console.log(windowHeight );
     if ( $activeProjectCopy.height() > windowHeight ) {
       $activeProjectCopy.css({
         position: staticPos,
