@@ -1,31 +1,25 @@
 {
-  "title"   : "Dekko",
-  "company" : "Dekko Inc.",
-  "slug"    : "dekko",
-  "website" : "dekko.co",
+  "title"   : "CollegePolos",
+  "company" : "CollegePolos",
+  "slug"    : "collegepolos",
+  "website" : "collegepolos.com",
   "overview": [
     "Dekko provided us with a clear design and user experience direction. Working along side their fantastic team we thoroughly enjoyed implementing a top notch, HTML5, iPhone and iPad compatible WordPress theme.",
     "We utilized YouTube’s advanced JavaScript SDK in order to create a custom video playback experience.",
     "Additionally, we implemented WordPress SEO, utilizing some well-known plugins as well as our own in-house techniques."
-
   ],
   "specs"   : [
-    "Wordpress", 
-    "PHP",
+    "Shopify", 
     "HTML5", 
     "CSS3",
-    "JavaScript",
+    "Advanced JavaScript",
     "Elegant degredation of CSS3/HTML5 using Modernizr", 
-    "YouTube JavaScript API", 
-    "Custom iPad / iPhone mobile Safari detection", 
-    "MailChimp Integration"
+    "Shopify's JavaScript API"
   ],
   "screenshots": [
     "home",
-    "team",
-    "blog",
-    "jobs"
+    "product"
   ],
-  "prev" : "collegepolos",
-  "next" : "half-pretties"
+  "prev" : "",
+  "next" : "dekko"
 }
