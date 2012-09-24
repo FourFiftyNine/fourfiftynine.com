@@ -2147,7 +2147,7 @@ footer {
 /* line 1028 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
   #content > section {
     margin-right: 0;
-    padding: 0;
+    padding: 0 !important;
   }
 
 /* line 1032 : /Users/anthonysessa/Sites/mygit/nodejs/fourfiftynine.com/public/stylesheets/style.styl */
