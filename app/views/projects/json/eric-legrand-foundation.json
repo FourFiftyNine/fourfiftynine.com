@@ -1,0 +1,23 @@
+{
+  "title"   : "The Eric Legrand Foundation",
+  "company" : "The Eric Legrand Foundation",
+  "slug"    : "eric-legrand-foundation",
+  "website" : null,
+  "overview": [
+    "Hometown hero Eric Legrand looked to us to create a progressive, forward thinking website design for his foundation whose goal is to find a cure for paralysis as well as fund research, educate, as well as provide equipment and therapy for others who are paralyzed."
+    ],
+  "specs"   : [
+    "Wordpress", 
+    "PHP",
+    "HTML5", 
+    "CSS3",
+    "JavaScript"
+  ],
+  "screenshots": [
+    "home",
+    "calendar",
+    "contact"
+  ],
+  "prev" : "",
+  "next" : "collegepolos"
+}
