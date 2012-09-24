@@ -186,7 +186,7 @@ var main = CDLIX.main = {
           // Add the scripts
           $scripts.each(function(){
             var $script = $(this), scriptText = $script.text(), scriptNode = document.createElement('script');
-            console.log($script);
+            // console.log($script);
             scriptNode.appendChild(document.createTextNode(scriptText));
             contentNode.appendChild(scriptNode);
           });
@@ -210,6 +210,8 @@ var main = CDLIX.main = {
             reinvigorate.ajax_track(url);
             // ^ we use the full url here as that is what reinvigorate supports
           }
+          main.setCopyCSSPosition();
+
         },
         error: function(jqXHR, textStatus, errorThrown){
           document.location.href = url;
@@ -324,8 +326,8 @@ var main = CDLIX.main = {
     // var $inPageNavigation = main.$copy.find('#in-page-navigation');
     // console.log(h);
     // console.log(main.$copy.height());
-    console.log($activeProjectCopy.height() );
-    console.log(windowHeight );
+    // console.log($activeProjectCopy.height() );
+    // console.log(windowHeight );
     if ( $activeProjectCopy.height() > windowHeight ) {
       $activeProjectCopy.css({
         position: staticPos,
