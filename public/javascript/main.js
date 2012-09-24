@@ -331,7 +331,10 @@ var main = CDLIX.main = {
     if ( $activeProjectCopy.height() > windowHeight ) {
       $activeProjectCopy.css({
         position: staticPos,
-        width: '40%'
+        width: '43%'
+      });
+      $('section#projects').css({
+        paddingLeft: 0
       });
       // TODO figure out navigation with static copy
       // $inPageNavigation.css(p, f);
@@ -339,6 +342,9 @@ var main = CDLIX.main = {
 
     } else {
       $activeProjectCopy.css({position: fixedPos, width: '35%'});
+      $('section#projects').css({
+        paddingLeft: '40px'
+      });
     }
   },
   setupContactBindings: function() {
