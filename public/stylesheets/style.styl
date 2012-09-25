@@ -1107,18 +1107,20 @@ footer
         margin: 10px auto
         width: 92%
     .arrow
-      background: url(/images/sprite-arrows-blue.png)
+      background: url(/images/sprite-arrows-blue.png) rgba(255,255,255, .8)
       height: 36px
-      top: auto
-      bottom: 30px
+      width: 36px
+      border-radius: 3px
+      // top: auto
+      // bottom: 30px
       img
         display: none
       &#prev
-        background-position: 0 -128px
+        background-position: 10px -128px
         left: 6px
       &#next
-        background-position: 0 -160px
-        right: -11px
+        background-position: 13px -160px
+        right: 5px
         margin: 0
     .website
       float: right
