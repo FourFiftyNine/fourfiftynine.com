@@ -25,5 +25,5 @@ exports.creator = function () {
 exports.body_classes = function(req, res){
   // console.log(module);
   if(typeof req.url !== 'undefined')
-    return (req.url === '/') ? 'home' : S(req.url).replaceAll('/', ' ').ltrim().s;
+    return (req.url === '/') ? 'home' : S(req.url).replaceAll('/', ' ').trimLeft().s;
 }
