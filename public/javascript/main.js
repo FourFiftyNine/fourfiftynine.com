@@ -9,7 +9,7 @@
 // global doesnt exist anywhere else yet
 var CDLIX     = window.CDLIX || {};
 var history   = window.history;
-var History   = window.History; // History.js - github
+var History   = $.History; // History.js - github
 var location  = window.location;
 var Modernizr = window.Modernizr;
 var $window   = $(window);
