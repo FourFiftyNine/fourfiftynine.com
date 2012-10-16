@@ -81,7 +81,7 @@ html.no-js(lang='en')
     script(src="https://raw.github.com/fgnass/spin.js/gh-pages/dist/spin.min.js") //- TODO localize
     script(src="/javascript/libs/history.js/scripts/bundled/html4+html5/native.history.js")
 
-    - if (process.env.NODE_ENV != 'production')
+    - if (process.env.NODE_ENV == 'production')
       script(src= '/javascript/all.min.js')
     - else
       script(src="/javascript/libs/cycle/jquery.cycle.all.js")
