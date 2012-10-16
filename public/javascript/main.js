@@ -9,7 +9,7 @@
 // global doesnt exist anywhere else yet
 var CDLIX     = window.CDLIX || {};
 var history   = window.history;
-var History   = $.History; // History.js - github
+var History   = window.History;
 var location  = window.location;
 var Modernizr = window.Modernizr;
 var $window   = $(window);
@@ -115,7 +115,7 @@ var main = CDLIX.main = {
     }
   },
   onStateChange: function() {
-    $(window).bind('statechange',function(){
+    History.Adapter.bind(window,'statechange',function(){
       // Prepare Variables
       var
         State = History.getState(),
