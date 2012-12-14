@@ -1,0 +1,24 @@
+{
+  "title"   : "PolicyMic",
+  "company" : "PolicyMic",
+  "slug"    : "policymic",
+  "website" : "policymic.com",
+  "overview": [
+    "PolicyMic is the fastest growing news & discussion platform for millennials.  They draw <strong>over 5 million</strong> unique visitors per month and we were lucky enough to be welcomed into their exceptional team environment to refine and build their publishing technology.",
+    "The Live Blogging platform utilizes WebSockets in order to deliver content to PolicyMic's users in real time fashion while optimizing server architecture so that the content delivery process is as economically efficient as it is technically.",
+    "We also advised them on development workflow and server achitecture."
+  ],
+  "specs"   : [
+    "Symfony (PHP)", 
+    "HTML5 Web Sockets", 
+    "CSS3",
+    "Advanced JavaScript Patterns",
+    "Responsive Mobile Development"
+  ],
+  "screenshots": [
+    "liveblog",
+    "publishing"
+  ],
+  "prev" : "",
+  "next" : "eric-legrand-foundation"
+}
