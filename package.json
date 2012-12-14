@@ -14,20 +14,21 @@
       , "express-expose"    : "0.2.2"
       , "stylus"            : "0.13.x"
       , "mongoose"          : "2.4.7"
-      , "jade"              : "0.19.x"
+      , "jade"              : ">=0.0.x"
       , "stylus"            : "0.22.x"
       , "nib"               : "0.3.x"
-      , "pusher"            : "0.0.x"
+      , "pusher"            : ">=0.0.x"
       , "string"            : ">=0.0.1"
       , "markdown-js"       : ">=0.0.3"
       , "nodemailer"        : ">=0.3.20"
       , "mustache"          : ">=0.4.0"
       , "node-minify"       : ">=0.4.1"
       , "gzippo"            : ">=0.1.4"
+      , "uglify-js"         : ">=2.2.0"
     }
   , "main"    : "./index.js"
   , "engines" : { 
       "node": "0.6.x" 
-    , "npm" : "1.0.x"
+    , "npm" : "1.1.x"
     }
 }
